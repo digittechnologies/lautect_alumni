@@ -15,6 +15,10 @@ class CreateAppCategoriesTable extends Migration
     {
         Schema::create('app_categories', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('app_cate_name')->nullable();
+            $table->string('app_cate_type')->nullable();
+            $table->string('description')->nullable();
+            $table->string('status')->default('Y');
             $table->timestamps();
         });
     }

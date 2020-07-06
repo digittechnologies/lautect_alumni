@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAuthenticationsTable extends Migration
+class CreateInterviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateAuthenticationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('authentications', function (Blueprint $table) {
+        Schema::create('interviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('matric_no');
-            $table->string('fullname');
-            $table->string('dept');  
-            // $table->string('faculty');
+            $table->string('inter_name');
+            $table->string('content');
+            $table->string('inter_position');
+            $table->string('inter_image');
+            $table->string('link');
             $table->string('status')->default('Y');
+            $table->string('created_by');
+            $table->string('updated_by');
             $table->timestamps();
         });
     }
@@ -31,6 +34,6 @@ class CreateAuthenticationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authentications');
+        Schema::dropIfExists('interviews');
     }
 }
