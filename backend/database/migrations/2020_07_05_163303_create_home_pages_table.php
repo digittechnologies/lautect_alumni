@@ -15,6 +15,10 @@ class CreateHomePagesTable extends Migration
     {
         Schema::create('home_pages', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('entity')->nullable();
+            $table->string('component1')->nullable();
+            $table->string('component2')->nullable();
+            $table->string('component3')->nullable();
             $table->timestamps();
         });
     }

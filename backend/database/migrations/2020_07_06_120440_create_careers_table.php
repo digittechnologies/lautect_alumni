@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventTbsTable extends Migration
+class CreateCareersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateEventTbsTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_tbs', function (Blueprint $table) {
+        Schema::create('careers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('event_name');
-            $table->string('subject');
+            $table->string('car_name');
+            $table->string('title');
             $table->string('content');
+            $table->string('location');
             $table->string('address');
-            $table->string('start_time');
-            $table->string('start_date');
-            $table->string('created_by');
-            $table->string('end_time');
-            $table->string('end_date');
+            $table->string('car_image');
+            $table->string('information');
+            $table->string('car_cat_id');
             $table->string('status')->default('Y');
+            $table->string('created_by');
+            $table->string('updated_by');
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateEventTbsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_tbs');
+        Schema::dropIfExists('careers');
     }
 }
