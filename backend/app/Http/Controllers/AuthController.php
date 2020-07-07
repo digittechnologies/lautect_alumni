@@ -17,7 +17,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'signup']]);
+        $this->middleware('auth:api', ['except' => ['login','login2', 'signup']]);
     }
 
     /**
@@ -34,6 +34,19 @@ class AuthController extends Controller
         }
 
         return $this->respondWithToken($token);
+        // return view('home');
+    }
+
+    public function login2()
+    {        
+        $credentials = request(['email', 'password']);
+
+        if (!$token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Email or password does\'t exist'], 401);
+        }
+
+        // return $this->respondWithToken($token);
+        return view('home');
     }
 
     public function signup(SignUpRequest $request)

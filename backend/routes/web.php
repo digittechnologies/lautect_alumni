@@ -18,6 +18,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::POST('/add-user', 'AuthController@login2')->name('add-user');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
