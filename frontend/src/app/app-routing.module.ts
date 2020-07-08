@@ -10,12 +10,19 @@ import { BeforeLoginService } from './services/before-login.service';
 import { AfterLoginService } from './services/after-login.service';
 import { MembersComponent } from './pages/members/members.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+
 
 const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
     canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'coming_soon',
+    component: ComingSoonComponent,
+    canActivate: [AfterLoginService]
   },
   {
     path: 'signup',

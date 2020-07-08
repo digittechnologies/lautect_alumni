@@ -19,6 +19,7 @@ import { BeforeLoginService } from './services/before-login.service';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { MembersComponent } from './pages/members/members.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 
 
 
@@ -32,7 +33,8 @@ import { HomeComponent } from './pages/home/home.component';
     RequestResetComponent,
     ResponseResetComponent,
     MembersComponent,
-    HomeComponent
+    HomeComponent,
+    ComingSoonComponent
   ],
   imports: [
     BrowserModule,
