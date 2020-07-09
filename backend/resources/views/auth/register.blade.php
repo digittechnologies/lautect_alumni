@@ -72,6 +72,8 @@
                                                             </div>
                                                             
                                                         </div>
+                                                        <input type="hidden" class="form-control" id="register_deptno" name="user_cat_id" value="1">
+
                                                         <div class="row">
                                                             <div class="col-12 col-sm-6">
                                                                 <div class="form-group">

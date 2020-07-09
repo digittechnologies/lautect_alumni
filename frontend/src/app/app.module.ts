@@ -19,7 +19,13 @@ import { BeforeLoginService } from './services/before-login.service';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { MembersComponent } from './pages/members/members.component';
 import { HomeComponent } from './pages/home/home.component';
-
+import { VerificationComponent } from './pages/verification/verification.component';
+import { AssociationComponent } from './pages/association/association.component';
+import { MemberCatComponent } from './pages/member-cat/member-cat.component';
+import { UserCatComponent } from './pages/user-cat/user-cat.component';
+import { AdminListComponent } from './pages/admin-list/admin-list.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { SystemSettingComponent } from './system-setting/system-setting.component';
 
 
 @NgModule({
@@ -32,14 +38,21 @@ import { HomeComponent } from './pages/home/home.component';
     RequestResetComponent,
     ResponseResetComponent,
     MembersComponent,
-    HomeComponent
+    HomeComponent,
+    VerificationComponent,
+    AssociationComponent,
+    MemberCatComponent,
+    UserCatComponent,
+    AdminListComponent,
+    SystemSettingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
-    SnotifyModule
+    SnotifyModule,
+    NgxPaginationModule,
+    FormsModule 
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },

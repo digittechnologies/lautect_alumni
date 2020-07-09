@@ -10,4 +10,28 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@process');
+
+    //start auth
+    Route::get('getauth', 'ApiController@getauth');
+    //end auth
+    //start user_cat
+    Route::post('addusercat', 'ApiController@addusercat');
+    Route::get('getusercat', 'ApiController@getusercat');
+    //end user_cat
+    //start member_cat
+    Route::post('addmembercat', 'ApiController@addmembercat');
+    Route::get('getmembercat', 'ApiController@getmembercat');
+    //end member_cat
+    //start association
+    Route::post('addasso', 'ApiController@addasso');
+    Route::get('getasso', 'ApiController@getasso');
+    //end asso
+
+    Route::get('getmember', 'ApiController@getmember');
+    Route::get('getadmin', 'ApiController@getadmin');
+
+    Route::get('getsettingapp', 'ApiController@getsettingapp');
+    Route::post('updatesettingapp', 'ApiController@updatesettingapp');
+    Route::get('getaboutus', 'ApiController@getaboutus');
+    Route::post('addaboutus', 'ApiController@addaboutus');
 });

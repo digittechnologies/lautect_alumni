@@ -10,6 +10,12 @@ import { BeforeLoginService } from './services/before-login.service';
 import { AfterLoginService } from './services/after-login.service';
 import { MembersComponent } from './pages/members/members.component';
 import { HomeComponent } from './pages/home/home.component';
+import { VerificationComponent } from './pages/verification/verification.component';
+import { AssociationComponent } from './pages/association/association.component';
+import { MemberCatComponent } from './pages/member-cat/member-cat.component';
+import { UserCatComponent } from './pages/user-cat/user-cat.component';
+import { AdminListComponent } from './pages/admin-list/admin-list.component';
+import { SystemSettingComponent } from './system-setting/system-setting.component';
 
 const appRoutes: Routes = [
   {
@@ -20,7 +26,7 @@ const appRoutes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
-    canActivate: [BeforeLoginService]
+    canActivate: [AfterLoginService]
   },
   {
     path: 'nav',
@@ -51,6 +57,37 @@ const appRoutes: Routes = [
     path: 'response-password-reset',
     component: ResponseResetComponent,
     canActivate: [BeforeLoginService]
+  },
+
+  {
+    path: 'verification',
+    component: VerificationComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'association',
+    component: AssociationComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'm_cat',
+    component: MemberCatComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'user_cat',
+    component: UserCatComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'admin_list',
+    component: AdminListComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'system_setting',
+    component: SystemSettingComponent,
+    canActivate: [AfterLoginService]
   },
 ];
 
