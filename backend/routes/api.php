@@ -32,6 +32,8 @@ Route::group([
 
     Route::get('getsettingapp', 'ApiController@getsettingapp');
     Route::post('updatesettingapp', 'ApiController@updatesettingapp');
-    Route::get('getaboutus', 'ApiController@getaboutus');
-    Route::post('addaboutus', 'ApiController@addaboutus');
+    Route::get('gethomeheader', 'ApiController@gethomeheader');
+    Route::post('addhomeheader', 'ApiController@addhomeheader');
+
+
 });

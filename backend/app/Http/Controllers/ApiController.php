@@ -27,6 +27,43 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function addhomeheader(Request $request)
+    {
+        // return $request;
+      
+        $datas=$request->formdata;
+        $request->merge(['component1'=>$datas['component1']]);
+        $request->merge(['component2'=>$datas['component2']]);
+        $request->merge(['component3'=>$datas['component3']]);
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
+                $request->merge(['home_image'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=home_page::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function gethomeheader()
+    {
+        return response()->json(
+            
+          home_page::get()
+         
+        );
+       
+    }
+
     public function addaboutus(Request $request)
     {
         // return $request;

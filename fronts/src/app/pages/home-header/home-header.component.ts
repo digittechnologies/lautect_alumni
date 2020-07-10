@@ -2,19 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-aboutus',
-  templateUrl: './aboutus.component.html',
-  styleUrls: ['./aboutus.component.css']
+  selector: 'app-home-header',
+  templateUrl: './home-header.component.html',
+  styleUrls: ['./home-header.component.css']
 })
-export class AboutusComponent implements OnInit {
+export class HomeHeaderComponent implements OnInit {
 
   public form = {
-    about_name: null,
-    title: null,
-    content:null,
-    year:null
+    component1: null,
+    component2: null,
+    component3:null,
   };
   public error = [];
 
@@ -23,7 +21,7 @@ export class AboutusComponent implements OnInit {
     private Token: TokenService,
     private router: Router
   ) { }
-aboutus:any;
+header:any;
 image:any;
 uploadFile(event){
   let files =event.target.files[0];
@@ -37,16 +35,15 @@ uploadFile(event){
   reader.readAsDataURL(files);
 }
   onSubmit() {
-    this.Jarwis.addaboutus({formdata:this.form,imag:this.image}).subscribe(
+    this.Jarwis.addhomeheader({formdata:this.form,image:this.image}).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error)
     );
   }
   handleResponse(data) {
-    this.form.about_name="";
-    this.form.title="";
-    this.form.year="";
-    this.form.content="";
+    this.form.component1="";
+    this.form.component2="";
+    this.form.component3="";
     this.ngOnInit()
   }
 
@@ -55,14 +52,13 @@ uploadFile(event){
   }
 
   ngOnInit() {
-    this.Jarwis.getaboutus().subscribe(
+    this.Jarwis.gethomeheader().subscribe(
       data=>{
-      this.aboutus = data; 
+      this.header = data; 
     //  console.log(this.usercat)
 
       
       }
     )
   }
-
 }

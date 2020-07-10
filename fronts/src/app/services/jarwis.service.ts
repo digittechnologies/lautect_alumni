@@ -79,4 +79,12 @@ export class JarwisService {
   getaboutus() {
     return this.http.get(`${this.baseUrl}/getaboutus`)
   }
+  addhomeheader(data) {
+    return this.http.post(`${this.baseUrl}/addhomeheader`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  gethomeheader() {
+    return this.http.get(`${this.baseUrl}/gethomeheader`)
+  }
 }

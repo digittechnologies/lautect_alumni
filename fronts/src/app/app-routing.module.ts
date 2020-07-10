@@ -18,8 +18,20 @@ import { AdminListComponent } from './pages/admin-list/admin-list.component';
 import { SystemSettingComponent } from './system-setting/system-setting.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { OpportunitiesComponent } from './pages/opportunities/opportunities.component';
+import { HomeHeaderComponent } from './pages/home-header/home-header.component';
+import { EventProgramsComponent } from './pages/event-programs/event-programs.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'event_programs',
+    component: EventProgramsComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'home_header',
+    component: HomeHeaderComponent,
+    canActivate: [AfterLoginService]
+  },
   {
     path: 'aboutus',
     component: AboutusComponent,

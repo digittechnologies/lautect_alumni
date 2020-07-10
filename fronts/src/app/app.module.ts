@@ -37,6 +37,7 @@ import { SystemSettingComponent } from './system-setting/system-setting.componen
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { OpportunitiesComponent } from './pages/opportunities/opportunities.component';
 import { EventProgramsComponent } from './pages/event-programs/event-programs.component';
+import { HomeHeaderComponent } from './pages/home-header/home-header.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { EventProgramsComponent } from './pages/event-programs/event-programs.co
     AboutusComponent,
     OpportunitiesComponent,
     EventProgramsComponent,
+    HomeHeaderComponent,
    
   ],
   imports: [
