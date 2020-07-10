@@ -16,12 +16,19 @@ import { MemberCatComponent } from './pages/member-cat/member-cat.component';
 import { UserCatComponent } from './pages/user-cat/user-cat.component';
 import { AdminListComponent } from './pages/admin-list/admin-list.component';
 import { SystemSettingComponent } from './system-setting/system-setting.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+
 
 const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
     canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'coming_soon',
+    component: ComingSoonComponent,
+    canActivate: [AfterLoginService]
   },
   {
     path: 'signup',

@@ -1,14 +1,26 @@
 <div *ngIf="!loggedIn">
     <app-login></app-login>
 </div>
+
+<!-- <ng-snotify></ng-snotify> 
+<div *ngIf="loggedIn">  
+    <div class="wrapper"> 
+        <div class="mt-2 main-panel">
+            <app-coming-soon></app-coming-soon>
+        </div>
+    </div>
+ </div> -->
+
+
 <ng-snotify></ng-snotify> 
 <div *ngIf="loggedIn">  
     <div class="wrapper"> 
         <app-navbar></app-navbar>
+        <div class="mt-2 main-panel">
         <router-outlet></router-outlet>
     </div>
+    </div>
 
-    <!-- START Notification Sidebar-->
     <aside id="notification-sidebar" class="notification-sidebar d-none d-sm-none d-md-block"><a class="notification-sidebar-close"><i class="ft-x font-medium-3"></i></a>
         <div class="side-nav notification-sidebar-content">
         <div class="row">
@@ -311,7 +323,8 @@
             </div>
         </div>
         <hr>
-        <!-- Sidebar Options Starts-->
+     
+        
         <h6 class="text-center text-bold-500 mb-3 text-uppercase sb-options">Sidebar Color Options</h6>
         <div class="cz-bg-color sb-color-options">
             <div class="row p-1">
@@ -333,8 +346,7 @@
             <div class="col"><span style="width:20px; height:20px;" data-bg-color="danger" class="bg-danger d-block rounded-circle"></span></div>
             </div>
         </div>
-        <!-- Sidebar Options Ends-->
-        <!-- Transparent Layout Bg color Options-->
+    
         <h6 class="text-center text-bold-500 mb-3 text-uppercase tl-color-options d-none">Background Colors</h6>
         <div class="cz-tl-bg-color d-none">
             <div class="row p-1">
@@ -346,9 +358,9 @@
             <div class="col"><span style="width:20px; height:20px;" data-bg-color="bg-tundora" class="bg-tundora d-block rounded-circle"></span></div>
             </div>
         </div>
-        <!-- Transparent Layout Bg color Ends-->
+
         <hr>
-        <!-- Sidebar BG Image Starts-->
+  
         <h6 class="text-center text-bold-500 mb-3 text-uppercase sb-bg-img">Sidebar Bg Image</h6>
         <div class="cz-bg-image row sb-bg-img">
             <div class="col-sm-2 mb-3"><img src="assets/img/sidebar-bg/01.jpg" width="90" class="rounded sb-bg-01"></div>
@@ -358,7 +370,7 @@
             <div class="col-sm-2 mb-3"><img src="assets/img/sidebar-bg/05.jpg" width="90" class="rounded sb-bg-05"></div>
             <div class="col-sm-2 mb-3"><img src="assets/img/sidebar-bg/06.jpg" width="90" class="rounded sb-bg-06"></div>
         </div>
-        <!-- Transparent BG Image Ends-->
+
         <div class="tl-bg-img d-none">
             <h6 class="text-center text-bold-500 text-uppercase">Background Images</h6>
             <div class="cz-tl-bg-image row">
@@ -368,9 +380,9 @@
             <div class="col-sm-3"><img src="assets/img/gallery/bg-glass-4.jpg" width="90" class="rounded bg-glass-4"></div>
             </div>
         </div>
-        <!-- Transparent BG Image Ends    -->
+
         <hr>
-        <!-- Sidebar BG Image Toggle Starts-->
+   
         <div class="togglebutton toggle-sb-bg-img">
             <div class="switch"><span>Sidebar Bg Image</span>
             <div class="float-right">
@@ -382,8 +394,7 @@
             </div>
             <hr>
         </div>
-        <!-- Sidebar BG Image Toggle Ends-->
-        <!-- Compact Menu Starts-->
+    
         <div class="togglebutton">
             <div class="switch"><span>Compact Menu</span>
             <div class="float-right">
@@ -394,9 +405,9 @@
             </div>
             </div>
         </div>
-        <!-- Compact Menu Ends-->
+    
         <hr>
-        <!-- Sidebar Width Starts-->
+ 
         <div>
             <label for="cz-sidebar-width">Sidebar Width</label>
             <select id="cz-sidebar-width" class="custom-select cz-sidebar-width float-right">
@@ -405,9 +416,9 @@
             <option value="large">Large</option>
             </select>
         </div>
-        <!-- Sidebar Width Ends-->
+      
         </div>
     </div>
-    <!-- Theme customizer Ends-->
+ 
 
 </div>

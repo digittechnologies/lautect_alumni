@@ -9,7 +9,7 @@ import {  SnotifyService } from 'ng-snotify';
   styleUrls: ['./response-reset.component.css']
 })
 export class ResponseResetComponent implements OnInit {
-  public error=[];
+  public error: any;
   public form = {
     email : null,
     password : null,

@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment'
 
 @Injectable()
 export class TokenService {
   private iss = {
     login: 'http://localhost:8000/api/login',
     signup: 'http://localhost:8000/api/signup'
+
+    // login: environment.login,
+    // signup: environment.signup,
+
   };
 
   constructor() { }

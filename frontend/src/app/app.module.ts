@@ -26,6 +26,8 @@ import { UserCatComponent } from './pages/user-cat/user-cat.component';
 import { AdminListComponent } from './pages/admin-list/admin-list.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SystemSettingComponent } from './system-setting/system-setting.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { SystemSettingComponent } from './system-setting/system-setting.componen
     MemberCatComponent,
     UserCatComponent,
     AdminListComponent,
-    SystemSettingComponent
+    SystemSettingComponent,
+    ComingSoonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment'
 
 @Injectable()
 export class JarwisService {
   private baseUrl = 'http://localhost:8000/api';
+
+  // private baseUrl = environment.baseUrl 
 
   constructor(private http: HttpClient) { }
 
