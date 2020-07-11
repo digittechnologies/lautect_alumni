@@ -16,10 +16,10 @@ class CreateInterviewsTable extends Migration
         Schema::create('interviews', function (Blueprint $table) {
             $table->increments('id');
             $table->string('inter_name');
-            $table->string('content');
+            $table->longText('content');
             $table->string('inter_position');
             $table->string('inter_image');
-            $table->string('link');
+            $table->string('link')->nullable();
             $table->string('status')->default('Y');
             $table->string('created_by');
             $table->string('updated_by');

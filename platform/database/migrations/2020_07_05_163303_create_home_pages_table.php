@@ -18,7 +18,8 @@ class CreateHomePagesTable extends Migration
             $table->string('entity')->nullable();
             $table->string('component1')->nullable();
             $table->string('component2')->nullable();
-            $table->string('component3')->nullable();
+            $table->longText('component3')->nullable();
+            $table->string('home_image')->nullable();
             $table->timestamps();
         });
     }

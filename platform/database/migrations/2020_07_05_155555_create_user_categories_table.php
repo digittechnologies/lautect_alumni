@@ -17,7 +17,7 @@ class CreateUserCategoriesTable extends Migration
             $table->increments('id');
             $table->string('cat_name');
             $table->string('created_by')->nullable();
-            $table->string('about')->nullable();
+            $table->longText('about')->nullable();
             $table->string('status')->default('Y');
             $table->timestamps();
         });

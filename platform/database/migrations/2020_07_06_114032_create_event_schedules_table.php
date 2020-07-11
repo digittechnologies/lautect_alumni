@@ -17,13 +17,13 @@ class CreateEventSchedulesTable extends Migration
             $table->increments('id');
             $table->string('schedule_name');
             $table->string('title');
-            $table->string('content')->nullable();
+            $table->longText('content')->nullable();
             $table->string('speaker');
             $table->string('start_time');
             $table->string('start_date');
             $table->string('created_by');
             $table->string('end_time');
-            $table->string('end_date');
+            $table->string('end_date')->nullable();
             $table->string('status')->default('Y');
             $table->timestamps();
         });

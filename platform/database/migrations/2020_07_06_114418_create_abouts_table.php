@@ -17,7 +17,7 @@ class CreateAboutsTable extends Migration
             $table->increments('id');
             $table->string('about_name');
             $table->string('title');
-            $table->string('content');
+            $table->longText('content');
             $table->string('images');
             $table->string('year');
             $table->string('status')->default('Y');

@@ -16,7 +16,7 @@ class CreateCareerCategoriesTable extends Migration
         Schema::create('career_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('car_cat_name');
-            $table->string('decription');
+            $table->longText('decription');
             $table->string('status')->default('Y');
             $table->string('created_by');
             $table->string('updated_by');

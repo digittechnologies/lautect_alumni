@@ -16,7 +16,7 @@ class CreateImageCategoriesTable extends Migration
         Schema::create('image_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('image_cate_name');
-            $table->string('about');
+            $table->longText('about');
             $table->string('updated_by')->nullable();
             $table->string('app_cat_id');
             $table->string('status')->default('Y');

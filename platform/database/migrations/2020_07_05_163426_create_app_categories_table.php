@@ -17,7 +17,7 @@ class CreateAppCategoriesTable extends Migration
             $table->increments('id');
             $table->string('app_cate_name')->nullable();
             $table->string('app_cate_type')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('status')->default('Y');
             $table->timestamps();
         });

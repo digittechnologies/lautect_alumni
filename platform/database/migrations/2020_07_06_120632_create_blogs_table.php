@@ -17,11 +17,11 @@ class CreateBlogsTable extends Migration
             $table->increments('id');
             $table->string('blog_name');
             $table->string('blog_title');
-            $table->string('content1');
-            $table->string('content2');
-            $table->string('content3');
-            $table->string('blog_image');
-            $table->string('link');
+            $table->longText('content1');
+            $table->longText('content2');
+            $table->longText('content3');
+            $table->string('blog_image')->default('lau_image');
+            $table->string('link')->nullable();
             $table->string('category_id');
             $table->string('status')->default('Y');
             $table->string('created_by');

@@ -157,6 +157,7 @@
                                                             <input type="file" name="file" id="customfile" class="d-none">
                                                             <label class="custom-file" for="customfile"><i class="fa fa-upload"></i>Upload Your Photo</label>
                                                         </div> --}}
+                                                        <input type="hidden" class="form-control" id="register_deptno" name="user_cat_id" value="1">
 
                                                         <div class="gender form-group">
                                                             <label class="g-name d-block">Gender</label>

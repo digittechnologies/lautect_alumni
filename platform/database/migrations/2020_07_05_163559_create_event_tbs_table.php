@@ -16,14 +16,15 @@ class CreateEventTbsTable extends Migration
         Schema::create('event_tbs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('event_name');
-            $table->string('subject');
-            $table->string('content');
-            $table->string('address');
+            $table->longText('subject');
+            $table->longText('content');
+            $table->longText('address');
             $table->string('start_time');
             $table->string('start_date');
-            $table->string('created_by');
+            $table->string('created_by')->nullable();
             $table->string('end_time');
-            $table->string('end_date');
+            $table->string('end_date')->nullable();
+            $table->string('event_image')->dafault('lau_image.jpg');
             $table->string('status')->default('Y');
             $table->timestamps();
         });

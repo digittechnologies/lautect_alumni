@@ -19,9 +19,9 @@ class CreateAppSettingsTable extends Migration
             $table->string('short_name');
             $table->string('phone_nunmber');
             $table->string('email1');
-            $table->string('email2');
+            $table->string('email2')->nullable();
             $table->string('address');
-            $table->string('updated_by');
+            $table->string('updated_by')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();

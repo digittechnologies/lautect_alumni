@@ -16,7 +16,7 @@ class CreateMemberCategoriesTable extends Migration
         Schema::create('member_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('member_cat_name');
-            $table->string('about')->nullable();
+            $table->longText('about')->nullable();
             $table->string('status')->default('Y');
             $table->timestamps();
         });

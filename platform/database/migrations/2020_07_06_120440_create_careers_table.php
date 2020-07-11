@@ -17,11 +17,11 @@ class CreateCareersTable extends Migration
             $table->increments('id');
             $table->string('car_name');
             $table->string('title');
-            $table->string('content');
+            $table->longText('content');
             $table->string('location');
             $table->string('address');
             $table->string('car_image');
-            $table->string('information');
+            $table->longText('information');
             $table->string('car_cat_id');
             $table->string('status')->default('Y');
             $table->string('created_by');

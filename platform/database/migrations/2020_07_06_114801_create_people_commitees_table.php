@@ -16,10 +16,10 @@ class CreatePeopleCommiteesTable extends Migration
         Schema::create('people_commitees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('p_name');
-            $table->string('p_about');
+            $table->longText('p_about');
             $table->string('p_position');
             $table->string('p_image');
-            $table->string('link_id');
+            $table->string('link_id')->nullable();
             $table->string('category_id');
             $table->string('status')->default('Y');
             $table->string('created_by');
