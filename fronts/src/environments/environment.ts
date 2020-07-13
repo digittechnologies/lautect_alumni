@@ -11,7 +11,7 @@ export const environment = {
     // signup: 'http://localhost:8000/api/signup'
   
     baseUrl: 'http://testenv.digittechnologies.org/lautech/platform/public/api', 
-    login:   'http://testenv.digittechnologies.org/lautech/platform/public/api/login',
+    login: 'http://testenv.digittechnologies.org/lautech/platform/public/api/login',
     signup: 'http://testenv.digittechnologies.org/lautech/platform/public/api/signup'
 
     //PRODUCTION ENVIROMENT

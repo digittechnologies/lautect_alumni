@@ -16,6 +16,13 @@ export class ResponseResetComponent implements OnInit {
     password_confirmation:null,
     resetToken :null
   }
+
+  name:any[];
+  email:any[];
+  password:any[];
+  password_confirmation:any[]
+
+
   constructor(
     private route:ActivatedRoute,
     private Jarwis: JarwisService,
