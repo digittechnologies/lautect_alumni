@@ -31,9 +31,16 @@ Route::group([
     Route::get('getadmin', 'ApiController@getadmin');
 
     Route::get('getsettingapp', 'ApiController@getsettingapp');
+    Route::post('addsettingapp', 'ApiController@addsettingapp');
     Route::post('updatesettingapp', 'ApiController@updatesettingapp');
+
     Route::get('gethomeheader', 'ApiController@gethomeheader');
     Route::post('addhomeheader', 'ApiController@addhomeheader');
 
+    Route::get('getevent', 'ApiController@getevent');
+    Route::post('addevent', 'ApiController@addevent');
+
+    Route::get('geteventsch', 'ApiController@geteventsch');
+    Route::post('addeventsch', 'ApiController@addeventsch');
 
 });

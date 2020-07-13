@@ -16,7 +16,7 @@ use App\blog;
 use App\career_category;
 use App\career;
 use App\event_schedule;
-use App\event;
+use App\event_tb;
 use App\gallery;
 use App\home_page;
 use App\image_category;
@@ -27,6 +27,72 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function addevent(Request $request)
+    {
+        // return $request;
+       
+        $datas=$request->formdata;
+        $request->merge(['event_name'=>$datas['event_name']]);
+        $request->merge(['subject'=>$datas['subject']]);
+        $request->merge(['content'=>$datas['content']]);
+        $request->merge(['start_date'=>$datas['start_date']]);
+        $request->merge(['start_time'=>$datas['start_time']]);
+        $request->merge(['end_time'=>$datas['end_time']]);
+        $request->merge(['end_date'=>$datas['end_date']]);
+        $request->merge(['address'=>$datas['address']]);
+        //   return $request;
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['event_image'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=event_tb::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+    public function getevent()
+    {
+        return response()->json(
+            
+          event_tb::get()
+         
+        );
+       
+    }
+    public function addeventsch(Request $request)
+    {
+        // return $request;
+       
+        $id= auth()->user()->id;
+        $request->merge(['created_by'=>$id]);
+    //    return $request;
+            $u=event_schedule::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+    public function geteventsch()
+    {
+        return response()->json(
+            
+          event_schedule::get()
+         
+        );
+       
+    }
     public function addhomeheader(Request $request)
     {
         // return $request;
@@ -51,7 +117,7 @@ class ApiController extends Controller
             }
           
             //  return $apps;
-           return response()->json(['success' => 'Not save'], 200);
+           return response()->json(['error' => 'Not save'], 200);
             
     }
     public function gethomeheader()
@@ -101,20 +167,55 @@ class ApiController extends Controller
         );
        
     }
+    public function addsettingapp(Request $request)
+    {
+        // return $request;
+        // $id= auth()->user()->id;
+        $datas=$request->formdata;
+         
+        // return  $user;
+        $apps = new app_setting;
+            if ($request->image ){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+              
+                $apps->logo = $filename;
+               
+            }
+            // $user = new user;
+            $apps->app_name = $datas['app_name'];
+            $apps->short_name = $datas['short_name'];
+            $apps->email2 = $datas['email2'];
+         $apps->email1 =  $datas['email1'];
+        //  $apps->updated_by =  $id;
+        $apps->address =  $datas['address'];
+         $apps->phone_number =  $datas['phone_number'];
+         $apps->facebook =  $datas['facebook'];
+         $apps->instagram =  $datas['instagram'];
+         $apps->youtube =  $datas['youtube'];
+         $apps->linkedin =  $datas['linkedin'];
+         $apps->twitter =  $datas['twitter'];
+        $apps->save();
+            
+            //  return $apps;
+           return response()->json(['success' => 'You have successfully uploaded an image'], 200);
+            
+    }
     public function updatesettingapp(Request $request)
     {
         // return $request;
         $id= auth()->user()->id;
         $datas=$request->formdata;
         $apps=app_setting::where('id','=',$datas['id'])->first();
-        $currentfile= $apps['logo'];
+        // $currentfile= $apps['logo'];
          
         // return  $user;
           
-            if ($request->image != $currentfile){
+            if ($request->image){
                 $file=$request->image;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
-                // Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
               
                 $apps->logo = $filename;
                

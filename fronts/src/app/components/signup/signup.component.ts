@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
     password_confirmation: null,
     user_cat_id:null
   };
-  public error = [];
+  public error :any;
   usercat: any;
 
   constructor(

@@ -42,11 +42,11 @@
                   </div>
                   <div class="form-group">
                     <label for="eventInput1">Email 1</label>
-                    <input type="text" id="eventInput1" class="form-control" formControlName="email1" required>
+                    <input type="email" id="eventInput1" class="form-control" formControlName="email1" required>
                   </div>
                   <div class="form-group">
                     <label for="eventInput1">Email 2</label>
-                    <input type="text" id="eventInput1" class="form-control" formControlName="email2" >
+                    <input type="email" id="eventInput1" class="form-control" formControlName="email2" >
                   </div>
                   <div class="form-group">
                     <label for="eventInput1">Address</label>
@@ -80,9 +80,15 @@
               </div>
             </div>
 
-            <div class="form-actions center">
+            <div class="form-actions center"  *ngIf="(response | json) === '{}'">
               
-              <button type="submit" (click)="onSubmit()" class="btn btn-raised btn-primary">
+              <button type="submit" (click)="onSubmitsave()" class="btn btn-raised btn-primary">
+                <i class="fa fa-check-square-o"></i> Save
+              </button>
+            </div>
+            <div class="form-actions center"  *ngIf="(response | json) != '{}'">
+              
+              <button type="submit" (click)="onSubmitupdate()" class="btn btn-raised btn-primary">
                 <i class="fa fa-check-square-o"></i> Update
               </button>
             </div>

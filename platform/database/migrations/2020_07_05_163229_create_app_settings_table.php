@@ -27,6 +27,7 @@ class CreateAppSettingsTable extends Migration
             $table->string('youtube')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('twitter')->nullable();
+            $table->string('logo')->nullable();
             $table->string('status')->default('Y');
             $table->timestamps();
         });

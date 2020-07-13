@@ -18,7 +18,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 // import { OwlModule } from 'ngx-owl-carousel';
 // import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image';
-import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+// import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -76,7 +76,7 @@ import { HomeHeaderComponent } from './pages/home-header/home-header.component';
     MatListModule,
     MatSnackBarModule,
     NgxPaginationModule,
-    SnotifyModule,
+    // SnotifyModule,
     // LazyLoadImageModule.forRoot({
     //   preset: scrollPreset 
     // }),
@@ -87,9 +87,10 @@ import { HomeHeaderComponent } from './pages/home-header/home-header.component';
     // OwlModule
   
   ],
-  providers: [JarwisService,TokenService,AuthService,BeforeLoginService,AfterLoginService,
-    { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
-  SnotifyService],
+  // providers: [JarwisService,TokenService,AuthService,BeforeLoginService,AfterLoginService,
+  //   { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
+  // SnotifyService],
+  providers: [JarwisService,TokenService,AuthService,BeforeLoginService,AfterLoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

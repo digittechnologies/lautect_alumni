@@ -4,6 +4,7 @@ import { JarwisService } from '../services/jarwis.service';
 import { TokenService } from '../services/token.service';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators, NgForm, FormControl} from "@angular/forms";
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-system-setting',
@@ -16,23 +17,24 @@ export class SystemSettingComponent implements OnInit {
   image: any;
   datas: { formdata: any; };
   error: any;
-  constructor(private formBuilder: FormBuilder,private Token: TokenService, private Jarwis: JarwisService,private router: Router) { }
+
+  constructor(private formBuilder: FormBuilder, public snackBar: MatSnackBar, private Token: TokenService, private Jarwis: JarwisService,private router: Router) { }
   public response:any;
 
   ngOnInit() {
     this.submitForm = this.formBuilder.group(
      
       {
-        app_name: [''],
-       short_name: [''],
-       email1:[''],
+        app_name: ['',Validators.required],
+       short_name: ['',Validators.required],
+       email1:['',Validators.required],
        email2:[''],
        facebook:[''],
-       phone_number:[''],
+       phone_number:['',Validators.required],
        instagram:[''],
        youtube:[''],
        linkedin:[''],
-       address:[''],
+       address:['',Validators.required],
        twitter:[''],
        id:[''],
      },
@@ -81,26 +83,38 @@ export class SystemSettingComponent implements OnInit {
    }
    reader.readAsDataURL(files);
  }
- onSubmit() {
-//  console.log(this.submitForm.value)
-  this.Jarwis.updateappsetting({formdata:this.submitForm.value,image:this.image}).subscribe(
-    data => this.handleResponse(data),
-   error => this.handleError(error)
- );
+ onSubmitsave() {
+if (typeof this.image === 'undefined') {
+  let snackBarRef = this.snackBar.open("App name, Short name, email1, address and logo are required", 'Dismiss', {
+    duration: 3000
+  }) 
+}
+// console.log(this.image)
+this.Jarwis.addappsetting({formdata:this.submitForm.value,image:this.image}).subscribe(
+  data => this.handleResponse(data),
+ error => this.handleError(error)
+);
+
+  
  
 }
+onSubmitupdate() {
+  //  console.log(this.submitForm.value)
+    this.Jarwis.updateappsetting({formdata:this.submitForm.value,image:this.image}).subscribe(
+      data => this.handleResponse(data),
+     error => this.handleError(error)
+   );
+   
+  }
 handleError(error) {
-  // this.disabled=false; 
-  this.error = error.error.errors;
-  console.log(this.error);
-  // this.disabled=false;
-  // this.sav= 'Update';
+  let snackBarRef = this.snackBar.open("Not Save", 'Dismiss', {
+    duration: 3000
+  }) 
 }
 handleResponse(data) {  
-  // this.router.navigateByUrl('/User/(side:Profile)');
-  // this.disabled=false;
-  // this.sav= 'Updated';
-
+  let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
+    duration: 2000
+  }) 
   this.ngOnInit()
 }
   }

@@ -67,6 +67,11 @@ export class JarwisService {
       Authorization:`Bearer ${localStorage.token}`
     }})
   }
+  addappsetting(data) {
+    return this.http.post(`${this.baseUrl}/addsettingapp`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
   getappsetting() {
     return this.http.get(`${this.baseUrl}/getsettingapp`)
   }
@@ -86,5 +91,21 @@ export class JarwisService {
   }
   gethomeheader() {
     return this.http.get(`${this.baseUrl}/gethomeheader`)
+  }
+  addevent(data) {
+    return this.http.post(`${this.baseUrl}/addevent`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getevent() {
+    return this.http.get(`${this.baseUrl}/getevent`)
+  }
+  addeventsch(data) {
+    return this.http.post(`${this.baseUrl}/addeventsch`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  geteventsch() {
+    return this.http.get(`${this.baseUrl}/geteventsch`)
   }
 }
