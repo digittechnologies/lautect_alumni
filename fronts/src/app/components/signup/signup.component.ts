@@ -19,6 +19,9 @@ export class SignupComponent implements OnInit {
   };
   public error :any;
   usercat: any;
+  name:any[];
+  email:any[];
+  password:any[];
 
   constructor(
     private Jarwis: JarwisService,

@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'faculty' => $data['faculty'],
             'user_cat_id' => $data['user_cat_id'],
             // 'member_id' => $data['member_id'],
-            'auth_id' => $data['auth_id'],
+            // 'auth_id' => $data['auth_id'],
             // 'asso_id' => $data['asso_id'],
             'gender' => $data['gender'],
             'year_od_g' => $data['year_of_g'],

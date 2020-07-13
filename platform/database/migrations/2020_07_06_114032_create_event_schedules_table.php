@@ -24,6 +24,7 @@ class CreateEventSchedulesTable extends Migration
             $table->string('created_by');
             $table->string('end_time');
             $table->string('end_date')->nullable();
+            $table->string('event_id');
             $table->string('status')->default('Y');
             $table->timestamps();
         });

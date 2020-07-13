@@ -3,7 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+    //Local Environment
+    // baseUrl: 'http://localhost:8000/api',
+    // login: 'http://localhost:8000/api/login',
+    // signup: 'http://localhost:8000/api/signup'
+  
+    baseUrl: 'http://testenv.digittechnologies.org/lautech/platform/public/api', 
+    login: 'http://testenv.digittechnologies.org/lautech/platform/public/api/login',
+    signup: 'http://testenv.digittechnologies.org/lautech/platform/public/api/signup'
+
+    //PRODUCTION ENVIROMENT
+    // baseUrl: 'https://web.preciousmetalstrade.ng/api', 
+    // login: 'http://web.preciousmetalstrade.ng/api/entrust',
+    // signup: 'http://web.preciousmetalstrade.ng/api/signup'
 };
 
 /*
