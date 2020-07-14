@@ -20,6 +20,9 @@ use App\event_tb;
 use App\gallery;
 use App\home_page;
 use App\image_category;
+use App\interview;
+use App\people_commitee;
+
 class ApiController extends Controller
 {
     /**
@@ -27,6 +30,75 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function addcareer(Request $request)
+    {
+        // return $request;
+        $id= auth()->user()->id;
+        $request->merge(['created_by'=>$id]);
+        $datas=$request->formdata;
+        $request->merge(['car_name'=>$datas['car_name']]);
+        $request->merge(['title'=>$datas['title']]);
+        $request->merge(['content'=>$datas['content']]);
+        $request->merge(['location'=>$datas['location']]);
+        $request->merge(['information'=>$datas['information']]);
+        $request->merge(['address'=>$datas['address']]);
+       
+        $request->merge(['address'=>$datas['address']]);
+        $request->merge(['car_cat_id'=>$datas['car_cat_id']]);
+        //   return $request;
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['car_image'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=career::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+    public function getcareer()
+    {
+        return response()->json(
+            
+          career::orderBy('careers.id','desc')->join('career_categories','careers.car_cat_id','=','career_categories.id')
+          ->select('careers.*', 'career_categories.car_cat_name')->get()
+         
+        );
+       
+    }
+    public function addcareercat(Request $request)
+    {
+        // return $request;
+       
+        $id= auth()->user()->id;
+        $request->merge(['created_by'=>$id]);
+    //    return $request;
+            $u=career_category::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+    public function getcareercat()
+    {
+        return response()->json(
+            
+         career_category::orderBy('id','desc')->get()
+         
+        );
+       
+    }
     public function addevent(Request $request)
     {
         // return $request;
@@ -63,7 +135,7 @@ class ApiController extends Controller
     {
         return response()->json(
             
-          event_tb::get()
+          event_tb::orderBy('id','desc')->get()
          
         );
        
@@ -88,7 +160,8 @@ class ApiController extends Controller
     {
         return response()->json(
             
-          event_schedule::get()
+          event_schedule::orderBy('event_schedules.id','desc')->join('event_tbs','event_schedules.event_id','=','event_tbs.id')
+          ->select('event_schedules.*', 'event_tbs.event_name')->get()
          
         );
        
@@ -143,7 +216,7 @@ class ApiController extends Controller
             if ($request->imag){
                 $file=$request->imag;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
-                // Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
                 $request->merge(['images'=>$filename]);
                 // $apps->logo = $filename;
                

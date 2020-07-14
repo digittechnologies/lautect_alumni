@@ -111,4 +111,20 @@ export class JarwisService {
   geteventsch() {
     return this.http.get(`${this.baseUrl}/geteventsch`)
   }
+  addcareercat(data) {
+    return this.http.post(`${this.baseUrl}/addcareercat`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getcareercat() {
+    return this.http.get(`${this.baseUrl}/getcareercat`)
+  }
+  addcareer(data) {
+    return this.http.post(`${this.baseUrl}/addcareer`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getcareer() {
+    return this.http.get(`${this.baseUrl}/getcareer`)
+  }
 }

@@ -43,4 +43,10 @@ Route::group([
     Route::get('geteventsch', 'ApiController@geteventsch');
     Route::post('addeventsch', 'ApiController@addeventsch');
 
+    Route::get('getcareer', 'ApiController@getcareer');
+    Route::post('addcareer', 'ApiController@addcareer');
+
+    Route::get('getcareercat', 'ApiController@getcareercat');
+    Route::post('addcareercat', 'ApiController@addcareercat');
+
 });

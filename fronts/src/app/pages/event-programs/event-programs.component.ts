@@ -29,6 +29,7 @@ export class EventProgramsComponent implements OnInit {
     end_date:null,
     end_time:null,
    speaker:null,
+   event_id:null,
   };
   public error:any;
   image: any;
@@ -54,6 +55,11 @@ uploadFile(event){
   reader.readAsDataURL(files);
 }
   onSubmit1() {
+    if (typeof this.image === 'undefined') {
+      let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
+        duration: 3000
+      }) 
+    }
     this.Jarwis.addevent({formdata:this.form,image:this.image}).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error)
