@@ -36,6 +36,7 @@ export class SystemSettingComponent implements OnInit {
        linkedin:[''],
        address:['',Validators.required],
        twitter:[''],
+       url:[''],
        id:[''],
      },
    )
@@ -46,7 +47,7 @@ export class SystemSettingComponent implements OnInit {
     data=>{
  
     this.response = data;
-   console.log(this.response)
+  
     this.submitForm = this.formBuilder.group(
      
      {
@@ -62,6 +63,7 @@ export class SystemSettingComponent implements OnInit {
    linkedin:[this.response.linkedin],
    address:[this.response.address],
    twitter:[this.response.twitter],
+   url:[this.response.url],
    id:[this.response.id]
      },
    )

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-members',
@@ -17,10 +18,12 @@ export class MembersComponent implements OnInit {
   public error = [];
   userdata: any;
   count: any;
+  app: any;
 
   constructor(
     private Jarwis: JarwisService,
     private Token: TokenService,
+    public snackBar: MatSnackBar, 
     private router: Router
   ) { }
 user:any;
@@ -33,11 +36,16 @@ user:any;
   handleResponse(data) {
     this.form.about="";
     this.form.member_cat_name="";
+    let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
+      duration: 2000
+    })  
     this.ngOnInit()
   }
 
   handleError(error) {
-    this.error = error.error.errors;
+    let snackBarRef = this.snackBar.open("Not Save", 'Dismiss', {
+      duration: 3000
+    }) 
   }
 
   ngOnInit() {
@@ -48,6 +56,12 @@ user:any;
       this.count=this.userdata.usercount
     //  console.log(this.user)
 
+      
+      }
+    )
+    this.Jarwis.getappsetting().subscribe(
+      data=>{
+      this.app = data;
       
       }
     )

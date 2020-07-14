@@ -29,6 +29,7 @@ export class OpportunitiesComponent implements OnInit {
   image: any;
   careers: any;
   career: any;
+  app: any;
 
   constructor(
     private Jarwis: JarwisService,
@@ -118,6 +119,12 @@ uploadFile(event){
       
       }
       
+    )
+    this.Jarwis.getappsetting().subscribe(
+      data=>{
+      this.app = data;
+      
+      }
     )
   }
 }
