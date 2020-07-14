@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-7 col-7">
                     <div class="preheader-left">
-                        <a href="mailto:info@construc.com"><strong>Email:</strong> info@construc.com</a>
-                        <a href="mailto:info@construc.com"><strong>Hotline:</strong> 880 454 5477</a>
+                        <a href="mailto:info@construc.com"><strong>Email:</strong> lautechalumni@gmail.com</a>
+                        <a href="mailto:info@construc.com"><strong>Hotline:</strong> +234 701 234 5678</a>
                     </div>
                 </div>
 
@@ -16,8 +16,8 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a title="Login" class="btn-auth btn-auth-rev" href="{{ route('login') }}">Login</a>
-                        <a title="Register" class="btn-auth btn-auth" href="{{ route('register') }}">Signup</a>
+                        <a title="Login" class="btn-auth btn-auth-rev" href="{{ route('login') }}">Already A Member</a>
+                        <a title="Register" class="btn-auth btn-auth" href="{{ route('register') }}">Be a Member</a>
                     @endauth
                 </div>
             @endif
