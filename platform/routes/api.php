@@ -14,6 +14,10 @@ Route::group([
     //start auth
     Route::get('getauth', 'ApiController@getauth');
     //end auth
+
+    //About
+    Route::post('addaboutus', 'ApiController@addaboutus');
+
     //start user_cat
     Route::post('addusercat', 'ApiController@addusercat');
     Route::get('getusercat', 'ApiController@getusercat');

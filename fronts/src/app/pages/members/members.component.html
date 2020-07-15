@@ -39,8 +39,8 @@
            
            <tr *ngFor="let u of user | paginate: {itemsPerPage: 50, currentPage: p} ; let i=index">               
              <td>{{i + 1}}</td>
-             <td>
-             <img src="http://{{app.url}}/platform/public/upload/uploads/{{u.user_image}}" class="rounded" style="width: 50px;height: 40px;">
+             <td><a href="http://{{url}}/{{u.user_image}}"></a>
+             <img src="http://{{url}}/{{u.user_image}}" class="rounded" style="width: 50px;height: 40px;">
              </td>
             <td>{{u.name}}</td>
               <td>{{u.matric_no}}</td>

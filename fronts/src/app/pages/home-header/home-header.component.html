@@ -90,7 +90,7 @@
              <tr *ngFor="let u of header | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
               <td>{{i + 1}}</td>
                <td>
-                 <img src="http://{{app.url}}/platform/public/upload/uploads/{{u.home_image}}" class="rounded" style="width: 50px;height: 40px;">
+                 <img src="http://{{url}}/{{u.home_image}}" class="rounded" style="width: 50px;height: 40px;">
                </td>
                <td>{{u.component1}}</td>
                <td>{{u.component2}}</td>

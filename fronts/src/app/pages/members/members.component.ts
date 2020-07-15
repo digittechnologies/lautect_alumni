@@ -19,6 +19,7 @@ export class MembersComponent implements OnInit {
   userdata: any;
   count: any;
   app: any;
+  url: any;
 
   constructor(
     private Jarwis: JarwisService,
@@ -62,7 +63,7 @@ user:any;
     this.Jarwis.getappsetting().subscribe(
       data=>{
       this.app = data;
-      
+      this.url=this.app.url;
       }
     )
   }

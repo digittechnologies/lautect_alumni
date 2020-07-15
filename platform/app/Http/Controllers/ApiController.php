@@ -205,10 +205,8 @@ class ApiController extends Controller
 
     public function addaboutus(Request $request)
     {
-        // return $request;
-      
         $datas=$request->formdata;
-        $request->merge(['about_name'=>$datas['about_name']]);
+        $request->merge(['about_cat_id'=>$datas['about_cat_id']]);
         $request->merge(['title'=>$datas['title']]);
         $request->merge(['content'=>$datas['content']]);
         $request->merge(['year'=>$datas['year']]);

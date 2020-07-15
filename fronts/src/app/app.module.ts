@@ -38,7 +38,10 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { OpportunitiesComponent } from './pages/opportunities/opportunities.component';
 import { EventProgramsComponent } from './pages/event-programs/event-programs.component';
 import { HomeHeaderComponent } from './pages/home-header/home-header.component';
-
+import { JwtModule } from "@auth0/angular-jwt";
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +88,13 @@ import { HomeHeaderComponent } from './pages/home-header/home-header.component';
     MatFormFieldModule,
     // BrowserModule,
     // OwlModule
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:4200"],
+        // disallowedRoutes: ["http://example.com/examplebadroute/"],
+      },
+    }),
   
   ],
   // providers: [JarwisService,TokenService,AuthService,BeforeLoginService,AfterLoginService,
