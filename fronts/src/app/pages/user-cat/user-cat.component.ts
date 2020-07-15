@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
-
+import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'app-user-cat',
   templateUrl: './user-cat.component.html',
@@ -19,6 +19,7 @@ export class UserCatComponent implements OnInit {
   constructor(
     private Jarwis: JarwisService,
     private Token: TokenService,
+    public snackBar: MatSnackBar, 
     private router: Router
   ) { }
 usercat:any;
@@ -29,15 +30,18 @@ usercat:any;
     );
   }
   handleResponse(data) {
-    // this.Token.handle(data.access_token);
     this.form.about="";
     this.form.cat_name="";
-    this.router.navigateByUrl('/user_cat');
+    let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
+      duration: 2000
+    })  
     this.ngOnInit()
   }
 
   handleError(error) {
-    this.error = error.error.errors;
+    let snackBarRef = this.snackBar.open("Not Save", 'Dismiss', {
+      duration: 3000
+    }) 
   }
 
   ngOnInit() {

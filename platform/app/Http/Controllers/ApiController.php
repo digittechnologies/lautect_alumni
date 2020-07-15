@@ -240,11 +240,10 @@ class ApiController extends Controller
     }
     public function addsettingapp(Request $request)
     {
-        // return $request;
-        // $id= auth()->user()->id;
+       
         $datas=$request->formdata;
          
-        // return  $user;
+    
         $apps = new app_setting;
             if ($request->image ){
                 $file=$request->image;
@@ -254,12 +253,12 @@ class ApiController extends Controller
                 $apps->logo = $filename;
                
             }
-            // $user = new user;
+           
             $apps->app_name = $datas['app_name'];
             $apps->short_name = $datas['short_name'];
             $apps->email2 = $datas['email2'];
          $apps->email1 =  $datas['email1'];
-        //  $apps->updated_by =  $id;
+       
         $apps->address =  $datas['address'];
          $apps->phone_number =  $datas['phone_number'];
          $apps->facebook =  $datas['facebook'];
@@ -267,26 +266,25 @@ class ApiController extends Controller
          $apps->youtube =  $datas['youtube'];
          $apps->linkedin =  $datas['linkedin'];
          $apps->twitter =  $datas['twitter'];
+         $apps->url =  $datas['url'];
         $apps->save();
             
-            //  return $apps;
+            
            return response()->json(['success' => 'You have successfully uploaded an image'], 200);
             
     }
     public function updatesettingapp(Request $request)
     {
-        // return $request;
+        
         $id= auth()->user()->id;
         $datas=$request->formdata;
         $apps=app_setting::where('id','=',$datas['id'])->first();
-        // $currentfile= $apps['logo'];
-         
-        // return  $user;
+       
           
             if ($request->image){
                 $file=$request->image;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
-                Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
               
                 $apps->logo = $filename;
                
@@ -304,9 +302,10 @@ class ApiController extends Controller
          $apps->youtube =  $datas['youtube'];
          $apps->linkedin =  $datas['linkedin'];
          $apps->twitter =  $datas['twitter'];
+         $apps->url =  $datas['url'];
         $apps->save();
             
-            //  return $apps;
+          
            return response()->json(['success' => 'You have successfully uploaded an image'], 200);
             
     }

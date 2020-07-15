@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'app-home-header',
   templateUrl: './home-header.component.html',
@@ -19,10 +20,12 @@ export class HomeHeaderComponent implements OnInit {
   constructor(
     private Jarwis: JarwisService,
     private Token: TokenService,
+    public snackBar: MatSnackBar, 
     private router: Router
   ) { }
 header:any;
 image:any;
+app:any;
 uploadFile(event){
   let files =event.target.files[0];
   let reader = new FileReader();
@@ -35,6 +38,11 @@ uploadFile(event){
   reader.readAsDataURL(files);
 }
   onSubmit() {
+    if (typeof this.image === 'undefined') {
+      let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
+        duration: 3000
+      }) 
+    }
     this.Jarwis.addhomeheader({formdata:this.form,image:this.image}).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error)
@@ -44,11 +52,16 @@ uploadFile(event){
     this.form.component1="";
     this.form.component2="";
     this.form.component3="";
+    let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
+      duration: 2000
+    })  
     this.ngOnInit()
   }
 
   handleError(error) {
-    this.error = error.error.errors;
+    let snackBarRef = this.snackBar.open("Not Save", 'Dismiss', {
+      duration: 3000
+    }) 
   }
 
   ngOnInit() {
@@ -56,7 +69,13 @@ uploadFile(event){
       data=>{
       this.header = data; 
     //  console.log(this.usercat)
+      
+      }
+    )
 
+    this.Jarwis.getappsetting().subscribe(
+      data=>{
+      this.app = data;
       
       }
     )

@@ -155,7 +155,7 @@
                             <!-- <img src="http://{{$settings->url}}/{{$president->images}}" alt="" class="img-fluid"> -->
                         </div>
 
-                        <p>{{$president->content}}</p>
+                        <p style="white-space: pre-line">{{$president->content}}</p>
                         <!-- <p>{{$president->paragraph_2}}</p>
                         <p>{{$president->paragraph_3}}</p> -->
                         <a href="{{url('about/')}}" class="btn btn-brand about-btn">More About Us</a>
