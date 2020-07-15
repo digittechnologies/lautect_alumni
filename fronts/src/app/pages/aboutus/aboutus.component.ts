@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AboutusComponent implements OnInit {
 
   public form = {
-    about_name: null,
+    about_cat_id: null,
     title: null,
     content:null,
     year:null
@@ -43,7 +43,7 @@ uploadFile(event){
     );
   }
   handleResponse(data) {
-    this.form.about_name="";
+    this.form.about_cat_id="";
     this.form.title="";
     this.form.year="";
     this.form.content="";

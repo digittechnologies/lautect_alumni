@@ -178,7 +178,7 @@ class ApiController extends Controller
             if ($request->image){
                 $file=$request->image;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
-                Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
                 $request->merge(['home_image'=>$filename]);
                 // $apps->logo = $filename;
                
@@ -205,10 +205,8 @@ class ApiController extends Controller
 
     public function addaboutus(Request $request)
     {
-        // return $request;
-      
         $datas=$request->formdata;
-        $request->merge(['about_name'=>$datas['about_name']]);
+        $request->merge(['about_cat_id'=>$datas['about_cat_id']]);
         $request->merge(['title'=>$datas['title']]);
         $request->merge(['content'=>$datas['content']]);
         $request->merge(['year'=>$datas['year']]);
@@ -216,7 +214,7 @@ class ApiController extends Controller
             if ($request->imag){
                 $file=$request->imag;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
-                Image::make($file)->resize(300, 300)->save(public_path('/upload/upload/'.$filename));
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
                 $request->merge(['images'=>$filename]);
                 // $apps->logo = $filename;
                

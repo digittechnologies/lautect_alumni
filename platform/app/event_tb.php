@@ -8,7 +8,8 @@ class event_tb extends Model
 {
     //
     protected $fillable = [
-        'car_cat_name','decription','created_by'
+        'id','event_name','subject','content','address','start_time','start_date','created_by','end_time','end_date','event_image','status','created_at','
+        updated_at','decription'
     ];
     
 }
