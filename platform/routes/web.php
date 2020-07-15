@@ -22,3 +22,14 @@ Route::POST('/add-user', 'AuthController@login2')->name('add-user');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/members', 'Web\MemberController@index')->name('members');
+Route::get('/events', 'Web\EventController@index')->name('events');
+Route::get('/gallery', 'Web\GalleryController@index')->name('gallery');
+
+Route::get('/job', 'Web\JobController@index')->name('job');
+Route::get('/scholarship', 'Web\ScholarshipController@index')->name('scholarship');
+Route::get('/news', 'Web\NewsController@index')->name('news');
+Route::get('/commitee', 'Web\CommiteeController@index')->name('commitee');
+
+Route::get('/contactus', 'Web\ContactUsController@index')->name('contactus');

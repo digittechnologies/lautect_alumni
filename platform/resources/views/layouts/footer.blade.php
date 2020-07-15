@@ -9,7 +9,7 @@
                     <div class="single-widget-wrap">
                         <div class="widgei-body">
                             <div class="footer-about">
-                                <img src="assets/img/footer-logo.png" alt="Logo" class="img-fluid">
+                                <img src="assets/img/logo.png" alt="Logo" class="img-fluid">
                                 <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod tempor incidunt ut  et do maga aliqua enim ad minim.</p>
                                 <a href="#">Phone: +8745 44 5444</a> <a href="#">Fax: +88474 156 362</a> <br> <a href="#">Email: demoemail@demo.com</a>
                             </div>
@@ -90,7 +90,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer-bottom-text">
-                        <p>&#xA9; 2018 Codeboxr, All Rights Reserved.</p>
+                        <p>&#xA9; 2020 Lautech Alumni, All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

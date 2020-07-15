@@ -152,13 +152,13 @@
                         </div>
 
                         <div class="about-thumb">
-                            <img src="http://{{$settings->url}}/{{$president->images}}" alt="" class="img-fluid">
+                            <!-- <img src="http://{{$settings->url}}/{{$president->images}}" alt="" class="img-fluid"> -->
                         </div>
 
                         <p>{{$president->content}}</p>
-                        <p>{{$president->paragraph_2}}</p>
-                        <p>{{$president->paragraph_3}}</p>
-                        <a href="about.html" class="btn btn-brand about-btn">More About Us</a>
+                        <!-- <p>{{$president->paragraph_2}}</p>
+                        <p>{{$president->paragraph_3}}</p> -->
+                        <a href="{{url('about/')}}" class="btn btn-brand about-btn">More About Us</a>
                     </div>
                 </div>
             </div>

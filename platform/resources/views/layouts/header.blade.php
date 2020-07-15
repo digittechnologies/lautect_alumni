@@ -46,9 +46,9 @@
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active"><a class="nav-link" href="{{url('/')}}">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{url('about/')}}">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="gallery.html">Member</a></li>
-                                <li class="nav-item"><a class="nav-link" href="event.html">Event</a></li>
-                                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{url('members/')}}">Member</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{url('events/')}}">Event</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{url('gallery/')}}">Gallery</a></li>
                                 <!-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" data-toggle="dropdown" role="button">More</a>
                                     <ul class="dropdown-menu">
@@ -61,19 +61,19 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">More</a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link dropdown-toggle" href="gallery.html" role="button">Career</a>
+                                        <li class="nav-item"><a class="nav-link dropdown-toggle" role="button">Career</a>
                                             <ul class="dropdown-menu">
-                                                <li class="nav-item"><a class="nav-link" href="gallery.html">Job Opportunities</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="single-album.html">Scholarship</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{url('job/')}}">Job Opportunities</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{url('scholarship/')}}">Scholarship</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item"><a class="nav-link" href="committee.html">Committee</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="directory.html">News</a></li>                                   
+                                        <li class="nav-item"><a class="nav-link" href="{{url('commitee/')}}">Committee</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{url('news/')}}">News</a></li>                                   
                                         <li class="nav-item"><a class="nav-link" href="index-offcanvas.html">Constitution</a></li>
                                         <li class="nav-item"><a class="nav-link" href="typography.html">Capacity Building</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{url('contactus/')}}">Contact</a></li>
                             </ul>
                         </div>
                     </nav>
