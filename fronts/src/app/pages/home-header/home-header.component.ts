@@ -16,6 +16,7 @@ export class HomeHeaderComponent implements OnInit {
     component3:null,
   };
   public error = [];
+  url: any;
 
   constructor(
     private Jarwis: JarwisService,
@@ -76,7 +77,7 @@ uploadFile(event){
     this.Jarwis.getappsetting().subscribe(
       data=>{
       this.app = data;
-      
+      this.url=this.app.url;
       }
     )
   }
