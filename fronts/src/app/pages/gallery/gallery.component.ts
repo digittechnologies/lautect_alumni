@@ -4,47 +4,37 @@ import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 @Component({
-  selector: 'app-event-programs',
-  templateUrl: './event-programs.component.html',
-  styleUrls: ['./event-programs.component.css']
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
 })
-export class EventProgramsComponent implements OnInit {
-
+export class GalleryComponent implements OnInit {
   public form = {
-    event_name: null,
-    subject: null,
-    content:null,
-    start_date:null,
-    start_time:null,
-    end_date:null,
-    end_time:null,
-    address:null,
+    image_cate_name: null,
+    about: null,
+   
   };
   public form2 = {
-    schedule_name: null,
-    title: null,
-    content:null,
-    start_date:null,
-    start_time:null,
-    end_date:null,
-    end_time:null,
-   speaker:null,
-   event_id:null,
+    image_name: null,
+    image_cat_id:null,
+    video: null,
+    image:null
   };
   public error:any;
   image: any;
   eventsch: any;
-  app: any;
+  gallery: any;
+  gallerycat: any;
   url: any;
-
+  app: any;
   constructor(
     private Jarwis: JarwisService,
     private Token: TokenService,
     private router: Router,
     public snackBar: MatSnackBar, 
   ) { }
-event:any;
 
+ 
 uploadFile(event){
   let files =event.target.files[0];
   let reader = new FileReader();
@@ -56,26 +46,35 @@ uploadFile(event){
   }
   reader.readAsDataURL(files);
 }
-  onSubmit1() {
+  onSubmitImage() {
     if (typeof this.image === 'undefined') {
       let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
         duration: 3000
       }) 
+    }else{
+      this.Jarwis.addgallery({formdata:this.form2,image:this.image}).subscribe(
+        data => this.handleResponse(data),
+        error => this.handleError(error)
+      );
     }
-    this.Jarwis.addevent({formdata:this.form,image:this.image}).subscribe(
-      data => this.handleResponse(data),
-      error => this.handleError(error)
-    );
+    
+  }
+  onSubmitVideo() {
+    console.log(this.form2.video)
+    if ( this.form2.video === null) {
+      let snackBarRef = this.snackBar.open(" Video link are required", 'Dismiss', {
+        duration: 3000
+      }) 
+    }else{
+      this.Jarwis.addgallery({formdata:this.form2,image:this.image}).subscribe(
+        data => this.handleResponse(data),
+        error => this.handleError(error)
+      );
+    }
   }
   handleResponse(data) {
-    this.form.event_name="";
-    this.form.subject="";
-    this.form.content="";
-    this.form.end_date="";
-    this.form.end_time="";
-    this.form.start_date="";
-    this.form.start_time="";
-    this.form.address="";
+    this.form2.image_name="";
+    this.form2.video="";
     let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
       duration: 2000
     })   
@@ -89,21 +88,15 @@ uploadFile(event){
     console.log(error);
     // this.error = error.error.errors;
   }
-  onSubmit2() {
-    this.Jarwis.addeventsch(this.form2).subscribe(
+  onSubmit1() {
+    this.Jarwis.addgallerycat(this.form).subscribe(
       data => this.handleResponse2(data),
       error => this.handleError2(error)
     );
   }
   handleResponse2(data) {
-    this.form2.schedule_name="";
-    this.form2.title="";
-    this.form2.content="";
-    this.form2.end_date="";
-    this.form2.end_time="";
-    this.form2.start_date="";
-    this.form2.start_time="";
-    this.form2.speaker="";
+    this.form.image_cate_name="";
+    this.form.about="";
     let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
       duration: 2000
     })   
@@ -116,24 +109,24 @@ uploadFile(event){
     }) 
   }
   ngOnInit() {
-    this.Jarwis.getevent().subscribe(
+    this.Jarwis.getgallerycat().subscribe(
       data=>{
-      this.event = data; 
+      this.gallerycat = data; 
 
       
       }
       
     )
 
-    this.Jarwis.geteventsch().subscribe(
+    this.Jarwis.getgallery().subscribe(
       data=>{
-      this.eventsch = data; 
+      this.gallery = data; 
 
       
       }
       
     )
-    
+
     this.Jarwis.getappsetting().subscribe(
       data=>{
       this.app = data;

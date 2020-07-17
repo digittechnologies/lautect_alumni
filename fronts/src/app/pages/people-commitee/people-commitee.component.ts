@@ -3,30 +3,37 @@ import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-@Component({
-  selector: 'app-aboutus',
-  templateUrl: './aboutus.component.html',
-  styleUrls: ['./aboutus.component.css']
-})
-export class AboutusComponent implements OnInit {
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthService } from '../../services/auth.service';
 
+@Component({
+  selector: 'app-people-commitee',
+  templateUrl: './people-commitee.component.html',
+  styleUrls: ['./people-commitee.component.css']
+})
+export class PeopleCommiteeComponent implements OnInit {
   public form = {
-    about_cat_id: null,
-    title: null,
-    content:null,
-    year:null
+    category_id: null,
+    about: null,
+    name:null,
+    position:null,
+    link_id:null,
   };
-  public error:any;
-  aboutcat: any;
+  public error = [];
+  app: any;
+  url: any;
+  people: any;
+  image: string | ArrayBuffer;
 
   constructor(
     private Jarwis: JarwisService,
     private Token: TokenService,
     public snackBar: MatSnackBar, 
-    private router: Router
+    private router: Router,
+    private jwtHelper: JwtHelperService,
+    private Auth: AuthService,
   ) { }
-aboutus:any;
-image:any;
+cat:any;
 uploadFile(event){
   let files =event.target.files[0];
   let reader = new FileReader();
@@ -43,17 +50,20 @@ uploadFile(event){
       let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
         duration: 3000
       }) 
+    }else{
+      this.Jarwis.addpeople({formdata:this.form,image:this.image}).subscribe(
+        data => this.handleResponse(data),
+        error => this.handleError(error)
+      );
     }
-    this.Jarwis.addaboutus({formdata:this.form,imag:this.image}).subscribe(
-      data => this.handleResponse(data),
-      error => this.handleError(error)
-    );
+    
   }
+ 
   handleResponse(data) {
-    this.form.about_cat_id="";
-    this.form.title="";
-    this.form.year="";
-    this.form.content="";
+    this.form.name="";
+    this.form.link_id="";
+    this.form.about="";
+    this.form.position="";
     let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
       duration: 2000
     })  
@@ -67,22 +77,29 @@ uploadFile(event){
   }
 
   ngOnInit() {
-    this.Jarwis.getaboutcat().subscribe(
+    
+   
+    this.Jarwis.getcat().subscribe(
       data=>{
-      this.aboutcat = data; 
+      this.cat = data; 
     //  console.log(this.usercat)
 
       
       }
     )
-    this.Jarwis.getaboutus().subscribe(
+    this.Jarwis.getappsetting().subscribe(
       data=>{
-      this.aboutus = data; 
+      this.app = data;
+      this.url=this.app.url;
+      }
+    )
+    this.Jarwis.getpeople().subscribe(
+      data=>{
+      this.people = data; 
     //  console.log(this.usercat)
 
       
       }
     )
   }
-
 }

@@ -4,7 +4,7 @@
     <div class="content-wrapper"><!--Extended Table starts-->
 <div class="row">
 <div class="col-12">
-<div class="content-header">About Us</div>
+<div class="content-header">People and Commitee</div>
 </div></div>
 
 
@@ -13,7 +13,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title" id="basic-layout-form-center">Add About Us</h4>
+        <h4 class="card-title" id="basic-layout-form-center">Add people</h4>
         <p>This example shows a way to center your form in the card. Here we have used <code>.justify-content-md-center
             .row</code> classe to center the form in a full width card. User can always change column classes
           according to his requirements. This example also uses form action buttons in the center bottom position of
@@ -26,38 +26,39 @@
             <div class="row justify-content-md-center">
               <div class="col-md-6">
                 <div class="form-body">
-                  <!-- <div class="form-group"> -->
+                  
                     <div class="form-group">
-                      <label for="issueinput6">About Category</label>
-                      <select id="issueinput6" name="about_cat_id" class="form-control" [(ngModel)]="form.about_cat_id" data-toggle="tooltip" data-trigger="hover"
+                      <label for="issueinput6">Select Category Name</label>
+                      <select id="issueinput6" name="image_cat_id" class="form-control" [(ngModel)]="form.category_id" data-toggle="tooltip" data-trigger="hover"
                         data-placement="top" data-title="Status">
-                        <option *ngFor="let u of aboutcat" value="{{u.id}}">{{u.cat_name}}</option>
+                        <option *ngFor="let e of cat" value="{{e.id}}">{{e.app_cate_name}}</option>
                         
                       </select>
                     </div>
-                    <!-- <label for="eventInput1">About Name</label>
-                    <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.about_cat_id" name="about_cat_id" required>
-                  </div> -->
                   <div class="form-group">
-                    <label for="eventInput1">Title</label>
-                    <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.title" name="title" required>
+                    <label for="eventInput1"> Name</label>
+                    <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.name" name="name" required>
                   </div>
                   <div class="form-group">
-                    <label for="eventInput2">Content</label>
-                  <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form.content" name="content" required></textarea>
+                    <label for="eventInput1">Position</label>
+                    <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.position" name="position" required>
                   </div>
                   <div class="form-group">
-                    <label for="eventInput1">Year</label>
-                    <input type="month" id="eventInput1" class="form-control"  [(ngModel)]="form.year" name="year" required>
+                    <label for="eventInput1"> Link</label>
+                    <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.link_id" name="link_id" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="eventInput2">About </label>
+                  <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form.about" name="about" required></textarea>
                   </div>
                   <div class="form-group">
                     <label>Select Image</label>
-                    <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)">
-                  </div>
+                    <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)" required>
+                  </div>  
                 </div>
               </div>
             </div>
-           
+
             <div class="form-actions center">
               
               <button type="submit" [disabled]="!signupForm.valid" class="btn btn-raised btn-primary">
@@ -77,7 +78,7 @@
   <div class="col-sm-12">
   <div class="card">
     <div class="card-header">
-      <h4 class="card-title">List of about us</h4>
+      <h4 class="card-title">List of the People and Commitee</h4>
     </div>
     <div class="card-content">
       <div class="card-body table-responsive">
@@ -85,32 +86,39 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Title </th>
+              <th></th>
+              <th> Name</th>
+              <th>About </th>
+              <th>Position</th>
+              <th>Link</th>
+              <th>Category</th>
               <th>Status</th>
-              <!-- <th>Content</th> -->
-              <th>Year</th>
+              <th>Created_by</th>
+              <th>Updated_by</th>
               <th>Created_at</th>
               <th>Updated_at</th>
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody *ngIf="!aboutus?.length">
+          <tbody *ngIf="!people?.length">
             <tr ><td></td><td></td><td></td><td></td><h3>No Data Found.</h3></tr>
            </tbody>
-           <tbody *ngIf="aboutus?.length">
+           <tbody *ngIf="people?.length">
              
-             <tr *ngFor="let u of aboutus | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
+             <tr *ngFor="let u of people | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
               <td>{{i + 1}}</td>
                <td>
-                 <img >
+                <img src="http://{{url}}/{{u.p_image}}" class="rounded" style="width: 50px;height: 40px;">
+                
                </td>
-               <td>{{u.cat_name}}</td>
-               <td>{{u.title}}</td>
+               <td>{{u.p_name}}</td>
+               <td>{{u.p_about}}</td>
+               <th>{{u.p_position}}</th>
+               <td>{{u.p_link}}</td>
+               <td>{{u.app_cate_name}}</td>
                <td>{{u.status}}</td>
-               <!-- <td>{{u.content}}</td> -->
-               <td>{{u.year}}</td>
+               <td>{{u.created_by}}</td>
+               <td>{{u.updated_by}}</td>
                <td>{{u.created_at}}</td>
                <td>{{u.updated_at}}</td>
               <td>
@@ -128,7 +136,7 @@
            
           </tbody>
         </table>
-         <div class="center" *ngIf="aboutus?.length">
+         <div class="center" *ngIf="people?.length">
               <pagination-controls (pageChange)="p = $event" class="my-pagination text-info"></pagination-controls> 
              
          </div>
@@ -146,4 +154,5 @@
 
 
 </div></div>
+
 

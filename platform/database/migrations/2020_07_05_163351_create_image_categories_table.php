@@ -18,7 +18,7 @@ class CreateImageCategoriesTable extends Migration
             $table->string('image_cate_name');
             $table->longText('about');
             $table->string('updated_by')->nullable();
-            $table->string('app_cat_id');
+            $table->string('app_cat_id')->nullable();
             $table->string('status')->default('Y');
             $table->timestamps();
         });

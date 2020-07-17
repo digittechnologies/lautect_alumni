@@ -5,15 +5,16 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from '../../services/auth.service';
+
 @Component({
-  selector: 'app-member-cat',
-  templateUrl: './member-cat.component.html',
-  styleUrls: ['./member-cat.component.css']
+  selector: 'app-system-category',
+  templateUrl: './system-category.component.html',
+  styleUrls: ['./system-category.component.css']
 })
-export class MemberCatComponent implements OnInit {
+export class SystemCategoryComponent implements OnInit {
   public form = {
-    member_cat_name: null,
-    about: null,
+    app_cate_name: null,
+    description: null,
   };
   public error = [];
   app: any;
@@ -27,16 +28,16 @@ export class MemberCatComponent implements OnInit {
     private jwtHelper: JwtHelperService,
     private Auth: AuthService,
   ) { }
-membercat:any;
+cat:any;
   onSubmit() {
-    this.Jarwis.addmembercat(this.form).subscribe(
+    this.Jarwis.addcat(this.form).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error)
     );
   }
   handleResponse(data) {
-    this.form.about="";
-    this.form.member_cat_name="";
+    this.form.description="";
+    this.form.app_cate_name="";
     let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
       duration: 2000
     })  
@@ -52,9 +53,9 @@ membercat:any;
   ngOnInit() {
     
    
-    this.Jarwis.getmembercat().subscribe(
+    this.Jarwis.getcat().subscribe(
       data=>{
-      this.membercat = data; 
+      this.cat = data; 
     //  console.log(this.usercat)
 
       

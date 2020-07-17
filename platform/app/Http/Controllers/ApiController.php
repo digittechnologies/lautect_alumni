@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\association;
 use App\authentication;
@@ -30,6 +30,123 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function addpeople(Request $request)
+    {
+        $datas=$request->formdata;
+        $request->merge(['category_id'=>$datas['category_id']]);
+        $request->merge(['p_name'=>$datas['name']]);
+        $request->merge(['p_about'=>$datas['about']]);
+        $request->merge(['p_position'=>$datas['position']]);
+        $request->merge(['link_id'=>$datas['link_id']]);
+        $id= auth()->user()->id;
+        $request->merge(['created_by'=>$id]);
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['p_image'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=people_commitee::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function getpeople()
+    {
+        return response()->json(
+            
+            people_commitee::orderBy('id','desc')->join('app_categories','people_commitees.category_id','=','app_categories.id')
+          ->select('people_commitees.*', 'app_categories.app_cate_name')->get()
+         
+        );
+       
+    }
+    public function addcat(Request $request)
+    {
+       
+    //    return $request;
+            $u=app_category::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function getcat()
+    {
+        return response()->json(
+            
+          app_category::orderBy('id','desc')->get()
+         
+        );
+       
+    }
+    public function addgallerycat(Request $request)
+    {
+
+    //    return $request;
+            $u=image_category::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function getgallerycat()
+    {
+        return response()->json(
+            
+          image_category::orderBy('id','desc')->get()
+         
+        );
+       
+    }
+    public function addgallery(Request $request)
+    {
+        $datas=$request->formdata;
+        $request->merge(['image_cat_id'=>$datas['image_cat_id']]);
+        $request->merge(['image_name'=>$datas['image_name']]);
+        $request->merge(['video'=>$datas['video']]);
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['file'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=gallery::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function getgallery()
+    {
+        return response()->json(
+            
+          gallery::orderBy('id','desc')->join('image_categories','galleries.image_cat_id','=','image_categories.id')
+          ->select('galleries.*', 'image_categories.image_cate_name')->get()
+         
+        );
+       
+    }
     public function addcareer(Request $request)
     {
         // return $request;
@@ -233,7 +350,16 @@ class ApiController extends Controller
     {
         return response()->json(
             
-          about::get()
+          about::orderBy('id','desc')->join('about_category','abouts.about_cat_id','=','about_category.id')
+          ->select('abouts.*', 'about_category.cat_name')->get()
+         
+        );
+       
+    }
+    public function getaboutcat()
+    {
+        return response()->json(
+            DB::table('about_category')->orderBy('id','desc')->get()
          
         );
        
