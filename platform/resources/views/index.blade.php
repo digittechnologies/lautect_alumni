@@ -152,7 +152,7 @@
                         </div>
 
                         <div class="about-thumb">
-                            <!-- <img src="http://{{$settings->url}}/{{$president->images}}" alt="" class="img-fluid"> -->
+                            <img src="http://{{$settings->url}}/{{$president->images}}" alt="" class="img-fluid">
                         </div>
 
                         <p style="white-space: pre-line">{{$president->content}}</p>
@@ -186,8 +186,8 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="single-responsibility">
                     <img src="assets/img/responsibility/01.png" alt="Responsibility">
-                    <h4>Scholarship</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area</p>
+                    <h4>{{$responsibilities[0]->title}}</h4>
+                    <p>{{$responsibilities[0]->content}}</p>
                 </div>
             </div>
             <!--== Single Responsibility End ==-->
@@ -196,8 +196,8 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="single-responsibility">
                     <img src="assets/img/responsibility/02.png" alt="Responsibility">
-                    <h4>Help Current Students</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area</p>
+                    <h4>{{$responsibilities[1]->title}}</h4>
+                    <p>{{$responsibilities[1]->content}}</p>
                 </div>
             </div>
             <!--== Single Responsibility End ==-->
@@ -206,8 +206,8 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="single-responsibility">
                     <img src="assets/img/responsibility/03.png" alt="Responsibility">
-                    <h4>Help Our University</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area</p>
+                    <h4>{{$responsibilities[2]->title}}</h4>
+                    <p>{{$responsibilities[2]->content}}</p>
                 </div>
             </div>
             <!--== Single Responsibility End ==-->
@@ -216,8 +216,8 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="single-responsibility">
                     <img src="assets/img/responsibility/04.png" alt="Responsibility">
-                    <h4>Build Our Community</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area</p>
+                    <h4>{{$responsibilities[3]->title}}</h4>
+                    <p>{{$responsibilities[3]->content}}</p>
                 </div>
             </div>
             <!--== Single Responsibility End ==-->
@@ -308,123 +308,31 @@
         <div class="job-opportunity-wrapper">
             <div class="row">
                 <!--== Single Job opportunity Start ==-->
+                @foreach ($career as $cr)
                 <div class="col-lg-4 col-sm-6 text-center">
                     <div class="single-job-opportunity">
                         <div class="job-opportunity-text">
                             <div class="job-oppor-logo">
                                 <div class="display-table">
                                     <div class="display-table-cell">
-                                        <img src="http://placehold.it/317x410" alt="Job">
+                                        <img src="http://{{$settings->url}}/{{$cr->car_image}}" alt="Job">
                                     </div>
                                 </div>
                             </div>
-                            <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
+                            <h3><a href="#">{{$cr->title}}</a></h3>
+                            <p>{{$cr->content}}<a href="#">[...]</a></p>
                         </div>
                         <a href="#" class="btn btn-job">Apply now</a>
                     </div>
                 </div>
-                <!--== Single Job opportunity End ==-->
+            @endforeach
+                <!--== Single Job opportunity End ==-->               
 
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="http://placehold.it/349x248" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Product Owner (m/f) for our Charter Business</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job">Apply now</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="http://placehold.it/317x410" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Backend Developer (Java) (m/f) wanted for leading</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="http://placehold.it/349x248" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">API Architect and Lead - Python, SQLAlchemy, GraphQL</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job">Apply now</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="http://placehold.it/314x234" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Remotely - Javascript Developer Node.js</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="http://placehold.it/226x224" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Five Years Experience Data Center Specialist Needed</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job">Apply now</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
             </div>
 
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a href="career.html" class="btn btn-brand btn-loadmore">All job list</a>
+                    <a href="{{url('job/')}}" class="btn btn-brand btn-loadmore">All job list</a>
                 </div>
             </div>
         </div>
@@ -451,43 +359,48 @@
             <div class="row">
                 <div class="col-lg-12">
                     <!-- Gallery Menu Start -->
+                 
                     <div class="gallery-menu text-center">
                         <span class="active" data-filter="*">All</span>
-                        <span data-filter=".old">Old Memories</span>
-                        <span data-filter=".event">Event</span>
-                        <span data-filter=".pic">Our Picnic</span>
-                        <span class="d-none d-sm-inline-block" data-filter=".recent">Recent</span>
+                        @foreach ($image_cat as $img)
+                        <span data-filter=".{{$img->about}}">{{$img->image_cate_name}}</span>  
+                        @endforeach                      
+                        <!-- <span class="d-none d-sm-inline-block" data-filter=".recent">Recent</span> -->
                     </div>
+                 
                     <!-- Gallery Menu End -->
 
                     <!-- Gallery Item content Start -->
                         <div class="row gallery-gird">
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 recent event">
+    @foreach ($galleries as $g)
+    <div class="col-lg-3  col-sm-6 {{$g->about}}">
         <div class="single-gallery-item gallery-bg-1">
+        <img src="http://{{$settings->url}}/{{$g->file}}" alt="a">
             <div class="gallery-hvr-wrap">
                 <div class="gallery-hvr-text">
-                    <h4>University Cumpus</h4>
+                    <h4>{{$g->image_name}}</h4>
                     <p class="gallery-event-date">28 Oct, 2018</p>
                 </div>
-                <a href="assets/img/gallery/gellary-img-1.jpg" class="btn-zoom image-popup">
-                    <img src="assets/img/zoom-icon.png" alt="a">
+                <a href="http://{{$settings->url}}/{{$g->file}}" class="btn-zoom image-popup">
+                    <img src="http://{{$settings->url}}/{{$g->file}}" alt="a">
                 </a>
             </div>
         </div>
     </div>
+    @endforeach
     <!-- Single Gallery End -->
 
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 old event pic">
+    <!-- <div class="col-lg-3  col-sm-6 old event pic">
         <div class="single-gallery-item video gallery-bg-2">
             <a href="https://player.vimeo.com/video/140182080?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1&amp;loop=1" class="btn btn-video-play video-popup"><i class="fa fa-play"></i></a>
         </div>
-    </div>
+    </div> -->
     <!-- Single Gallery End -->
 
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 recent pic">
+    <!-- <div class="col-lg-3  col-sm-6 recent pic">
         <div class="single-gallery-item gallery-bg-3">
             <div class="gallery-hvr-wrap">
                 <div class="gallery-hvr-text">
@@ -499,11 +412,11 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Single Gallery End -->
 
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 old">
+    <!-- <div class="col-lg-3  col-sm-6 old">
         <div class="single-gallery-item gallery-bg-4">
             <div class="gallery-hvr-wrap">
                 <div class="gallery-hvr-text">
@@ -515,11 +428,11 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Single Gallery End -->
 
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 pic event">
+    <!-- <div class="col-lg-3  col-sm-6 pic event">
         <div class="single-gallery-item gallery-bg-5">
             <div class="gallery-hvr-wrap">
                 <div class="gallery-hvr-text">
@@ -531,11 +444,11 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Single Gallery End -->
 
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 old recent">
+    <!-- <div class="col-lg-3  col-sm-6 old recent">
         <div class="single-gallery-item gallery-bg-6">
             <div class="gallery-hvr-wrap">
                 <div class="gallery-hvr-text">
@@ -547,19 +460,19 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Single Gallery End -->
 
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 pic">
+    <!-- <div class="col-lg-3  col-sm-6 pic">
         <div class="single-gallery-item video gallery-bg-7">
             <a href="https://player.vimeo.com/video/181545195?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1&amp;loop=1" class="btn btn-video-play video-popup"><i class="fa fa-play"></i></a>
         </div>
-    </div>
+    </div> -->
     <!-- Single Gallery End -->
 
     <!-- Single Gallery Start -->
-    <div class="col-lg-3  col-sm-6 pic recent old">
+    <!-- <div class="col-lg-3  col-sm-6 pic recent old">
         <div class="single-gallery-item gallery-bg-8">
             <div class="gallery-hvr-wrap">
                 <div class="gallery-hvr-text">
@@ -571,7 +484,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Single Gallery End -->
 </div>
                     <!-- Gallery Item content End -->

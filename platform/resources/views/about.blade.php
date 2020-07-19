@@ -13,10 +13,10 @@
               
    
 <!--== Page Title Area Start ==-->
-<section id="page-title-area">
+<section id="page-title-area" style="background-image: url('http://localhost/lautech/platform/public/upload/photos/download.jpg');">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 m-auto text-center">
+        <div class="row" > 
+            <div class="col-lg-8 m-auto text-center">           
                 <div class="page-title-content">
                     <h1 class="h2">About Us</h1>
                     <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
@@ -36,65 +36,31 @@
             <div class="row">
                 <div class="col-lg-11 m-auto">
                     <!-- Single about text start -->
+           
                     <div class="single-about-text">
-                        <span class="year">1834</span>
-                        <img src="http://placehold.it/1920x1281" alt="About" class="img-fluid img-left">
-                        <h2 class="h3">ESTD of This Alumni Assotitation</h2>
-                        <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
-                            quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
-                            fringilla mauris sit amet nibh.</p>
-                        <p>Etiam rhoncus. Ut lddffdfqwqeo. Morbi mollis tellus ac sapien. Fusce fermentum oo
-                            nec arcu. Quisque manisl idUt leo. Morbi mollis tellus ac sapien. Fusce
-                            fermentum oo nec ante tempus hendrerit. Curabitur at lacus ac velit ornare
-                            lobortis. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                            turpis. Quisque id mi.Aenean viverra rhoncus pede. Phasellus leo dolor, tempus non, auctor endrerit quis, nisi.
-                            Fusce neque. Donec vitae orci sed dolor rutrum auctor. Sed fringilla mauris sit amet
-                            nibh.Etiam rhoncus. Ut leo. Morbi mollis tellus ac sapien. Fusce fermentum oo nec arcu.
-                            Quisque malesuada placerat nisl. Etiam sit amet orci eget faucitincidunt. Quisque
-                            rutrum. Pellentesque posuere. Praesent ac massa at ligula laoureet iaculis. Cras risus
-                            ipsum, faucibus ut, ullamcorper id, varius ac, leo.</p>
+                        <span class="year">2020</span>
+                        <img src="http://{{$settings->url}}/{{$about[0]->images}}" alt="About" class="img-fluid img-left">
+                        <h2 class="h3">{{$about[0]->title}}</h2>
+                        <p style="white-space: pre-line">{{$about[0]->content}}</p>
+                    </div>   
+            
+                    <!-- Single about text End -->
+
+                    <!-- Single about text start -->
+                    <div class="single-about-text">
+                        <span class="year">2009</span>
+                        <img src="http://{{$settings->url}}/{{$about[1]->images}}" alt="About" class="img-fluid img-right">
+                        <h2 class="h3">{{$about[1]->title}}</h2>
+                        <p style="white-space: pre-line">{{$about[1]->content}}</p>
                     </div>
                     <!-- Single about text End -->
 
                     <!-- Single about text start -->
                     <div class="single-about-text">
-                        <span class="year">1920</span>
-                        <img src="http://placehold.it/1920x1280" alt="About" class="img-fluid img-right">
-                        <h2 class="h3">Our First Achivement in History</h2>
-                        <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
-                            quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
-                            fringilla mauris sit amet nibh.</p>
-                        <p>Etiam rhoncus. Ut lddffdfqwqeo. Morbi mollis tellus ac sapien. Fusce fermentum oo
-                            nec arcu. Quisque manisl idUt leo. Morbi mollis tellus ac sapien. Fusce
-                            fermentum oo nec ante tempus hendrerit. Curabitur at lacus ac velit ornare
-                            lobortis. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                            turpis. Quisque id mi.Aenean viverra rhoncus pede. Phasellus leo dolor, tempus non, auctor endrerit quis, nisi.
-                            Fusce neque. Donec vitae orci sed dolor rutrum auctor. Sed fringilla mauris sit amet
-                            nibh.Etiam rhoncus. Ut leo. Morbi mollis tellus ac sapien. Fusce fermentum oo nec arcu.
-                            Quisque malesuada placerat nisl. Etiam sit amet orci eget faucitincidunt. Quisque
-                            rutrum. Pellentesque posuere. Praesent ac massa at ligula laoureet iaculis. Cras risus
-                            ipsum, faucibus ut, ullamcorper id, varius ac, leo.</p>
-                    </div>
-                    <!-- Single about text End -->
-
-                    <!-- Single about text start -->
-                    <div class="single-about-text">
-                        <span class="year">2006</span>
-                        <img src="http://placehold.it/1920x1280" alt="About" class="img-fluid img-left">
-                        <h2 class="h3">Our New Genaretion</h2>
-                        <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
-                            quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
-                            fringilla mauris sit amet nibh.</p>
-                        <p>Etiam rhoncus. Ut lddffdfqwqeo. Morbi mollis tellus ac sapien. Fusce fermentum oo
-                            nec arcu. Quisque manisl idUt leo. Morbi mollis tellus ac sapien. Fusce
-                            fermentum oo nec ante tempus hendrerit. Curabitur at lacus ac velit ornare
-                            lobortis. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                            turpis. Quisque id mi.Aenean viverra rhoncus pede. Phasellus leo dolor, tempus non, auctor endrerit quis, nisi.
-                            Fusce neque. Donec vitae orci sed dolor rutrum auctor. Sed fringilla mauris sit amet
-                            nibh.Etiam rhoncus. Ut leo. Morbi mollis tellus ac sapien. Fusce fermentum oo nec arcu.
-                            Quisque malesuada placerat nisl. Etiam sit amet orci eget faucitincidunt. Quisque
-                            rutrum. Pellentesque posuere. Praesent ac massa at ligula laoureet iaculis. Cras risus
-                            ipsum, faucibus ut, ullamcorper id, varius ac, leo.</p>
+                        <span class="year">2001</span>
+                        <img src="http://{{$settings->url}}/{{$about[2]->images}}" alt="About" class="img-fluid img-left">
+                        <h2 class="h3">{{$about[2]->title}}</h2>
+                        <p style="white-space: pre-line">{{$about[2]->content}}</p>
                     </div>
                     <!-- Single about text End -->
                 </div>
