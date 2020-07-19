@@ -34,6 +34,8 @@ export class EventProgramsComponent implements OnInit {
   public error:any;
   image: any;
   eventsch: any;
+  app: any;
+  url: any;
 
   constructor(
     private Jarwis: JarwisService,
@@ -130,6 +132,13 @@ uploadFile(event){
       
       }
       
+    )
+    
+    this.Jarwis.getappsetting().subscribe(
+      data=>{
+      this.app = data;
+      this.url=this.app.url;
+      }
     )
   }
 

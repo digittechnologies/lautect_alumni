@@ -20,8 +20,26 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { OpportunitiesComponent } from './pages/opportunities/opportunities.component';
 import { HomeHeaderComponent } from './pages/home-header/home-header.component';
 import { EventProgramsComponent } from './pages/event-programs/event-programs.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { SystemCategoryComponent } from './pages/system-category/system-category.component';
+import { PeopleCommiteeComponent } from './pages/people-commitee/people-commitee.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'people_commitee',
+    component: PeopleCommiteeComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'system_cat',
+    component: SystemCategoryComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'gallery',
+    component: GalleryComponent,
+    canActivate: [AfterLoginService]
+  },
   {
     path: 'event_programs',
     component: EventProgramsComponent,

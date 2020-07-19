@@ -67,10 +67,5 @@ membercat:any;
       }
     )
   }
-  // logout() {
-  //   // event.preventDefault();
-  //   this.Token.remove();
-  //   this.Auth.changeAuthStatus(false);
-  //   this.router.navigateByUrl('/login');
-  // }
+  
 }

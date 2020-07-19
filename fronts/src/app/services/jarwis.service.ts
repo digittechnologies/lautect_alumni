@@ -87,6 +87,9 @@ export class JarwisService {
   getaboutus() {
     return this.http.get(`${this.baseUrl}/getaboutus`)
   }
+  getaboutcat() {
+    return this.http.get(`${this.baseUrl}/getaboutcat`)
+  }
   addhomeheader(data) {
     return this.http.post(`${this.baseUrl}/addhomeheader`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -126,5 +129,38 @@ export class JarwisService {
   }
   getcareer() {
     return this.http.get(`${this.baseUrl}/getcareer`)
+  }
+  addgallerycat(data) {
+    return this.http.post(`${this.baseUrl}/addgallerycat`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getgallerycat() {
+    return this.http.get(`${this.baseUrl}/getgallerycat`)
+  }
+  addgallery(data) {
+    return this.http.post(`${this.baseUrl}/addgallery`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getgallery() {
+    return this.http.get(`${this.baseUrl}/getgallery`)
+  }
+
+  addcat(data) {
+    return this.http.post(`${this.baseUrl}/addcat`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getcat() {
+    return this.http.get(`${this.baseUrl}/getcat`)
+  }
+  addpeople(data) {
+    return this.http.post(`${this.baseUrl}/addpeople`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getpeople() {
+    return this.http.get(`${this.baseUrl}/getpeople`)
   }
 }
