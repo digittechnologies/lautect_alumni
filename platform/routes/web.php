@@ -13,9 +13,7 @@
 
 Route::get('/', 'Web\HomeController@index');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'Web\AboutController@index');
 
 Route::POST('/add-user', 'AuthController@login2')->name('add-user');
 
