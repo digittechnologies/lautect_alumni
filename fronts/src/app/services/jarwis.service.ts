@@ -7,9 +7,9 @@ import { environment } from '../../environments/environment'
 )
 export class JarwisService {
 
-  private baseUrl= 'https://testenv.digittechnologies.org/lautech/platform/public/api';
+  // private baseUrl= 'https://testenv.digittechnologies.org/lautech/platform/public/api';
 
-    // private baseUrl = 'http://localhost:8000/api';
+    private baseUrl = 'http://localhost:8000/api';
 
     // private baseUrl = environment.baseUrl 
 
@@ -162,5 +162,29 @@ export class JarwisService {
   }
   getpeople() {
     return this.http.get(`${this.baseUrl}/getpeople`)
+  }
+  addnewcat(data) {
+    return this.http.post(`${this.baseUrl}/addnewcat`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getnewcat() {
+    return this.http.get(`${this.baseUrl}/getnewcat`)
+  }
+  addnews(data) {
+    return this.http.post(`${this.baseUrl}/addnews`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getnews() {
+    return this.http.get(`${this.baseUrl}/getnews`)
+  }
+  addinterview(data) {
+    return this.http.post(`${this.baseUrl}/addinterview`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getinterview() {
+    return this.http.get(`${this.baseUrl}/getinterview`)
   }
 }

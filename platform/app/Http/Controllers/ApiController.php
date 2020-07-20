@@ -13,6 +13,7 @@ use Image;
 use App\about;
 use App\app_category;
 use App\blog;
+use App\blogs_category;
 use App\career_category;
 use App\career;
 use App\event_schedule;
@@ -23,6 +24,7 @@ use App\image_category;
 use App\interview;
 use App\people_commitee;
 
+
 class ApiController extends Controller
 {
     /**
@@ -30,6 +32,107 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function addinter(Request $request)
+    {
+        $datas=$request->formdata;
+        $request->merge(['inter_name'=>$datas['inter_name']]);
+        $request->merge(['inter_position'=>$datas['inter_position']]);
+        $request->merge(['content'=>$datas['content']]);
+        $request->merge(['link'=>$datas['link']]);
+       
+        $id= auth()->user()->id;
+        $request->merge(['created_by'=>$id]);
+        $request->merge(['updated_by'=>$id]);
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['inter_image'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=interview::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function getinter()
+    {
+        return response()->json(
+            
+            interview::orderBy('id','desc')->get()
+         
+        );
+       
+    }
+    public function addnews(Request $request)
+    {
+        $datas=$request->formdata;
+        $request->merge(['category_id'=>$datas['category_id']]);
+        $request->merge(['blog_name'=>$datas['blog_name']]);
+        $request->merge(['blog_title'=>$datas['blog_title']]);
+        $request->merge(['content1'=>$datas['content1']]);
+        $request->merge(['link'=>$datas['link']]);
+        $request->merge(['content2'=>$datas['content2']]);
+        $request->merge(['content3'=>$datas['content3']]);
+        $id= auth()->user()->id;
+        $request->merge(['created_by'=>$id]);
+        $request->merge(['updated_by'=>$id]);
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['blog_image'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=blog::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function getnews()
+    {
+        return response()->json(
+            
+            blog::orderBy('id','desc')->join('blogs_categories','blogs.category_id','=','blogs_categories.id')
+          ->select('blogs.*', 'blogs_categories.blog_cat_name')->get()
+         
+        );
+       
+    }
+    public function addnewcat(Request $request)
+    {
+       
+    //    return $request;
+            $u=blogs_category::create($request->all());
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['success' => 'Not save'], 200);
+            
+    }
+    public function getnewcat()
+    {
+        return response()->json(
+            
+          blogs_category::orderBy('id','desc')->get()
+         
+        );
+       
+    }
     public function addpeople(Request $request)
     {
         $datas=$request->formdata;
