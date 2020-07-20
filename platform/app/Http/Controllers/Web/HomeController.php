@@ -11,6 +11,7 @@ use App\about;
 use App\career;
 use App\gallery;
 use App\image_category;
+use App\home_body;
 
 class HomeController extends Controller
 {
@@ -33,15 +34,13 @@ class HomeController extends Controller
     $home_page = home_page::all();
     $event_page = event_tb::all();
     $image_cat = image_category::all();
-    $president = about::join('about_category','abouts.about_cat_id','=','about_category.id')
-                    ->select('abouts.*','about_category.cat_name')
-                    ->where('about_category.id', '=', '1')
+    $president = home_body::select('home_body.*')
+                    ->where('home_body.id', '=', '1')
                     ->first();
                     
-    $responsibilities = about::join('about_category','abouts.about_cat_id','=','about_category.id')
-                    ->select('abouts.*','about_category.cat_name')
-                    ->where('about_category.id', '=', '2')
-                    ->get();
+    $responsibilities =home_body::select('home_body.*')
+                           ->where('home_body.name', '=', 'responsibility')
+                           ->get();
    
    $career = career::join('career_categories','careers.car_cat_id','=','career_categories.id')
                     ->select('careers.*','career_categories.car_cat_name')                   

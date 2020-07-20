@@ -183,43 +183,15 @@
         <!--== Responsibility Content Wrapper ==-->
         <div class="row text-center text-sm-left">
             <!--== Single Responsibility Start ==-->
+            @foreach ($responsibilities as $res)
             <div class="col-lg-3 col-sm-6">
                 <div class="single-responsibility">
-                    <img src="assets/img/responsibility/01.png" alt="Responsibility">
-                    <h4>{{$responsibilities[0]->title}}</h4>
-                    <p>{{$responsibilities[0]->content}}</p>
+                    <img src="http://{{$settings->url}}/{{$res->image}}" alt="Responsibility">
+                    <h4>{{$res->title}}</h4>
+                    <p>{{$res->content}}</p>
                 </div>
             </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="assets/img/responsibility/02.png" alt="Responsibility">
-                    <h4>{{$responsibilities[1]->title}}</h4>
-                    <p>{{$responsibilities[1]->content}}</p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="assets/img/responsibility/03.png" alt="Responsibility">
-                    <h4>{{$responsibilities[2]->title}}</h4>
-                    <p>{{$responsibilities[2]->content}}</p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="assets/img/responsibility/04.png" alt="Responsibility">
-                    <h4>{{$responsibilities[3]->title}}</h4>
-                    <p>{{$responsibilities[3]->content}}</p>
-                </div>
-            </div>
+            @endforeach
             <!--== Single Responsibility End ==-->
         </div>
         <!--== Responsibility Content Wrapper ==-->
