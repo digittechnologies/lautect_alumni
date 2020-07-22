@@ -3,37 +3,32 @@ import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+
 @Component({
-  selector: 'app-event-programs',
-  templateUrl: './event-programs.component.html',
-  styleUrls: ['./event-programs.component.css']
+  selector: 'app-news',
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.css']
 })
-export class EventProgramsComponent implements OnInit {
+export class NewsComponent implements OnInit {
 
   public form = {
-    event_name: null,
-    subject: null,
-    content:null,
-    start_date:null,
-    start_time:null,
-    end_date:null,
-    end_time:null,
-    address:null,
+    blog_cat_name: null,
+    description: null,
+    
   };
   public form2 = {
-    schedule_name: null,
-    title: null,
-    content:null,
-    start_date:null,
-    start_time:null,
-    end_date:null,
-    end_time:null,
-   speaker:null,
-   event_id:null,
+    blog_name: null,
+    blog_title: null,
+    content1:null,
+    content2:null,
+    content3:null,
+    link:null,
+    category_id:null,
+   
   };
   public error:any;
   image: any;
-  eventsch: any;
+  news: any;
   app: any;
   url: any;
 
@@ -43,7 +38,7 @@ export class EventProgramsComponent implements OnInit {
     private router: Router,
     public snackBar: MatSnackBar, 
   ) { }
-event:any;
+newcat:any;
 
 uploadFile(event){
   let files =event.target.files[0];
@@ -57,27 +52,16 @@ uploadFile(event){
   reader.readAsDataURL(files);
 }
   onSubmit1() {
-    if (typeof this.image === 'undefined') {
-      let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
-        duration: 3000
-      }) 
-    }else{
-      this.Jarwis.addevent({formdata:this.form,image:this.image}).subscribe(
-        data => this.handleResponse(data),
-        error => this.handleError(error)
-      );
-    }
    
+    this.Jarwis.addnewcat(this.form).subscribe(
+      data => this.handleResponse(data),
+      error => this.handleError(error)
+    );
   }
   handleResponse(data) {
-    this.form.event_name="";
-    this.form.subject="";
-    this.form.content="";
-    this.form.end_date="";
-    this.form.end_time="";
-    this.form.start_date="";
-    this.form.start_time="";
-    this.form.address="";
+    this.form.blog_cat_name="";
+    this.form.description="";
+   
     let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
       duration: 2000
     })   
@@ -92,20 +76,27 @@ uploadFile(event){
     // this.error = error.error.errors;
   }
   onSubmit2() {
-    this.Jarwis.addeventsch(this.form2).subscribe(
-      data => this.handleResponse2(data),
-      error => this.handleError2(error)
-    );
+    if (typeof this.image === 'undefined') {
+      let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
+        duration: 3000
+      }) 
+    }else{
+      this.Jarwis.addnews({formdata:this.form2,image:this.image}).subscribe(
+        data => this.handleResponse2(data),
+        error => this.handleError2(error)
+      );
+    }
+    
   }
   handleResponse2(data) {
-    this.form2.schedule_name="";
-    this.form2.title="";
-    this.form2.content="";
-    this.form2.end_date="";
-    this.form2.end_time="";
-    this.form2.start_date="";
-    this.form2.start_time="";
-    this.form2.speaker="";
+    this.form2.blog_name="";
+    this.form2.blog_title="";
+    this.form2.content1="";
+    this.form2.content2="";
+    this.form2.content3="";
+    this.form2.link="";
+    this.form2.category_id="";
+    
     let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
       duration: 2000
     })   
@@ -118,18 +109,18 @@ uploadFile(event){
     }) 
   }
   ngOnInit() {
-    this.Jarwis.getevent().subscribe(
+    this.Jarwis.getnewcat().subscribe(
       data=>{
-      this.event = data; 
+      this.newcat = data; 
 
       
       }
       
     )
 
-    this.Jarwis.geteventsch().subscribe(
+    this.Jarwis.getnews().subscribe(
       data=>{
-      this.eventsch = data; 
+      this.news= data; 
 
       
       }
@@ -143,5 +134,4 @@ uploadFile(event){
       }
     )
   }
-
 }

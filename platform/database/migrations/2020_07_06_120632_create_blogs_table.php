@@ -20,7 +20,7 @@ class CreateBlogsTable extends Migration
             $table->longText('content1');
             $table->longText('content2');
             $table->longText('content3');
-            $table->string('blog_image')->default('lau_image');
+            $table->string('blog_image')->default('lautech_defualt.png');
             $table->string('link')->nullable();
             $table->string('category_id');
             $table->string('status')->default('Y');

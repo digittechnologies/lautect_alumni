@@ -1,0 +1,283 @@
+<div class="mt-2 main-panel">
+  <!-- BEGIN : Main Content-->
+  <div class="main-content">
+    <div class="content-wrapper"><!--Extended Table starts-->
+<div class="row">
+<div class="col-12">
+<div class="content-header">News</div>
+</div></div>
+
+<div class="col-xl-12 col-lg-12">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">News</h4>
+      <p>You can also add icons to the tab name.</p>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <div class="nav-vertical">
+          <ul class="nav nav-tabs nav-left">
+            <li class="nav-item">
+              <a class="nav-link active" id="baseVerticalLeft2-tab1" data-toggle="tab" aria-controls="tabVerticalLeft21"
+                href="#tabVerticalLeft21" aria-expanded="true"><i class="fa fa-align-justify"></i> News Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="baseVerticalLeft2-tab2" data-toggle="tab" aria-controls="tabVerticalLeft22"
+                href="#tabVerticalLeft22" aria-expanded="false"><i class="fa fa-header"></i> News</a>
+            </li>
+            
+          </ul>
+          <div class="tab-content px-1">
+            <div role="tabpanel" class="tab-pane active" id="tabVerticalLeft21" aria-expanded="true"
+              aria-labelledby="baseVerticalLeft2-tab1">
+        
+              <h4 class="card-title" id="basic-layout-form-center">Add News Category</h4>
+              <div class="px-3">
+
+                <form class="form" #eventForm=ngForm (ngSubmit)="onSubmit1()">
+                  <div class="row justify-content-md-center">
+                    <div class="col-md-6">
+                      <div class="form-body">
+                        <div class="form-group">
+                          <label for="eventInput1"> Category Name</label>
+                          <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.blog_cat_name" name="blog_cat_name" required>
+                        </div>
+      
+                        <div class="form-group">
+                          <label for="eventInput2">About the Category</label>
+                        <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form.description" name="description" required></textarea>
+                        </div>
+      
+                     
+                       
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="form-actions center">
+                    
+                    <button type="submit" [disabled]="!eventForm.valid" class="btn btn-raised btn-primary">
+                      <i class="fa fa-check-square-o"></i> Save
+                    </button>
+                  </div>
+                </form>   
+              </div>
+              <section id="extended">
+                <div class="row">
+                <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">List of the Category </h4>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body table-responsive">
+                      <table class="table text-center">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                          
+                            <th>Name</th>
+                            <th>Description </th>
+                           
+                            <th>Status</th>
+                            
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody *ngIf="!newcat?.length">
+                          <tr ><td></td><td></td><td></td><td></td><h3>No Data Found.</h3></tr>
+                         </tbody>
+                         <tbody *ngIf="newcat?.length">
+                           
+                           <tr *ngFor="let u of newcat | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
+                            <td>{{i + 1}}</td>
+                       
+                             <td>{{u.blog_cat_name}}</td>
+                             <td>{{u.description}}</td>
+                             
+                             <td>{{u.status}}</td>
+                            
+                             <td>{{u.created_at}}</td>
+                             <td>{{u.updated_at}}</td>
+                            <td>
+                              <!-- <a class="info p-0" data-original-title="" title=""> -->
+                                <!-- <i class="ft-user font-medium-3 mr-2"></i> -->
+                              <!-- </a> -->
+                              <a class="success p-0" data-original-title="" title="">
+                                <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                              </a>
+                              <a class="danger p-0" data-original-title="" title="">
+                                <i class="ft-x font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                       <div class="center" *ngIf="event?.length">
+                            <pagination-controls (pageChange)="p = $event" class="my-pagination text-info"></pagination-controls> 
+                           
+                       </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </section>
+              
+            </div>
+
+
+
+            <div class="tab-pane" id="tabVerticalLeft22" aria-labelledby="baseVerticalLeft2-tab2">
+              
+              <h4 class="card-title" id="basic-layout-form-center">Add News</h4>
+              <div class="px-3">
+
+                <form class="form" #signupForm=ngForm (ngSubmit)="onSubmit2()">
+                  <div class="row justify-content-md-center">
+                    <div class="col-md-6">
+                      <div class="form-body">
+                        <div class="form-group">
+                          <label for="issueinput6">Select Category</label>
+                          <select id="issueinput6" name="category_id" class="form-control" [(ngModel)]="form2.category_id" data-toggle="tooltip" data-trigger="hover"
+                            data-placement="top" data-title="Status">
+                            <option *ngFor="let e of newcat" value="{{e.id}}">{{e.blog_cat_name}}</option>
+                            
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="eventInput1">Blog Name</label>
+                          <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form2.blog_name" name="blog_name" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="eventInput1">Blog Title</label>
+                          <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form2.blog_title" name="blog_title" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="eventInput1">Link</label>
+                          <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form2.link" name="link" >
+                        </div>
+                        <div class="form-group">
+                          <label for="eventInput2">Content 1</label>
+                        <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form2.content1" name="content1" required></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="eventInput2">Content 2</label>
+                        <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form2.content2" name="content2" ></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="eventInput2">Content 3</label>
+                        <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form2.content3" name="content3" ></textarea>
+                        </div>
+       
+                        <div class="form-group">
+                          <label>Select Image</label>
+                          <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="form-actions center">
+                    
+                    <button type="submit" [disabled]="!signupForm.valid" class="btn btn-raised btn-primary">
+                      <i class="fa fa-check-square-o"></i> Save
+                    </button>
+                  </div>
+                </form>
+   
+              </div>
+              <section id="extended">
+                <div class="row">
+                <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">List of the News</h4>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-body table-responsive">
+                      <table class="table text-center">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Title </th>
+                            <th>Status</th>
+                            <th>Link</th>
+                            <th>Category Name</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody *ngIf="!news?.length">
+                          <tr ><td></td><td></td><td></td><td></td><h3>No Data Found.</h3></tr>
+                         </tbody>
+                         <tbody *ngIf="news?.length">
+                           
+                           <tr *ngFor="let u of news | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
+                            <td>{{i + 1}}</td>
+                            
+                                  <td>
+                              <img src="http://{{url}}/{{u.blog_image}}" class="rounded" style="width: 50px;height: 40px;">
+
+                             </td>
+                           
+                             <td>{{u.blog_name}}</td>
+                             <td>{{u.blog_title}}</td>
+                             <td>{{u.status}}</td>
+                             <td>{{u.link}}</td>
+                           
+                             <td>{{u.blog_cat_name}}</td>
+                             <td>{{u.created_at}}</td>
+                             <td>{{u.updated_at}}</td>
+                            <td>
+                              <!-- <a class="info p-0" data-original-title="" title="">
+                                <i class="ft-user font-medium-3 mr-2"></i>
+                              </a> -->
+                              <a class="success p-0" data-original-title="" title="">
+                                <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                              </a>
+                              <a class="danger p-0" data-original-title="" title="">
+                                <i class="ft-x font-medium-3 mr-2"></i>
+                              </a>
+                            </td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                       <div class="center" *ngIf="news?.length">
+                            <pagination-controls (pageChange)="p = $event" class="my-pagination text-info"></pagination-controls> 
+                           
+                       </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </section>
+
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</div></div>
+
+
+

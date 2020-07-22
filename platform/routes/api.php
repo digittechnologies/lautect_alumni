@@ -65,4 +65,12 @@ Route::group([
     Route::post('addcat', 'ApiController@addcat');
     Route::get('getpeople', 'ApiController@getpeople');
     Route::post('addpeople', 'ApiController@addpeople');
+
+    Route::get('getnewcat', 'ApiController@getnewcat');
+    Route::post('addnewcat', 'ApiController@addnewcat');
+    Route::get('getnews', 'ApiController@getnews');
+    Route::post('addnews', 'ApiController@addnews');
+
+    Route::get('getinterview', 'ApiController@getinter');
+    Route::post('addinterview', 'ApiController@addinter');
 });

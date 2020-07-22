@@ -23,8 +23,20 @@ import { EventProgramsComponent } from './pages/event-programs/event-programs.co
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { SystemCategoryComponent } from './pages/system-category/system-category.component';
 import { PeopleCommiteeComponent } from './pages/people-commitee/people-commitee.component';
+import { NewsComponent } from './pages/news/news.component';
+import { InterviewsComponent } from './pages/interviews/interviews.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'interview',
+    component: InterviewsComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'news',
+    component: NewsComponent,
+    canActivate: [AfterLoginService]
+  },
   {
     path: 'people_commitee',
     component: PeopleCommiteeComponent,
