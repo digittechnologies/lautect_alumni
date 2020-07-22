@@ -128,7 +128,8 @@
                            <tr *ngFor="let u of event | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
                             <td>{{i + 1}}</td>
                              <td>
-                               <img src="">
+                              <img src="http://{{url}}/{{u.event_image}}" class="rounded" style="width: 50px;height: 40px;">
+
                              </td>
                              <td>{{u.event_name}}</td>
                              <td>{{u.subject}}</td>

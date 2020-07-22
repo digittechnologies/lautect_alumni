@@ -39,6 +39,11 @@ import { OpportunitiesComponent } from './pages/opportunities/opportunities.comp
 import { EventProgramsComponent } from './pages/event-programs/event-programs.component';
 import { HomeHeaderComponent } from './pages/home-header/home-header.component';
 import { JwtModule } from "@auth0/angular-jwt";
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { SystemCategoryComponent } from './pages/system-category/system-category.component';
+import { PeopleCommiteeComponent } from './pages/people-commitee/people-commitee.component';
+import { NewsComponent } from './pages/news/news.component';
+import { InterviewsComponent } from './pages/interviews/interviews.component';
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
@@ -63,7 +68,11 @@ export function tokenGetter() {
     OpportunitiesComponent,
     EventProgramsComponent,
     HomeHeaderComponent,
-   
+    GalleryComponent,
+    SystemCategoryComponent,
+    PeopleCommiteeComponent,
+    NewsComponent,
+    InterviewsComponent,
   ],
   imports: [
     BrowserModule,

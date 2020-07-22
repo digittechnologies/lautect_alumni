@@ -7,9 +7,9 @@ import { environment } from '../../environments/environment'
 )
 export class JarwisService {
 
-  private baseUrl= 'https://testenv.digittechnologies.org/lautech/platform/public/api';
+  // private baseUrl= 'https://testenv.digittechnologies.org/lautech/platform/public/api';
 
-    // private baseUrl = 'http://localhost:8000/api';
+    private baseUrl = 'http://localhost:8000/api';
 
     // private baseUrl = environment.baseUrl 
 
@@ -87,6 +87,9 @@ export class JarwisService {
   getaboutus() {
     return this.http.get(`${this.baseUrl}/getaboutus`)
   }
+  getaboutcat() {
+    return this.http.get(`${this.baseUrl}/getaboutcat`)
+  }
   addhomeheader(data) {
     return this.http.post(`${this.baseUrl}/addhomeheader`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -126,5 +129,62 @@ export class JarwisService {
   }
   getcareer() {
     return this.http.get(`${this.baseUrl}/getcareer`)
+  }
+  addgallerycat(data) {
+    return this.http.post(`${this.baseUrl}/addgallerycat`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getgallerycat() {
+    return this.http.get(`${this.baseUrl}/getgallerycat`)
+  }
+  addgallery(data) {
+    return this.http.post(`${this.baseUrl}/addgallery`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getgallery() {
+    return this.http.get(`${this.baseUrl}/getgallery`)
+  }
+
+  addcat(data) {
+    return this.http.post(`${this.baseUrl}/addcat`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getcat() {
+    return this.http.get(`${this.baseUrl}/getcat`)
+  }
+  addpeople(data) {
+    return this.http.post(`${this.baseUrl}/addpeople`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getpeople() {
+    return this.http.get(`${this.baseUrl}/getpeople`)
+  }
+  addnewcat(data) {
+    return this.http.post(`${this.baseUrl}/addnewcat`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getnewcat() {
+    return this.http.get(`${this.baseUrl}/getnewcat`)
+  }
+  addnews(data) {
+    return this.http.post(`${this.baseUrl}/addnews`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getnews() {
+    return this.http.get(`${this.baseUrl}/getnews`)
+  }
+  addinterview(data) {
+    return this.http.post(`${this.baseUrl}/addinterview`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  getinterview() {
+    return this.http.get(`${this.baseUrl}/getinterview`)
   }
 }

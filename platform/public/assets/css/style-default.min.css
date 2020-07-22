@@ -1210,7 +1210,7 @@ blockquote:before {
 }
 
 #about-area .about-area-wrapper:before {
-  background-image: url("http://placehold.it/1440x1018");
+  background-image: url("http://localhost/lautech/platform/public/upload/photos/download.jpg");
   background-size: cover;
   content: "";
   position: absolute;
@@ -1932,7 +1932,7 @@ blockquote:before {
 }
 
 #page-title-area {
-  background-image: url("http://placehold.it/1918x789");
+  
   background-size: cover;
   background-position: center center;
   position: relative;

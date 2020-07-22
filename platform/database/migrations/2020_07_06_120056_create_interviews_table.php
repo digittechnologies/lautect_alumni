@@ -15,7 +15,7 @@ class CreateInterviewsTable extends Migration
     {
         Schema::create('interviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('inter_name');
+         $table->string('inter_name');
             $table->longText('content');
             $table->string('inter_position');
             $table->string('inter_image');

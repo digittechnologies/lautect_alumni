@@ -17,7 +17,8 @@ Route::group([
 
     //About
     Route::post('addaboutus', 'ApiController@addaboutus');
-
+    Route::get('getaboutcat', 'ApiController@getaboutcat');
+    Route::get('getaboutus', 'ApiController@getaboutus');
     //start user_cat
     Route::post('addusercat', 'ApiController@addusercat');
     Route::get('getusercat', 'ApiController@getusercat');
@@ -53,4 +54,23 @@ Route::group([
     Route::get('getcareercat', 'ApiController@getcareercat');
     Route::post('addcareercat', 'ApiController@addcareercat');
 
+    //gallery
+    Route::get('getgallerycat', 'ApiController@getgallerycat');
+    Route::post('addgallerycat', 'ApiController@addgallerycat');
+
+    Route::get('getgallery', 'ApiController@getgallery');
+    Route::post('addgallery', 'ApiController@addgallery');
+
+    Route::get('getcat', 'ApiController@getcat');
+    Route::post('addcat', 'ApiController@addcat');
+    Route::get('getpeople', 'ApiController@getpeople');
+    Route::post('addpeople', 'ApiController@addpeople');
+
+    Route::get('getnewcat', 'ApiController@getnewcat');
+    Route::post('addnewcat', 'ApiController@addnewcat');
+    Route::get('getnews', 'ApiController@getnews');
+    Route::post('addnews', 'ApiController@addnews');
+
+    Route::get('getinterview', 'ApiController@getinter');
+    Route::post('addinterview', 'ApiController@addinter');
 });

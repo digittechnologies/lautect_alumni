@@ -5,12 +5,14 @@ import { environment } from '../../environments/environment';
 export class TokenService {
   private iss = {
 
-    login:   'https://testenv.digittechnologies.org/lautech/platform/public/api/login',
-   signup: 'https://testenv.digittechnologies.org/lautech/platform/public/api/signup'
+  //   login:   'https://testenv.digittechnologies.org/lautech/platform/public/api/login',
+  //  signup: 'https://testenv.digittechnologies.org/lautech/platform/public/api/signup'
 
-    // login: 'http://localhost:8000/api/login',
-    // signup: 'http://localhost:8000/api/signup'
+    login: 'http://localhost:8000/api/login',
+    signup: 'http://localhost:8000/api/signup'
 
+    // login: 'http://localhost/lautech/platform/public/api/login',
+    // signup: 'http://localhost/lautech/platform/public/api/signup'
     // login: environment.login,
     // signup: environment.signup,
     

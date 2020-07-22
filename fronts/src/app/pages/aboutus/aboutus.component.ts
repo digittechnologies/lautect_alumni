@@ -16,7 +16,8 @@ export class AboutusComponent implements OnInit {
     content:null,
     year:null
   };
-  public error = [];
+  public error:any;
+  aboutcat: any;
 
   constructor(
     private Jarwis: JarwisService,
@@ -66,6 +67,14 @@ uploadFile(event){
   }
 
   ngOnInit() {
+    this.Jarwis.getaboutcat().subscribe(
+      data=>{
+      this.aboutcat = data; 
+    //  console.log(this.usercat)
+
+      
+      }
+    )
     this.Jarwis.getaboutus().subscribe(
       data=>{
       this.aboutus = data; 
