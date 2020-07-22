@@ -16,7 +16,7 @@
     <div class="slider-active-wrap owl-carousel text-center text-md-left">
         <!-- Single Slide Item Start -->
         @foreach ($home as $h)
-        <div class="single-slide-wrap slide-bg-{{$h->id}}">
+        <div class="single-slide-wrap slide-bg-{{$h->id}}" style="background-image: url('http://{{$settings->url}}/{{$h->home_image}}');">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

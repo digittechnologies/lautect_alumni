@@ -967,7 +967,7 @@ blockquote:before {
   height: 30px;
 }
 
-#slider-area .slide-bg-1 {
+/* #slider-area .slide-bg-1 {
   background-image: url("http://localhost/lautech/platform/public/upload/photos/download.jpg");
 }
 
@@ -977,7 +977,7 @@ blockquote:before {
 
 #slider-area .slide-bg-3 {
   background-image: url("http://localhost/lautech/platform/public/upload/photos/download3.jpg");
-}
+} */
 
 #slider-area .social-networks-icon {
   position: absolute;

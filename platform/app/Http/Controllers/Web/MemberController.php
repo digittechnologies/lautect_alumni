@@ -9,6 +9,7 @@ use App\home_page;
 use App\event_tb;
 use App\about;
 use App\User;
+use App\home_body;
 
 class MemberController extends Controller
 {
@@ -26,9 +27,12 @@ class MemberController extends Controller
                      ->select('users.*','member_categories.member_cat_name')
                     //  ->where('about_category.id', '=', '3')
                      ->count();
-                     
+                 
+    $header =home_body::select('home_body.*')
+                        ->where('home_body.id', '=', 7)
+                        ->first();       
    
-            return view('pages.members',['settings'=>$settings[0], 'users'=>$users, 'countU'=>$count_users]);
+            return view('pages.members',['settings'=>$settings[0], 'users'=>$users, 'countU'=>$count_users, 'header'=> $header]);
     } 
 
 }

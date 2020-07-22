@@ -22,6 +22,7 @@ use App\home_page;
 use App\image_category;
 use App\interview;
 use App\people_commitee;
+use App\home_body;
 
 class ApiController extends Controller
 {
@@ -312,11 +313,11 @@ class ApiController extends Controller
     }
     public function gethomeheader()
     {
-        return response()->json(
+        return response()->json([
             
-          home_page::get()
-         
-        );
+          "home"=>home_page::get(),
+          'headers'=> home_body::get()         
+         ] );
        
     }
 
