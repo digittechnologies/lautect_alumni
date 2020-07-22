@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="directory-text-wrap">
-                            <h2>Now  we have <strong class="funfact-count">485274</strong> member </h2>
+                            <h2>Now  we have <strong class="funfact-count">{{$countU}}</strong> member </h2>
                             <div class="table-search-area">
                                 <form action="index.html">
                                     <input type="search" placeholder="Type Your Keyword">
@@ -63,98 +63,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($users as $user)
                                         <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
+                                            <td><img src="http://{{$settings->url}}/{{$user->user_image}}" alt="table">{{$user->name}}</td>
+                                            <td>{{$user->dept}}</td>
+                                            <td>{{$user->year_of_g}}</td>
                                             <td>Dhaka</td>
-                                            <td>Student</td>
+                                            <td>{{$user->mamber_cat_name}}</td>
                                         </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight</td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
                             <p class="show-memeber text-right">
-                                Show <span>30</span> of <span>12487 Member</span>
+                                Show <span>{{$countU}}</span> of <span>{{$countU}} Member</span>
                             </p>
                         </div>
                     </div>
