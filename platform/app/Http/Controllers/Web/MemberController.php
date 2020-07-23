@@ -23,7 +23,7 @@ class MemberController extends Controller
                     //  ->where('about_category.id', '=', '3')
                      ->get();
 
-    $count_users = User::join('member_categories','Users.user_cat_id','=','member_categories.id')
+    $count_users = User::join('member_categories','users.user_cat_id','=','member_categories.id')
                      ->select('users.*','member_categories.member_cat_name')
                     //  ->where('about_category.id', '=', '3')
                      ->count();
