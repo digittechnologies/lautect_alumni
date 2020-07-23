@@ -10,7 +10,11 @@
 
 // chartist chart
 // ------------------------------
+function home(){
+   
 $(window).on("load", function () {
+
+    // alert("111");
 
     // line chart widget 1 configuration Starts
     var widgetlineChart = new Chartist.Line('#Widget-line-chart', {
@@ -533,3 +537,4 @@ $(window).on("load", function () {
     // Donut Chart Ends
 
 });
+}

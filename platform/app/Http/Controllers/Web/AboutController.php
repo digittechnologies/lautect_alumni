@@ -8,6 +8,7 @@ use App\app_setting;
 use App\home_page;
 use App\event_tb;
 use App\about;
+use App\home_body;
 
 class AboutController extends Controller
 {
@@ -23,19 +24,12 @@ class AboutController extends Controller
                      ->select('abouts.*','about_category.cat_name')
                      ->where('about_category.id', '=', '3')
                      ->get();
+    $header =home_body::select('home_body.*')
+                     ->where('home_body.id', '=', 6)
+                     ->first();
                      
-    //  $responsibilities = about::join('about_category','abouts.about_cat_id','=','about_category.id')
-    //                  ->select('abouts.*','about_category.cat_name')
-    //                  ->where('about_category.id', '=', '2')
-    //                  ->get();
-    
+   
  
-    // $gallery = gallery::join('image_categories','galleries.image_cat_id','=','image_categories.id')
-    //                  ->select('galleries.*','image_categories.image_cate_name','image_categories.about')                   
-    //                  ->get();
- 
-     // return $responsibilities;
- 
-     return view('about',['settings'=>$settings[0], 'about'=> $about]);
+     return view('about',['settings'=>$settings[0], 'about'=> $about, 'header'=> $header]);
     }
 }

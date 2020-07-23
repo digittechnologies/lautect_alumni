@@ -4,11 +4,7 @@
     <div class="content-wrapper"><!--Extended Table starts-->
 <div class="row">
 <div class="col-12">
-<div class="content-header">Home Header</div>
-</div></div>
-
-
-
+<!-- 
 <div class="row match-height">
   <div class="col-md-12">
     <div class="card">
@@ -97,10 +93,7 @@
                <td>{{u.component3}}</td>
                <td>{{u.created_at}}</td>
                <td>{{u.updated_at}}</td>
-              <td>
-                <!-- <a class="info p-0" data-original-title="" title=""> -->
-                  <!-- <i class="ft-user font-medium-3 mr-2"></i> -->
-                <!-- </a> -->
+              <td>               
                 <a class="success p-0" data-original-title="" title="">
                   <i class="ft-edit-2 font-medium-3 mr-2"></i>
                 </a>
@@ -121,7 +114,302 @@
   </div>
   </div>
   </div>
-  </section>
+  </section> -->
+
+  <!-- Vertical Tabs start -->
+<section id="vertical-tabs">
+  <div class="row">
+    <div class="col-12 mt-3 mb-1">
+      <h4 class="text-uppercase">Page Header</h4>
+    </div>
+  </div>
+  <div class="row match-height">
+    <div class="col-xl-12 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Add Page Headers</h4>
+          <p>Wrap tabs and tab content with <code>.nav-vertical</code> class. To add left navigation use
+            <code>.nav-left</code> class to <code>.nav.nav-tabs</code>.</p>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div class="nav-vertical">
+              <ul class="nav nav-tabs nav-left flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" id="baseVerticalLeft-tab1" data-toggle="tab" aria-controls="tabVerticalLeft1"
+                    href="#tabVerticalLeft1" aria-expanded="true">Home Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab2" data-toggle="tab" aria-controls="tabVerticalLeft2"
+                    href="#tabVerticalLeft2" aria-expanded="false">About Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab3" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Members Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab4" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Event Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab5" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Opportunities Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab6" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Scholarship Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab7" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Commitee Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab8" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Constitution Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab9" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Capacity Building Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab10" data-toggle="tab" aria-controls="tabVerticalLeft3"
+                    href="#tabVerticalLeft3" aria-expanded="false">Contact Page</a>
+                </li>
+              </ul>
+              <div class="tab-content px-1">
+                <div role="tabpanel" class="tab-pane active" id="tabVerticalLeft1" aria-expanded="true" aria-labelledby="baseVerticalLeft-tab1">
+                  
+                    <div class="row">                     
+                      <div class="col-md-12 col-sm-12 ">
+                        <div class="card" style="margin-top: -25px;">
+                          <div class="card-header">
+                            <h4 class="card-title">Home Header View</h4>
+                          </div>
+                          <div class="card-content">
+                            <div class="card-body">
+                              <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                  <!-- <li data-target="#carousel-example-caption" data-slide-to="0" class="active"></li>
+                                  <li data-target="#carousel-example-caption" data-slide-to="1"></li>
+                                  <li data-target="#carousel-example-caption" data-slide-to="2"></li>
+                                  <li data-target="#carousel-example-caption" data-slide-to="1"></li>
+                                  <li data-target="#carousel-example-caption" data-slide-to="2"></li> -->
+
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                  <div  *ngFor="let u of header; let i=index" class="carousel-item {{u.status}}" style="height: 300px;">
+                                    <img src="http://{{url}}/{{u.home_image}}" alt="First slide">
+                                    <div class="carousel-caption">
+                                      <h1>{{u.component1}}</h1>
+                                      <h3>{{u.component2}}</h3>
+                                      <p>{{u.component3}}</p>
+                                      <button type="button" class="btn btn-raised btn-warning btn-min-width" data-toggle="dropdown"
+                                      aria-haspopup="true" aria-expanded="false"><i class="fa fa-pencil"></i>Edit</button> &nbsp;
+                                      <button type="button" class="btn btn-raised btn-danger btn-min-width" data-toggle="dropdown"
+                                      aria-haspopup="true" aria-expanded="false"><i class="fa fa-bin"></i>Delete</button>
+                                    </div>
+                                  </div>                                  
+                                </div>
+                                <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                              <hr><br>
+
+                                          <!-- Button trigger modal -->
+                              <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                              data-backdrop="false" data-target="#primary">
+                              Add Header
+                            </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                  <!-- Basic Carousel end -->
+
+
+                </div>
+                <div class="tab-pane" id="tabVerticalLeft2" aria-labelledby="baseVerticalLeft-tab2">                 
+                  
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">About Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                                <!-- <li data-target="#carousel-example-caption" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="2"></li> -->
+
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{about_header.image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{about_header.title}}</h1>                                   
+                                    <p>{{about_header.content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>
+                              <!-- <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span> -->
+                              <!-- </a> -->
+                            </div>
+                            <hr><br>
+
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" data-target="#primary">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+                <!-- Basic Carousel end -->
+
+
+                </div>
+                <div class="tab-pane" id="tabVerticalLeft3" aria-labelledby="baseVerticalLeft-tab3">
+                 
+                  
+                            
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">About Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                                <!-- <li data-target="#carousel-example-caption" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-caption" data-slide-to="2"></li> -->
+
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{member_header.image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{member_header.title}}</h1>                                   
+                                    <p>{{member_header.content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>
+                              <!-- <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span> -->
+                              <!-- </a> -->
+                            </div>
+                            <hr><br>
+
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" data-target="#primary">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+                <!-- Basic Carousel end -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+                            <!-- Modal -->
+                            <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8"
+                              aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header bg-primary white">
+                                    <h4 class="modal-title" id="myModalLabel8">New Header</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <form class="form" #signupForm=ngForm (ngSubmit)="onSubmit()">
+                                  <div class="modal-body">
+                                    <div class="px-1">
+
+                                      
+                                        <div class="row justify-content-md-center">
+                                          <div class="col-md-12">
+                                            <div class="form-body">
+                                              <div class="form-group">
+                                                <label for="eventInput1">Component 1</label>
+                                                <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.component1" name="component1" required>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="eventInput1">Component 2</label>
+                                                <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.component2" name="component2" required>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="eventInput2">Component 3</label>
+                                              <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form.component3" name="component3" required></textarea>
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Select Image</label>
+                                                <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                            
+                                    
+                            
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                    <button  type="submit" [disabled]="!signupForm.valid" class="btn btn-outline-primary">Add Header</button>
+                                  </div>
+                                </form>
+                                </div>
+                              </div>
+                            </div>
+
+
+  </div>
+</section>
+<!-- Vertical Tabs end -->
+
 
 
 

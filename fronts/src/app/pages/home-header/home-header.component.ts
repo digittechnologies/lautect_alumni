@@ -17,6 +17,10 @@ export class HomeHeaderComponent implements OnInit {
   };
   public error = [];
   url: any;
+  header1: any;
+  header2: any;
+  about_header: any;
+  member_header: any;
 
   constructor(
     private Jarwis: JarwisService,
@@ -68,7 +72,11 @@ uploadFile(event){
   ngOnInit() {
     this.Jarwis.gethomeheader().subscribe(
       data=>{
-      this.header = data; 
+      this.header1 = data; 
+      this.header= this.header1.home;
+      this.about_header= this.header1.headers[5];
+      this.member_header= this.header1.headers[6];
+      console.log(this.about_header);
     //  console.log(this.usercat)
       
       }
