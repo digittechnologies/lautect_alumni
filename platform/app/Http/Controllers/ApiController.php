@@ -548,6 +548,16 @@ class ApiController extends Controller
        
     }
 
+    public function addauth(Request $request)
+    {
+
+// return $request;
+$u=authentication::create($request->all());
+if ($u) {
+    return "true";
+}
+return "false";
+    }
     public function getauth()
     {
         return response()->json(
@@ -555,8 +565,8 @@ class ApiController extends Controller
             [
 
          'authcount' =>authentication::count(),
-        'auth'=>authentication::inRandomOrder()->limit(20000)
-        ->get()
+        'auth'=>authentication::latest()->take(1000)->get()
+        
             ]
         );
        

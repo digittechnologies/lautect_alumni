@@ -1,0 +1,119 @@
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Update Info</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <!-- <mat-icon (click)="onNoClick()">cancel</mat-icon> -->
+  </mat-toolbar>
+</mat-card-header>
+<div class="container">
+<mat-dialog-content class="mat-typography">
+  
+    <form [formGroup]="_userForm" >
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <label> Title</label>
+            <input type="text" formControlName="title" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label> Name</label>
+            <input type="text" formControlName="name" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label> Gender</label>
+            <input type="text" formControlName="gender" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label> Birthplace</label>
+            <input type="text" formControlName="birthplace" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col-md-6">
+            <label>Date of Birth</label>
+            <input type="text" formControlName="dob" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label>Department</label>
+            <input type="text" formControlName="dept" class="form-control">
+          </div>
+        </div>
+      <!-- </div> -->
+        <div class="row">
+            <div class="col-md-6">
+                <label>Address</label><br>                 
+                <input type="text" formControlName="address" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label>Phone Number</label>
+                <input type="text" formControlName="phone" class="form-control">
+              </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+              <label>Biogragh</label><br>
+             
+               
+              <input type="text" formControlName="biograph" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label>Occupation </label>
+              <input type="text" formControlName="occupation" class="form-control">
+
+            </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <label>Facebook</label><br>
+           
+             
+            <input type="text" formControlName="facebook" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label>Instagram </label>
+            <input type="text" formControlName="instagram" class="form-control">
+
+          </div>
+      
+    </div>
+      <div class="row">
+        
+        <div class="form-group col-md-12">
+          <label for="eventInput2">Content</label>
+        <textarea id="complaintinput5" rows="5" class="form-control round"  formControlName="about" ></textarea>
+        </div>
+      
+    </div>
+        <!-- <div class="row">
+          <div class="col-md-6">
+          <button type="submit" class="btn btn-success">
+            <mat-icon>Update</mat-icon>
+          </button>
+          </div>
+        </div> -->
+        
+      </div>
+
+    </form>
+  
+</mat-dialog-content>
+<div class="form-group">
+  <div class="row">
+<div class="form-actions center">
+                    
+  <button   class="btn btn-raised btn-defult mr-1" (click)="onNoClick()">
+    <i class="fa fa-check-square-o"></i>cancel
+  </button>
+
+  <button type="submit" (click)="onSubmit()"  class="btn btn-raised btn-success">
+    <i class="fa fa-check-square-o"></i>Update
+  </button>
+</div>
+</div>
+</div>
+</div>

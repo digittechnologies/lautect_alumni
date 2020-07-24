@@ -187,4 +187,51 @@ export class JarwisService {
   getinterview() {
     return this.http.get(`${this.baseUrl}/getinterview`)
   }
+  userprofile(id:string) {
+
+    return this.http.get(`${this.baseUrl}/userprofile/${id}`,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  userupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/userupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  userdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/userdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  addauth(data) {
+    return this.http.post(`${this.baseUrl}/addauth`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  authupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/authupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  authdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/authdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  authsearch(data) {
+
+    return this.http.post(`${this.baseUrl}/searchauth/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
 }

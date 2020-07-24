@@ -25,8 +25,19 @@ import { SystemCategoryComponent } from './pages/system-category/system-category
 import { PeopleCommiteeComponent } from './pages/people-commitee/people-commitee.component';
 import { NewsComponent } from './pages/news/news.component';
 import { InterviewsComponent } from './pages/interviews/interviews.component';
+import { UserprofileComponent } from './user/userprofile/userprofile.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'search/:search',
+    component: VerificationComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'userprofile/:id',
+    component: UserprofileComponent,
+    canActivate: [AfterLoginService]
+  },
   {
     path: 'interview',
     component: InterviewsComponent,

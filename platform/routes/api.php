@@ -13,8 +13,14 @@ Route::group([
 
     //start auth
     Route::get('getauth', 'ApiController@getauth');
-    //end auth
+    Route::post('addauth', 'ApiController@addauth');
+    Route::post('authupdate', 'UserApiController@updateauth');
+    Route::post('authdelete', 'UserApiController@deleteauth');
 
+    //end auth
+//search
+Route::post('searchauth', 'UserApiController@searchauth');
+//search
     //About
     Route::post('addaboutus', 'ApiController@addaboutus');
     Route::get('getaboutcat', 'ApiController@getaboutcat');
@@ -73,4 +79,9 @@ Route::group([
 
     Route::get('getinterview', 'ApiController@getinter');
     Route::post('addinterview', 'ApiController@addinter');
+
+    //userprofile
+    Route::get('userprofile/{id}', 'UserApiController@userprofile');
+    Route::post('userupdate', 'UserApiController@updateuser');
+    Route::post('userdelete', 'UserApiController@deleteuser');
 });

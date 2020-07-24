@@ -1,0 +1,26 @@
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Delete</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <!-- <mat-icon (click)="onNoClick()">cancel</mat-icon> -->
+  </mat-toolbar>
+</mat-card-header>
+<div class="container">
+<mat-dialog-content >
+  <p>Are you sure you want to delete this list?</p>
+  
+</mat-dialog-content>
+<div class="form-group">
+  <div class="row justify-content-md-center">
+<div class="form-actions center">
+                    
+  <button type="submit" (click)="onSubmit()"  class="btn btn-raised btn-success">
+    <i class="fa fa-check-square-o"></i>Yes
+  </button>
+  <button   class="btn btn-raised btn-defult mr-1" (click)="onNoClick()">
+    <i class="fa fa-check-square-o"></i>No
+  </button>
+</div>
+</div>
+</div>
+</div>
