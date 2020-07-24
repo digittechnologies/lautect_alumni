@@ -7,9 +7,9 @@ import { environment } from '../../environments/environment'
 )
 export class JarwisService {
 
-  private baseUrl= 'https://testenv.digittechnologies.org/lautech/platform/public/api';
+  // private baseUrl= 'https://testenv.digittechnologies.org/lautech/platform/public/api';
 
-    // private baseUrl = 'http://localhost:8000/api';
+    private baseUrl = 'http://localhost:8000/api';
 
     // private baseUrl = environment.baseUrl 
 
