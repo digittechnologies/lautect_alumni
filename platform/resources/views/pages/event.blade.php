@@ -71,12 +71,14 @@
                 <div class="col-lg-12">
                     <div class="all-event-list">
                         <!-- Single Event Start -->
+
+                        @foreach ($event as $e)
                         <div class="single-upcoming-event">
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-lg-4">
                                     <div class="up-event-thumb">
-                                        <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
+                                        <img src="http://{{$settings->url}}/{{$e->event_image}}" class="img-fluid" alt="Upcoming Event">
+                                        <h4 class="up-event-date">It&#x2019;s {{$e->start_date}}</h4>
                                     </div>
                                 </div>
 
@@ -88,8 +90,8 @@
                                                     <div class="event-countdown-counter" data-date="2018/9/10"></div>
                                                     <p>Remaining</p>
                                                 </div>
-                                                <h3><a href="single-event.html">We are going to arrange a get together!</a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim and minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
+                                                <h3><a href="single-event.html">{{$e->subject}}!</a></h3>
+                                                <p>{{$e->content}}</p>
                                                 <a href="single-event.html" class="btn btn-brand btn-brand-dark">join with us</a>
                                             </div>
                                         </div>
@@ -97,94 +99,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Event End -->
+                        @endforeach
 
-                        <!-- Single Event Start -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10"></div>
-                                                    <p>Remaining</p>
-                                                </div>
-                                                <h3><a href="single-event.html">We are going to arrange a get together!</a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim and minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join with us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Event End -->
-
-                        <!-- Single Event Start -->
-                        <div class="single-upcoming-event">
-    <div class="row">
-        <div class="col-lg-5">
-            <div class="up-event-thumb">
-                <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
-            </div>
-        </div>
-
-        <div class="col-lg-7">
-            <div class="display-table">
-                <div class="display-table-cell">
-                    <div class="up-event-text">
-                        <div class="event-countdown">
-                            <div class="event-countdown-counter" data-date="2018/9/10"></div>
-                            <p>Remaining</p>
-                        </div>
-                        <h3><a href="single-event.html">We are going to arrange a get together!</a></h3>
-                        <p>Hello everybody Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim and minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                        <a href="single-event.html" class="btn btn-brand btn-brand-dark">join with us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                        <!-- Single Event End -->
-
-                        <!-- Single Event Start -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10"></div>
-                                                    <p>Remaining</p>
-                                                </div>
-                                                <h3><a href="single-event.html">We are going to arrange a get together!</a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim and minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join with us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Event End -->
+                      
                     </div>
                 </div>
             </div>

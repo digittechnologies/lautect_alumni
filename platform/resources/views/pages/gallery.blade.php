@@ -13,13 +13,13 @@
 
 <!--== Committee Page Content Start ==-->
  <!--== Page Title Area Start ==-->
- <section id="page-title-area">
+ <section id="page-title-area" style="background-image: url('http://{{$settings->url}}/{{$header->image}}');">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 m-auto text-center">
+        <div class="row" > 
+            <div class="col-lg-8 m-auto text-center">           
                 <div class="page-title-content">
-                    <h1 class="h2">Gallery</h1>
-                    <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the need</p>
+                    <h1 class="h2">{{$header->title}}</h1>
+                    <p>{{$header->content}}</p>
                     <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
                 </div>
             </div>
