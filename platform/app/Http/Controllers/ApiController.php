@@ -566,7 +566,8 @@ return "false";
             [
 
          'authcount' =>authentication::count(),
-        'auth'=>authentication::latest()->take(1000)->get()
+        'auth'=>authentication::inRandomOrder()->limit(1000)
+        ->get()
         
             ]
         );
@@ -634,8 +635,8 @@ return "false";
 
         'usercount' =>User::where('user_cat_id','=','1')->count(),
         'user'=>User::join('authentications','users.auth_id','=','authentications.id')
-        ->select('users.*','authentications.matric_no')->where('users.user_cat_id','=','1')->inRandomOrder()->limit(20000)
-        ->get()
+        ->select('users.*','authentications.matric_no')->where('users.user_cat_id','=','1')->latest()->take(1000)->get()
+        
             ]
         );
     }
@@ -647,7 +648,7 @@ return "false";
             [
 
         'usercount' =>User::where('user_cat_id','=','2')->count(),
-        'user'=>User::where('users.user_cat_id','=','2')->inRandomOrder()->limit(20000)
+        'user'=>User::where('users.user_cat_id','=','2')->inRandomOrder()->limit(100)
         ->get()
             ]
         );
