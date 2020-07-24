@@ -31,6 +31,7 @@ export class NewsComponent implements OnInit {
   news: any;
   app: any;
   url: any;
+  event:any;
 
   constructor(
     private Jarwis: JarwisService,
