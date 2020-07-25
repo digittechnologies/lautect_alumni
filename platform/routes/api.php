@@ -41,6 +41,7 @@ Route::group([
 
     Route::get('gethomeheader', 'ApiController@gethomeheader');
     Route::post('addhomeheader', 'ApiController@addhomeheader');
+    Route::post('addheader', 'ApiController@addheader');
 
     Route::get('getevent', 'ApiController@getevent');
     Route::post('addevent', 'ApiController@addevent');

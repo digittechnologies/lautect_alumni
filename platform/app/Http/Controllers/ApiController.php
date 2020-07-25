@@ -414,6 +414,35 @@ class ApiController extends Controller
            return response()->json(['error' => 'Not save'], 200);
             
     }
+
+    public function addheader(Request $request)
+    {
+
+        $datas=$request->formdata;
+        
+        // $request->merge(['title'=>$datas['title']]);
+        // $request->merge(['component'=>$datas['component']]);
+       
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['image'=>$filename]);
+                // $apps->logo = $filename;
+               
+            }
+    //    return $request;
+            $u=home_body::where('home_body.id', '=', $datas['id'])->update($datas);
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+
     public function gethomeheader()
     {
         return response()->json([
