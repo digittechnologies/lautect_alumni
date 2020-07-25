@@ -227,6 +227,14 @@ export class JarwisService {
     }})
 
   }
+
+headerdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/headerdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   authsearch(data) {
 
     return this.http.post(`${this.baseUrl}/searchauth/`,data,{headers:{

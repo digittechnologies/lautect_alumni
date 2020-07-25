@@ -29,7 +29,7 @@ import { UserprofileComponent } from './user/userprofile/userprofile.component';
 
 const appRoutes: Routes = [
   {
-    path: 'search/:search',
+    path: 'search',
     component: VerificationComponent,
     canActivate: [AfterLoginService]
   },

@@ -106,6 +106,16 @@ class UserApiController extends Controller
       return $user;
       
     }
+
+
+    public function deleteheader(Request $request)
+    {
+       
+     $id=$request->id;
+      $header =home_page::where('id',$id)->delete();
+      return $header;
+      
+    }
     /**
      * Display the specified resource.
      *

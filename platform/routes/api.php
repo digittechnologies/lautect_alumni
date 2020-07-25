@@ -47,6 +47,7 @@ Route::post('searchauth', 'UserApiController@searchauth');
 
     Route::get('gethomeheader', 'ApiController@gethomeheader');
     Route::post('addhomeheader', 'ApiController@addhomeheader');
+    Route::post('headerdelete', 'UserApiController@deleteheader');
 
     Route::get('getevent', 'ApiController@getevent');
     Route::post('addevent', 'ApiController@addevent');

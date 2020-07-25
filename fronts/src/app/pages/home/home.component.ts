@@ -81,7 +81,7 @@ this.newcount=this.news.length
         
         }
       )
-
+      // this.router.navigate(['search']);
       
     new home();
     new sidenav();
