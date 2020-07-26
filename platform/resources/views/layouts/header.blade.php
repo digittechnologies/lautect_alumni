@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-7 col-7">
                     <div class="preheader-left">
-                        <a href="mailto:info@construc.com"><strong>Email:</strong>{{ \App\App_setting::select('email1')->first()->email1 }} </a>
-                        <a href="mailto:info@construc.com"><strong>Hotline:</strong>{{ \App\App_setting::select('phone_number')->first()->phone_number }} </a>
+                        <a href="mailto:info@construc.com"><strong>Email:</strong> {{ \App\App_setting::select('email1')->first()->email1 }} </a>
+                        <a href="mailto:info@construc.com"><strong>Hotline:</strong> {{ \App\App_setting::select('phone_number')->first()->phone_number }} </a>
                     </div>
                 </div>
 

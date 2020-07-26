@@ -211,9 +211,9 @@
                                       <h1>{{u.component1}}</h1>
                                       <h3>{{u.component2}}</h3>
                                       <p>{{u.component3}}</p>
-                                      <button type="button" class="btn btn-raised btn-warning btn-min-width" data-toggle="dropdown"
+                                      <button type="button" class="btn btn-raised btn-warning btn-min-width" (click)="oneditheader(u.id)" data-toggle="dropdown"
                                       aria-haspopup="true" aria-expanded="false" data-toggle="modal"
-                                      data-backdrop="false" data-target="#primary"><i class="fa fa-pencil"></i>Edit</button> &nbsp;
+                                      data-backdrop="false" data-target="#updateheader"><i class="fa fa-pencil"></i>Edit</button> &nbsp;
                                       <button type="button" class="btn btn-raised btn-danger btn-min-width" data-toggle="dropdown"
                                       aria-haspopup="true" aria-expanded="false" (click)="deleteheader(u.id)"><i class="fa fa-bin"></i>Delete</button>
                                     </div>
@@ -262,10 +262,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{about_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{about_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{about_header.title}}</h1>                                   
-                                    <p>{{about_header.content}}</p>                                   
+                                    <h1>{{about_title}}</h1>                                   
+                                    <p>{{about_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                             
@@ -273,7 +273,7 @@
                             <hr><br>
 
                                         <!-- Button trigger modal -->
-                            <button type="button" (click)="onheader(about_header.id) -1" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            <button type="button" (click)="onheader(about_id) -1" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
                             data-backdrop="false" data-target="#header">
                             Edit Header
                           </button>
@@ -302,10 +302,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{member_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{member_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{member_header.title}}</h1>                                   
-                                    <p>{{member_header.content}}</p>                                   
+                                    <h1>{{member_title}}</h1>                                   
+                                    <p>{{member_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -313,7 +313,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(member_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(member_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -340,10 +340,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{event_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{event_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{event_header.title}}</h1>                                   
-                                    <p>{{event_header.content}}</p>                                   
+                                    <h1>{{event_title}}</h1>                                   
+                                    <p>{{event_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -351,7 +351,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(event_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(event_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -378,10 +378,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{gallery_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{gallery_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{gallery_header.title}}</h1>                                   
-                                    <p>{{gallery_header.content}}</p>                                   
+                                    <h1>{{gallery_title}}</h1>                                   
+                                    <p>{{gallery_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -389,7 +389,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(gallery_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(gallery_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -416,10 +416,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{job_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{job_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{job_header.title}}</h1>                                   
-                                    <p>{{job_header.content}}</p>                                   
+                                    <h1>{{job_title}}</h1>                                   
+                                    <p>{{job_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -427,7 +427,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(job_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(job_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -454,10 +454,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{scholaship_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{scholaship_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{scholaship_header.title}}</h1>                                   
-                                    <p>{{scholaship_header.content}}</p>                                   
+                                    <h1>{{scholaship_title}}</h1>                                   
+                                    <p>{{scholaship_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -465,7 +465,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(scholaship_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(scholaship_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -492,10 +492,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{committee_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{committee_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{committee_header.title}}</h1>                                   
-                                    <p>{{committee_header.content}}</p>                                   
+                                    <h1>{{committee_title}}</h1>                                   
+                                    <p>{{committee_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -503,7 +503,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(committee_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(committee_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -530,10 +530,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{news_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{news_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{news_header.title}}</h1>                                   
-                                    <p>{{news_header.content}}</p>                                   
+                                    <h1>{{news_title}}</h1>                                   
+                                    <p>{{news_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -541,7 +541,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(news_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(news_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -566,10 +566,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{constitution_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{constitution_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{constitution_header.title}}</h1>                                   
-                                    <p>{{constitution_header.content}}</p>                                   
+                                    <h1>{{constitution_title}}</h1>                                   
+                                    <p>{{constitution_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -577,7 +577,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(constitution_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(constitution_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -604,10 +604,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{contact_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{contact_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{contact_header.title}}</h1>                                   
-                                    <p>{{contact_header.content}}</p>                                   
+                                    <h1>{{contact_title}}</h1>                                   
+                                    <p>{{contact_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -615,7 +615,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(contact_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(contact_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -642,10 +642,10 @@
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{capacity_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{capacity_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{capacity_header.title}}</h1>                                   
-                                    <p>{{capacity_header.content}}</p>                                   
+                                    <h1>{{capacity_title}}</h1>                                   
+                                    <p>{{capacity_content}}</p>                                   
                                   </div>
                                 </div>                                  
                               </div>                           
@@ -653,7 +653,7 @@
                             <hr><br>
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" (click)="onheader(capacity_header.id -1)" data-target="#header">
+                            data-backdrop="false" (click)="onheader(capacity_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -725,6 +725,59 @@
                                 </div>
                               </div>
                             </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade text-left" id="updateheader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8"
+                              aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header bg-primary white">
+                                    <h4 class="modal-title" id="myModalLabel8">Update Header</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <form class="form" #signupForm=ngForm >
+                                  <div class="modal-body">
+                                    <div class="px-1">
+
+                                      
+                                        <div class="row justify-content-md-center">
+                                          <div class="col-md-12">
+                                            <div class="form-body">
+                                              <div class="form-group">
+                                                <label for="eventInput1">Component 1</label>
+                                                <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.component1" name="component1" required>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="eventInput1">Component 2</label>
+                                                <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.component2" name="component2" required>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="eventInput2">Component 3</label>
+                                              <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form.component3" name="component3" required></textarea>
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Select Image</label>
+                                                <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                            
+                                    
+                            
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                    <button  type="submit"  (click)="onupdateSubmit()" class="btn btn-outline-primary">Update Header</button>
+                                  </div>
+                                </form>
+                                </div>
+                              </div>
+                            </div>
+
 
 
                             <!-- Modal -->

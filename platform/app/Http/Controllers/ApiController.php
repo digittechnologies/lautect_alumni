@@ -414,7 +414,34 @@ class ApiController extends Controller
            return response()->json(['error' => 'Not save'], 200);
             
     }
+    public function updatehomeheader(Request $request)
+    {
 
+        $datas=$request->formdata;
+        
+        // $request->merge(['title'=>$datas['title']]);
+        // $request->merge(['component'=>$datas['component']]);
+       
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(450, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['home_image'=>$filename]);
+                $h=home_page::where('id', '=', $datas['id'])->first();
+              $h->home_image = $request->home_image;
+              $h->save();
+            }
+    //    return $request;
+            $u=home_page::where('id', '=', $datas['id'])->update($datas);
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
     public function addheader(Request $request)
     {
 
@@ -427,12 +454,15 @@ class ApiController extends Controller
             if ($request->image){
                 $file=$request->image;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
-                Image::make($file)->resize(300, 300)->save(public_path('/upload/uploads/'.$filename));
+                Image::make($file)->resize(440, 300)->save(public_path('/upload/uploads/'.$filename));
+        
                 $request->merge(['image'=>$filename]);
-                // $apps->logo = $filename;
+                $h=home_body::where('home_body.id', '=', $datas['id'])->first();
                
+                $h->image = $request->image;
+                $h->save();
             }
-    //    return $request;
+    //    return $;
             $u=home_body::where('home_body.id', '=', $datas['id'])->update($datas);
             if ($u) {
                 return response()->json(['success' => 'You have successfully'], 200);

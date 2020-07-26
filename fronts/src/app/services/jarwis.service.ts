@@ -103,7 +103,11 @@ export class JarwisService {
       Authorization:`Bearer ${localStorage.token}`
     }})
   }
-
+  updatehomeheader(data) {
+    return this.http.post(`${this.baseUrl}/updatehomeheader`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
   addheader(data) {
     return this.http.post(`${this.baseUrl}/addheader`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
