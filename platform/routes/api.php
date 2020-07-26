@@ -7,7 +7,7 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+    Route::get('me', 'AuthController@me');
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@process');
 
@@ -47,6 +47,8 @@ Route::post('searchauth', 'UserApiController@searchauth');
 
     Route::get('gethomeheader', 'ApiController@gethomeheader');
     Route::post('addhomeheader', 'ApiController@addhomeheader');
+    Route::post('updatehomeheader', 'ApiController@updatehomeheader');
+    Route::post('addheader', 'ApiController@addheader');
     Route::post('headerdelete', 'UserApiController@deleteheader');
 
     Route::get('getevent', 'ApiController@getevent');

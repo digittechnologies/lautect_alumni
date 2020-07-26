@@ -49,6 +49,9 @@ import { EdituserComponent } from './edit/edituser/edituser.component';
 import { EditcatComponent } from './edit/editcat/editcat.component';
 import { DeletemodalComponent } from './delete/deletemodal/deletemodal.component';
 import { AuthmodelComponent } from './edit/authmodel/authmodel.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { Login2Component } from './components/login2/login2.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 
 export function tokenGetter() {
@@ -85,6 +88,9 @@ export function tokenGetter() {
     EditcatComponent,
     DeletemodalComponent,
     AuthmodelComponent,
+    LandingComponent,
+    Login2Component,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

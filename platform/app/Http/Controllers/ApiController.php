@@ -414,6 +414,61 @@ class ApiController extends Controller
            return response()->json(['error' => 'Not save'], 200);
             
     }
+    public function updatehomeheader(Request $request)
+    {
+
+        $datas=$request->formdata;
+        
+        // $request->merge(['title'=>$datas['title']]);
+        // $request->merge(['component'=>$datas['component']]);
+       
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(450, 300)->save(public_path('/upload/uploads/'.$filename));
+                // $datas->merge(['image'=>$filename]);
+                // $apps->logo = $filename;
+                $datas['home_image'] = $filename;
+            }
+    //    return $request;
+            $u=home_page::where('id', '=', $datas['id'])->update($datas);
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+    public function addheader(Request $request)
+    {
+
+        $datas=$request->formdata;
+        
+        // $request->merge(['title'=>$datas['title']]);
+        // $request->merge(['component'=>$datas['component']]);
+       
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(440, 300)->save(public_path('/upload/uploads/'.$filename));
+                // $datas->merge(['image'=>$filename]);
+                $datas['image'] = $filename;
+               
+            }
+    //    return $;
+            $u=home_body::where('home_body.id', '=', $datas['id'])->update($datas);
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+
     public function gethomeheader()
     {
         return response()->json([

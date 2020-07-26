@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { TokenService } from './services/token.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { MatSnackBar } from '@angular/material';
+import { JarwisService } from './services/jarwis.service';
+   
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +14,7 @@ import { MatSnackBar } from '@angular/material';
 export class AppComponent {
   title = 'app';
   public loggedIn: boolean;
+  usercat: any;
 
   constructor(
     private Auth: AuthService,
@@ -19,6 +22,7 @@ export class AppComponent {
     private Token: TokenService,
     public snackBar: MatSnackBar, 
     private jwtHelper: JwtHelperService,
+    private Jarwis: JarwisService,
   ) { }
 
   ngOnInit() {
@@ -35,11 +39,12 @@ export class AppComponent {
       // token valid
     }
     this.Auth.authStatus.subscribe(value => this.loggedIn = value);
+ 
   }
   logout() {
     // event.preventDefault();
     this.Token.remove();
     this.Auth.changeAuthStatus(false);
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/');
   }
 }

@@ -148,32 +148,40 @@
                     href="#tabVerticalLeft3" aria-expanded="false">Members Page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="baseVerticalLeft-tab4" data-toggle="tab" aria-controls="tabVerticalLeft3"
-                    href="#tabVerticalLeft3" aria-expanded="false">Event Page</a>
+                  <a class="nav-link" id="baseVerticalLeft-tab4" data-toggle="tab" aria-controls="tabVerticalLeft4"
+                    href="#tabVerticalLeft4" aria-expanded="false">Event Page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="baseVerticalLeft-tab5" data-toggle="tab" aria-controls="tabVerticalLeft3"
-                    href="#tabVerticalLeft3" aria-expanded="false">Opportunities Page</a>
+                  <a class="nav-link" id="baseVerticalLeft-tab11" data-toggle="tab" aria-controls="tabVerticalLeft11"
+                    href="#tabVerticalLeft11" aria-expanded="false">Gallery Page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="baseVerticalLeft-tab6" data-toggle="tab" aria-controls="tabVerticalLeft3"
-                    href="#tabVerticalLeft3" aria-expanded="false">Scholarship Page</a>
+                  <a class="nav-link" id="baseVerticalLeft-tab5" data-toggle="tab" aria-controls="tabVerticalLeft5"
+                    href="#tabVerticalLeft5" aria-expanded="false">Opportunities Page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="baseVerticalLeft-tab7" data-toggle="tab" aria-controls="tabVerticalLeft3"
-                    href="#tabVerticalLeft3" aria-expanded="false">Commitee Page</a>
+                  <a class="nav-link" id="baseVerticalLeft-tab6" data-toggle="tab" aria-controls="tabVerticalLeft6"
+                    href="#tabVerticalLeft6" aria-expanded="false">Scholarship Page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="baseVerticalLeft-tab8" data-toggle="tab" aria-controls="tabVerticalLeft3"
-                    href="#tabVerticalLeft3" aria-expanded="false">Constitution Page</a>
+                  <a class="nav-link" id="baseVerticalLeft-tab7" data-toggle="tab" aria-controls="tabVerticalLeft7"
+                    href="#tabVerticalLeft7" aria-expanded="false">Commitee Page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="baseVerticalLeft-tab9" data-toggle="tab" aria-controls="tabVerticalLeft3"
-                    href="#tabVerticalLeft3" aria-expanded="false">Capacity Building Page</a>
+                  <a class="nav-link" id="baseVerticalLeft-tab12" data-toggle="tab" aria-controls="tabVerticalLeft12"
+                    href="#tabVerticalLeft12" aria-expanded="false">News Page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="baseVerticalLeft-tab10" data-toggle="tab" aria-controls="tabVerticalLeft3"
-                    href="#tabVerticalLeft3" aria-expanded="false">Contact Page</a>
+                  <a class="nav-link" id="baseVerticalLeft-tab8" data-toggle="tab" aria-controls="tabVerticalLeft8"
+                    href="#tabVerticalLeft8" aria-expanded="false">Constitution Page</a>
+                </li>               
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab9" data-toggle="tab" aria-controls="tabVerticalLeft9"
+                    href="#tabVerticalLeft9" aria-expanded="false">Capacity Building Page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="baseVerticalLeft-tab10" data-toggle="tab" aria-controls="tabVerticalLeft10"
+                    href="#tabVerticalLeft10" aria-expanded="false">Contact Page</a>
                 </li>
               </ul>
               <div class="tab-content px-1">
@@ -203,9 +211,9 @@
                                       <h1>{{u.component1}}</h1>
                                       <h3>{{u.component2}}</h3>
                                       <p>{{u.component3}}</p>
-                                      <button type="button" class="btn btn-raised btn-warning btn-min-width" data-toggle="dropdown"
+                                      <button type="button" class="btn btn-raised btn-warning btn-min-width" (click)="oneditheader(u.id)" data-toggle="dropdown"
                                       aria-haspopup="true" aria-expanded="false" data-toggle="modal"
-                                      data-backdrop="false" data-target="#primary"><i class="fa fa-pencil"></i>Edit</button> &nbsp;
+                                      data-backdrop="false" data-target="#updateheader"><i class="fa fa-pencil"></i>Edit</button> &nbsp;
                                       <button type="button" class="btn btn-raised btn-danger btn-min-width" data-toggle="dropdown"
                                       aria-haspopup="true" aria-expanded="false" (click)="deleteheader(u.id)"><i class="fa fa-bin"></i>Delete</button>
                                     </div>
@@ -249,36 +257,24 @@
                           <div class="card-body">
                             <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
                               <ol class="carousel-indicators">
-                                <!-- <li data-target="#carousel-example-caption" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="2"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="2"></li> -->
+                    
 
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{about_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{about_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{about_header.title}}</h1>                                   
-                                    <p>{{about_header.content}}</p>                                   
+                                    <h1>{{about_title}}</h1>                                   
+                                    <p>{{about_content}}</p>                                   
                                   </div>
                                 </div>                                  
-                              </div>
-                              <!-- <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                              </a>
-                              <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span> -->
-                              <!-- </a> -->
+                              </div>                             
                             </div>
                             <hr><br>
 
                                         <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" data-target="#primary">
+                            <button type="button" (click)="onheader(about_id) -1" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -291,50 +287,33 @@
 
 
                 </div>
-                <div class="tab-pane" id="tabVerticalLeft3" aria-labelledby="baseVerticalLeft-tab3">
-                 
-                  
-                            
+                <div class="tab-pane" id="tabVerticalLeft3" aria-labelledby="baseVerticalLeft-tab3">                   
                   <div class="row">                     
                     <div class="col-md-12 col-sm-12 ">
                       <div class="card" style="margin-top: -25px;">
                         <div class="card-header">
-                          <h4 class="card-title">About Header View</h4>
+                          <h4 class="card-title">Member Header View</h4>
                         </div>
                         <div class="card-content">
                           <div class="card-body">
                             <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
                               <ol class="carousel-indicators">
-                                <!-- <li data-target="#carousel-example-caption" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="2"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-caption" data-slide-to="2"></li> -->
-
+                               
                               </ol>
                               <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="height: 300px;">
-                                  <img src="http://{{url}}/{{member_header.image}}" alt="First slide">
+                                  <img src="http://{{url}}/{{member_image}}" alt="First slide">
                                   <div class="carousel-caption">
-                                    <h1>{{member_header.title}}</h1>                                   
-                                    <p>{{member_header.content}}</p>                                   
+                                    <h1>{{member_title}}</h1>                                   
+                                    <p>{{member_content}}</p>                                   
                                   </div>
                                 </div>                                  
-                              </div>
-                              <!-- <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                              </a>
-                              <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span> -->
-                              <!-- </a> -->
+                              </div>                           
                             </div>
                             <hr><br>
-
                                         <!-- Button trigger modal -->
                             <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
-                            data-backdrop="false" data-target="#primary">
+                            data-backdrop="false" (click)="onheader(member_id -1)" data-target="#header">
                             Edit Header
                           </button>
                           </div>
@@ -342,10 +321,351 @@
                       </div>
                     </div>
                   </div>
-            
-                <!-- Basic Carousel end -->
-
                 </div>
+
+                <!-- Events Header -->
+
+                <div class="tab-pane" id="tabVerticalLeft4" aria-labelledby="baseVerticalLeft-tab4">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Event Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{event_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{event_title}}</h1>                                   
+                                    <p>{{event_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(event_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <!-- Gallery Header -->
+
+                 <div class="tab-pane" id="tabVerticalLeft11" aria-labelledby="baseVerticalLeft-tab11">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Gallery Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{gallery_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{gallery_title}}</h1>                                   
+                                    <p>{{gallery_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(gallery_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                
+                 <!-- job Header -->
+
+                 <div class="tab-pane" id="tabVerticalLeft5" aria-labelledby="baseVerticalLeft-tab5">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Opportunity Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{job_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{job_title}}</h1>                                   
+                                    <p>{{job_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(job_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- scholaship Header -->
+
+                <div class="tab-pane" id="tabVerticalLeft6" aria-labelledby="baseVerticalLeft-tab6">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Scholarship Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{scholaship_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{scholaship_title}}</h1>                                   
+                                    <p>{{scholaship_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(scholaship_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- committee Header -->
+
+                <div class="tab-pane" id="tabVerticalLeft7" aria-labelledby="baseVerticalLeft-tab7">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Committee Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{committee_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{committee_title}}</h1>                                   
+                                    <p>{{committee_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(committee_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- News Header -->
+
+                <div class="tab-pane" id="tabVerticalLeft12" aria-labelledby="baseVerticalLeft-tab12">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">News Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{news_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{news_title}}</h1>                                   
+                                    <p>{{news_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(news_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="tabVerticalLeft8" aria-labelledby="baseVerticalLeft-tab8">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Constitution Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{constitution_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{constitution_title}}</h1>                                   
+                                    <p>{{constitution_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(constitution_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Constitution Header -->
+
+                <div class="tab-pane" id="tabVerticalLeft10" aria-labelledby="baseVerticalLeft-tab10">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Contact Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{contact_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{contact_title}}</h1>                                   
+                                    <p>{{contact_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(contact_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capacity Header -->
+
+                <div class="tab-pane" id="tabVerticalLeft9" aria-labelledby="baseVerticalLeft-tab9">                   
+                  <div class="row">                     
+                    <div class="col-md-12 col-sm-12 ">
+                      <div class="card" style="margin-top: -25px;">
+                        <div class="card-header">
+                          <h4 class="card-title">Capacity Header View</h4>
+                        </div>
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                               
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" style="height: 300px;">
+                                  <img src="http://{{url}}/{{capacity_image}}" alt="First slide">
+                                  <div class="carousel-caption">
+                                    <h1>{{capacity_title}}</h1>                                   
+                                    <p>{{capacity_content}}</p>                                   
+                                  </div>
+                                </div>                                  
+                              </div>                           
+                            </div>
+                            <hr><br>
+                                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-block btn-lg" data-toggle="modal"
+                            data-backdrop="false" (click)="onheader(capacity_id -1)" data-target="#header">
+                            Edit Header
+                          </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
               </div>
             </div>
           </div>
@@ -405,6 +725,109 @@
                                 </div>
                               </div>
                             </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade text-left" id="updateheader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8"
+                              aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header bg-primary white">
+                                    <h4 class="modal-title" id="myModalLabel8">Update Header</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <form class="form" #signupForm=ngForm >
+                                  <div class="modal-body">
+                                    <div class="px-1">
+
+                                      
+                                        <div class="row justify-content-md-center">
+                                          <div class="col-md-12">
+                                            <div class="form-body">
+                                              <div class="form-group">
+                                                <label for="eventInput1">Component 1</label>
+                                                <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.component1" name="component1" required>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="eventInput1">Component 2</label>
+                                                <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form.component2" name="component2" required>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="eventInput2">Component 3</label>
+                                              <textarea id="complaintinput5" rows="5" class="form-control round"  [(ngModel)]="form.component3" name="component3" required></textarea>
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Select Image</label>
+                                                <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                            
+                                    
+                            
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                    <button  type="submit"  (click)="onupdateSubmit()" class="btn btn-outline-primary">Update Header</button>
+                                  </div>
+                                </form>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+                            <!-- Modal -->
+                            <div class="modal fade text-left" id="header" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header bg-primary white">
+                                  <h4 class="modal-title" id="myModalLabel8">New Header</h4>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <form class="form" #signupForm=ngForm (ngSubmit)="onUpdate()">
+                                <div class="modal-body">
+                                  <div class="px-1">
+
+                                    
+                                      <div class="row justify-content-md-center">
+                                        <div class="col-md-12">
+                                          <div class="form-body">
+                                            <div class="form-group">
+                                              <label for="eventInput1">Title</label>
+                                              <input type="text" id="eventInput1" class="form-control"  [(ngModel)]="form2.title" name="title" required>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="eventInput1">Component</label>
+                                              <textarea id="eventInput1" class="form-control" rows="4" [(ngModel)]="form2.content" name="content" required></textarea>
+                                            </div>
+                                      
+                                            <div class="form-group">
+                                              <label>Select Image</label>
+                                              <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                          
+                                  
+                          
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                                  <button  type="submit" [disabled]="!signupForm.valid" class="btn btn-outline-primary">Add Header</button>
+                                </div>
+                              </form>
+                              </div>
+                            </div>
+                          </div>
 
 
   </div>

@@ -36,47 +36,6 @@
             </div>
         </div>
         @endforeach
-        <!-- Single Slide Item End -->
-
-        <!-- Single Slide Item Start -->
-        <!-- <div class="single-slide-wrap slide-bg-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="slider-content">
-                            <h2>We Are Not Proud</h2>
-                            <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the need (academic, relocation, career, projects, mentorship, etc. you can ask the community and get responses in three.</p>
-                            <div class="slider-btn">
-                                <a href="#" class="btn btn-brand">our mission</a>
-                                <a href="#" class="btn btn-brand-rev">our story</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Single Slide Item End -->
-
-        <!-- Single Slide Item Start -->
-        <!-- <div class="single-slide-wrap slide-bg-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="slider-content">
-                            <h2>Why Proud for u</h2>
-                            <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the need (academic, relocation, career, projects, mentorship, etc. you can ask the community and get responses in three.</p>
-                            <div class="slider-btn">
-                                <a href="#" class="btn btn-brand">our mission</a>
-                                <a href="#" class="btn btn-brand-rev">our story</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Single Slide Item End -->
     </div>
 
     <!-- Social Icons Area Start -->
@@ -158,7 +117,13 @@
                         <p style="white-space: pre-line">{{$president->content}}</p>
                         <!-- <p>{{$president->paragraph_2}}</p>
                         <p>{{$president->paragraph_3}}</p> -->
-                        <a href="{{url('about/')}}" class="btn btn-brand about-btn">More About Us</a>
+                        <div class="section-title text-center text-lg-left">
+                        <br>
+                        <h6>{{$president->content2}}</h6>
+                        <h5>{{$president->content3}}</h5>
+                        </div>
+                        
+                        <a href="{{url('about/')}}" class="btn btn-brand about-btn">More About Us</a> 
                     </div>
                 </div>
             </div>
