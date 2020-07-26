@@ -47,11 +47,8 @@ Route::post('searchauth', 'UserApiController@searchauth');
 
     Route::get('gethomeheader', 'ApiController@gethomeheader');
     Route::post('addhomeheader', 'ApiController@addhomeheader');
-<<<<<<< HEAD
     Route::post('addheader', 'ApiController@addheader');
-=======
     Route::post('headerdelete', 'UserApiController@deleteheader');
->>>>>>> 79394684f4c0a43968ca9af662a95764bcc5e4e5
 
     Route::get('getevent', 'ApiController@getevent');
     Route::post('addevent', 'ApiController@addevent');
