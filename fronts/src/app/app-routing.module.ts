@@ -30,8 +30,11 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { Login2Component } from './components/login2/login2.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
+
 const appRoutes: Routes = [
-  {path: '', 
+
+  {path: '',
+  
     component: LandingComponent,
     canActivate: [BeforeLoginService] 
   },
@@ -43,6 +46,16 @@ const appRoutes: Routes = [
     path: 'login',
     component: LoginComponent,
     canActivate: [BeforeLoginService]
+  },
+  {
+    path: '',
+    component: ProfileComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'profile/:id',
+    component: ProfileComponent,
+    canActivate: [AfterLoginService]
   },
   {
     path: 'memberlogin',
@@ -125,11 +138,7 @@ const appRoutes: Routes = [
     component: HomeComponent,
     canActivate: [AfterLoginService]
   },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AfterLoginService]
-  },
+
   {
     path: 'request-password-reset',
     component: RequestResetComponent,

@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit {
     // this.Jarwis.cat(data.userCategory);  
 
     if (data.userCategory == 1) {
-      this.router.navigateByUrl('/profile');
+      this.router.navigateByUrl('/profile/'+data.id+'');
       
     } if(data.userCategory == 2){
       this.router.navigateByUrl('/home');
 
     } else {
-       // this.router.navigateByUrl('/home');      
+      //  this.router.navigateByUrl('/home');      
     }
     
    

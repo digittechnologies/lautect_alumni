@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   public loggedIn: boolean;
   usercat: any;
   uCat: any;
+  id: any;
 
   constructor(
     private Auth: AuthService,
@@ -27,7 +28,8 @@ export class NavbarComponent implements OnInit {
     this.Jarwis.me().subscribe(
       data=>{
         this.usercat = data; 
-        this.uCat=this.usercat.user_cat_id;   
+        this.uCat=this.usercat.user_cat_id;  
+        this.id=this.usercat.id; 
         }
     );
   }

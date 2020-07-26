@@ -9,6 +9,8 @@ use App\home_page;
 use App\event_tb;
 use App\about;
 use App\home_body;
+use App\people_commitee;
+use App\interview;
 
 class AboutController extends Controller
 {
@@ -27,9 +29,14 @@ class AboutController extends Controller
     $header =home_body::select('home_body.*')
                      ->where('home_body.id', '=', 6)
                      ->first();
-                     
-   
+    $committee =people_commitee::select('people_commitees.*')
+                     ->where('people_commitees.category_id', '=', 1)
+                     ->get();  
+    $interview =interview::select('interviews.*')                  
+                     ->get();  
  
-     return view('about',['settings'=>$settings[0], 'about'=> $about, 'header'=> $header]);
+     return view('about',['settings'=>$settings[0], 'about'=> $about, 'header'=> $header, 'committee'=>$committee, 'interview'=>$interview]);
+
+
     }
 }
