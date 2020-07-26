@@ -39,7 +39,7 @@
            
            <tr *ngFor="let u of user | paginate: {itemsPerPage: 50, currentPage: p} ; let i=index">               
              <td>{{i + 1}}</td>
-             <td><a href="http://{{url}}/{{u.user_image}}"></a>
+             <td>
              <img src="http://{{url}}/{{u.user_image}}" class="rounded" style="width: 50px;height: 40px;">
              </td>
             <td>{{u.name}}</td>
@@ -50,13 +50,13 @@
               <td>{{u.created_at}}</td>
               <td>{{u.updated_at}}</td>
             <td>
-              <a class="info p-0" data-original-title="" title="">
+              <a class="info p-0" data-original-title="" title="" (click)="userprofile(u.id)">
                 <i class="ft-user font-medium-3 mr-2"></i>
               </a>
-              <a class="success p-0" data-original-title="" title="">
+              <a class="success p-0" data-original-title="" title="" (click)="edituser(u.id)">
                 <i class="ft-edit-2 font-medium-3 mr-2"></i>
               </a>
-              <a class="danger p-0" data-original-title="" title="">
+              <a class="danger p-0" data-original-title="" title="" (click)="deleteuser(u.id)">
                 <i class="ft-x font-medium-3 mr-2"></i>
               </a>
             </td>

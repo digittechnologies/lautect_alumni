@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { environment } from '../../environments/environment'
 @Injectable(
   {
@@ -13,14 +14,25 @@ export class JarwisService {
 
     // private baseUrl = environment.baseUrl 
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
  
   signup(data) {
     return this.http.post(`${this.baseUrl}/signup`, data)
   }
 
+  cat(data) {
+    // alert(data);
+    this.router.navigateByUrl('/nav');
+  }
+
   login(data) {
     return this.http.post(`${this.baseUrl}/login`, data)
+  }
+
+  me() {
+    return this.http.get(`${this.baseUrl}/me`,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
   }
 
   sendPasswordResetLink(data) {
@@ -194,5 +206,52 @@ export class JarwisService {
   }
   getinterview() {
     return this.http.get(`${this.baseUrl}/getinterview`)
+  }
+  userprofile(id:string) {
+
+    return this.http.get(`${this.baseUrl}/userprofile/${id}`,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  userupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/userupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  userdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/userdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  addauth(data) {
+    return this.http.post(`${this.baseUrl}/addauth`, data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+  }
+  authupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/authupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  authdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/authdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  authsearch(data) {
+
+    return this.http.post(`${this.baseUrl}/searchauth/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
   }
 }

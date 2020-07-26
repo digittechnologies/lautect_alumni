@@ -25,8 +25,40 @@ import { SystemCategoryComponent } from './pages/system-category/system-category
 import { PeopleCommiteeComponent } from './pages/people-commitee/people-commitee.component';
 import { NewsComponent } from './pages/news/news.component';
 import { InterviewsComponent } from './pages/interviews/interviews.component';
+import { UserprofileComponent } from './user/userprofile/userprofile.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { Login2Component } from './components/login2/login2.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 const appRoutes: Routes = [
+  {path: '', 
+    component: LandingComponent,
+    canActivate: [BeforeLoginService] 
+  },
+  {path: 'nav', 
+    component: NavbarComponent,
+    canActivate: [BeforeLoginService] 
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'memberlogin',
+    component: Login2Component,
+    canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'search/:search',
+    component: VerificationComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'userprofile/:id',
+    component: UserprofileComponent,
+    canActivate: [AfterLoginService]
+  },
   {
     path: 'interview',
     component: InterviewsComponent,
@@ -72,12 +104,7 @@ const appRoutes: Routes = [
     component: OpportunitiesComponent,
     canActivate: [AfterLoginService]
   },
-
-  {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [BeforeLoginService]
-  },
+ 
   {
     path: 'signup',
     component: SignupComponent,

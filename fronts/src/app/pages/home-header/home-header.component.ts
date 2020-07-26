@@ -72,7 +72,7 @@ uploadFile(event){
   onheader(id){
     this.form2.title= this.header1.headers[id].title;
     this.form2.content= this.header1.headers[id].content;
-    this.form2.id=id;     
+    this.form2.id= this.header1.headers[id].id;
   }
 
   onUpdate() {
