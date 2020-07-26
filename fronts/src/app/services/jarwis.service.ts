@@ -20,11 +20,6 @@ export class JarwisService {
     return this.http.post(`${this.baseUrl}/signup`, data)
   }
 
-  cat(data) {
-    // alert(data);
-    this.router.navigateByUrl('/nav');
-  }
-
   login(data) {
     return this.http.post(`${this.baseUrl}/login`, data)
   }

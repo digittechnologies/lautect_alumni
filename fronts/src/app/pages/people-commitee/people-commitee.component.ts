@@ -46,16 +46,16 @@ uploadFile(event){
   reader.readAsDataURL(files);
 }
   onSubmit() {
-    if (typeof this.image === 'undefined') {
-      let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
-        duration: 3000
-      }) 
-    }else{
+    // if (typeof this.image === 'undefined') {
+    //   let snackBarRef = this.snackBar.open(" File are required", 'Dismiss', {
+    //     duration: 3000
+    //   }) 
+    // }else{
       this.Jarwis.addpeople({formdata:this.form,image:this.image}).subscribe(
         data => this.handleResponse(data),
         error => this.handleError(error)
       );
-    }
+    // }
     
   }
  
