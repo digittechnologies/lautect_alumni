@@ -12,14 +12,14 @@
     <div class="col-5">
       <div class="align-self-start halfway-fab pl-3 pt-2">
         <div class="text-left">
-          <h3 class="card-title white">Jose Diaz</h3>
+          <h3 class="card-title white">{{name}}</h3>
         </div>
       </div>
     </div>
     <div class="col-2">
       <div class="align-self-center halfway-fab text-center">
         <a class="profile-image">
-          <img src="assets/img/portrait/avatars/avatar-08.png" class="rounded-circle img-border gradient-summer width-100"
+          <img src="http://{{url}}/{{user_image}}" class="rounded-circle img-border gradient-summer width-100"
             alt="Card image">
         </a>
       </div>
@@ -55,8 +55,8 @@
         </ul>
       </div>
       <div class="col-lg-2 col-md-2 text-center">
-        <span class="font-medium-2 text-uppercase">Jose Diaz</span>
-        <p class="grey font-small-2">Ninja Developer</p>
+        <span class="font-medium-2 text-uppercase">{{title}} {{fname}}</span>
+        <p class="grey font-small-2">{{dept}}</p>
       </div>
       <div class="col-lg-5 col-md-5">
         <ul class="profile-menu no-list-style">
@@ -92,13 +92,8 @@
   <div class="card-content">
     <div class="card-body">
       <div class="mb-3">
-        <span class="text-bold-500 primary">About Me:</span>
-        <span class="d-block overflow-hidden">Hi, I’m Jose, I’m 29 and I work as a Ninja Developer for the
-          “PIXINVENT” Creative Studio. In my research, I follow the flow of early medieval slavery from viking
-          raids in the west, through the booming ports of the Scandinavian north, and out into the Islamic world.
-          Reading texts against the grain and seeing artifacts as traces of the past can make their lives once
-          again visible to us today. This website documents my efforts to do just that, and I hope it will prove
-          a resource and an inspiration for others in similar pursuits.
+        <span class="text-bold-500 primary">About {{name}}:</span>
+        <span class="d-block overflow-hidden" style="white-space: pre-line;">{{about}}
         </span>
       </div>
       <hr>
@@ -107,15 +102,15 @@
           <ul class="no-list-style">
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="icon-present font-small-3"></i> Birthday:</a></span>
-              <span class="d-block overflow-hidden">June 10th, 1988</span>
+              <span class="d-block overflow-hidden">{{dob}}</span>
             </li>
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-map-pin font-small-3"></i> Birthplace:</a></span>
-              <span class="d-block overflow-hidden">New Jersey, USA</span>
+              <span class="d-block overflow-hidden">{{birthplace}}</span>
             </li>
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-globe font-small-3"></i> Lives in:</a></span>
-              <span class="d-block overflow-hidden">Denver, USA</span>
+              <span class="d-block overflow-hidden">{{address}}</span>
             </li>
           </ul>
         </div>
@@ -123,15 +118,15 @@
           <ul class="no-list-style">
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-user font-small-3"></i> Gender:</a></span>
-              <span class="d-block overflow-hidden">Male</span>
+              <span class="d-block overflow-hidden">{{gender}}</span>
             </li>
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-mail font-small-3"></i> Email:</a></span>
-              <a class="d-block overflow-hidden">jose@yourmail.com</a>
+              <a class="d-block overflow-hidden">{{email}}</a>
             </li>
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-monitor font-small-3"></i> Website:</a></span>
-              <a class="d-block overflow-hidden">pixinvent.com</a>
+              <a class="d-block overflow-hidden">{{website}}</a>
             </li>
           </ul>
         </div>
@@ -139,15 +134,15 @@
           <ul class="no-list-style">
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-smartphone font-small-3"></i> Phone Number:</a></span>
-              <span class="d-block overflow-hidden">(012) 345 - 678 - 9910</span>
+              <span class="d-block overflow-hidden">{{phone}}</span>
             </li>
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-briefcase font-small-3"></i> Occupation:</a></span>
-              <span class="d-block overflow-hidden">Ninja Developer</span>
+              <span class="d-block overflow-hidden">{{occupation}}</span>
             </li>
             <li class="mb-2">
               <span class="text-bold-500 primary"><a><i class="ft-book font-small-3"></i> Joined:</a></span>
-              <span class="d-block overflow-hidden">April 1st, 2012</span>
+              <span class="d-block overflow-hidden">{{created_at}}</span>
             </li>
           </ul>
         </div>
@@ -155,13 +150,7 @@
       <hr>
       <div class="mt-3">
         <span class="text-bold-500 primary">Hobbies:</span>
-        <span class="d-block overflow-hidden">I like to ride the cycle to work, swimming, listning music and
-          working out. I also like reading magazines, go to museums, watching good movies and eat spicy food
-          while
-          it’s raining outside.Twin siblings Dipper and Mabel Pines spend the summer at their uncle's tourist
-          trap
-          in the enigmatic town of Gravity Falls.A mysterious Hollywood stuntman and mechanic moonlights as a
-          getaway driver.Scuba Diving, Skiing, Surfing, Photography, Long drive.
+        <span class="d-block overflow-hidden">{{hobbies}}
         </span>
       </div>
       <div class="mt-2 overflow-hidden">
@@ -695,11 +684,7 @@
   </div>
   <!-- END : End Main Content-->
 
-  <!-- BEGIN : Footer-->
-  <footer class="footer footer-static footer-light">
-    <p class="clearfix text-muted text-sm-center px-2"><span>Copyright  &copy; 2019 <a href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank" class="text-bold-800 primary darken-2">PIXINVENT </a>, All rights reserved. </span></p>
-  </footer>
-  <!-- End : Footer-->
+  
 
 </div>
-<!-- ////////////////////////////////////////////////////////////////////////////-->
+
