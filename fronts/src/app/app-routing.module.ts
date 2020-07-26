@@ -35,7 +35,7 @@ const appRoutes: Routes = [
 
   {path: '',
   
-    component: LandingComponent,
+    component: LoginComponent,
     canActivate: [BeforeLoginService] 
   },
   {path: 'nav', 

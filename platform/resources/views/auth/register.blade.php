@@ -31,7 +31,7 @@
                                     <div class="row">
                                         
                                         <!-- Signin Area Content Start -->
-                                        <div class="col-lg-4 col-md-6 text-center">
+                                        <!-- <div class="col-lg-4 col-md-6 text-center">
                                             <div class="display-table">
                                                 <div class="display-table-cell">
                                                     <div class="signin-area-wrap">
@@ -47,7 +47,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- Signin Area Content End -->
 
                                         <!-- Regsiter Form Area Start -->

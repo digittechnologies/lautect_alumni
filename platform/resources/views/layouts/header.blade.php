@@ -16,7 +16,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a title="Login" class="btn-auth btn-auth-rev" href="{{ route('login') }}">Already A Member</a>
+                        <a title="Login" class="btn-auth btn-auth-rev" href="http://localhost:4200/" target="_blank">Already A Member</a>
                         <a title="Register" class="btn-auth btn-auth" href="{{ route('register') }}">Be a Member</a>
                     @endauth
                 </div>
