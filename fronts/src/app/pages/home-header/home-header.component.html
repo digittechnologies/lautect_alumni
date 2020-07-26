@@ -212,9 +212,10 @@
                                       <h3>{{u.component2}}</h3>
                                       <p>{{u.component3}}</p>
                                       <button type="button" class="btn btn-raised btn-warning btn-min-width" data-toggle="dropdown"
-                                      aria-haspopup="true" aria-expanded="false"><i class="fa fa-pencil"></i>Edit</button> &nbsp;
+                                      aria-haspopup="true" aria-expanded="false" data-toggle="modal"
+                                      data-backdrop="false" data-target="#primary"><i class="fa fa-pencil"></i>Edit</button> &nbsp;
                                       <button type="button" class="btn btn-raised btn-danger btn-min-width" data-toggle="dropdown"
-                                      aria-haspopup="true" aria-expanded="false"><i class="fa fa-bin"></i>Delete</button>
+                                      aria-haspopup="true" aria-expanded="false" (click)="deleteheader(u.id)"><i class="fa fa-bin"></i>Delete</button>
                                     </div>
                                   </div>                                  
                                 </div>

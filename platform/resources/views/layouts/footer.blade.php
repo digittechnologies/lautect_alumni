@@ -9,9 +9,10 @@
                     <div class="single-widget-wrap">
                         <div class="widgei-body">
                             <div class="footer-about">
-                                <img src="assets/img/logo.png" alt="Logo" class="img-fluid">
+                                {{-- <img src="assets/img/logo.png" alt="Logo" class="img-fluid"> --}}
+                            <img src="http://{{\App\App_setting::select('url')->first()->url}}/{{\App\App_setting::select('logo')->first()->logo}} " style=" height:150px;width:350px " alt="Logo" class="img-fluid">
                                 <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod tempor incidunt ut  et do maga aliqua enim ad minim.</p>
-                                <a href="#">Phone: +8745 44 5444</a> <a href="#">Fax: +88474 156 362</a> <br> <a href="#">Email: demoemail@demo.com</a>
+                                <a >Phone: {{ \App\App_setting::select('phone_number')->first()->phone_number }}</a>  <br> <a >Email: {{ \App\App_setting::select('email1')->first()->email1 }}</a>
                             </div>
                         </div>
                     </div>
@@ -31,10 +32,10 @@
                                 </form>
                             </div>
                             <div class="footer-social-icons">
-                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                <a href="{{ \App\App_setting::select('facebook')->first()->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="{{ \App\App_setting::select('twitter')->first()->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="{{ \App\App_setting::select('linkedin')->first()->linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                <a href="{{ \App\App_setting::select('instagram')->first()->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>

@@ -50,7 +50,7 @@ const appRoutes: Routes = [
     canActivate: [BeforeLoginService]
   },
   {
-    path: 'search/:search',
+    path: 'search',
     component: VerificationComponent,
     canActivate: [AfterLoginService]
   },
