@@ -17,13 +17,12 @@ export class HomeHeaderComponent implements OnInit {
     component2: null,
     component3:null,
     id:null,
-    home_image:null
   };
   public form2 = {
     title: null,
     content: null,
     id:null,
-    image:null
+    
   };
 
   public error = [];
@@ -157,7 +156,6 @@ uploadFile(event){
     }) 
   }
   onUpdate() {
-    
     this.Jarwis.addheader({formdata:this.form2,image:this.image}).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error)

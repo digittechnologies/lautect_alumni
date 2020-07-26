@@ -427,9 +427,10 @@ class ApiController extends Controller
                 $file=$request->image;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
                 Image::make($file)->resize(450, 300)->save(public_path('/upload/uploads/'.$filename));
-                // $datas->merge(['image'=>$filename]);
-                // $apps->logo = $filename;
-                $datas['home_image'] = $filename;
+                $request->merge(['home_image'=>$filename]);
+                $h=home_page::where('id', '=', $datas['id'])->first();
+              $h->home_image = $request->home_image;
+              $h->save();
             }
     //    return $request;
             $u=home_page::where('id', '=', $datas['id'])->update($datas);
@@ -454,9 +455,12 @@ class ApiController extends Controller
                 $file=$request->image;
                 $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
                 Image::make($file)->resize(440, 300)->save(public_path('/upload/uploads/'.$filename));
-                // $datas->merge(['image'=>$filename]);
-                $datas['image'] = $filename;
+        
+                $request->merge(['image'=>$filename]);
+                $h=home_body::where('home_body.id', '=', $datas['id'])->first();
                
+                $h->image = $request->image;
+                $h->save();
             }
     //    return $;
             $u=home_body::where('home_body.id', '=', $datas['id'])->update($datas);
