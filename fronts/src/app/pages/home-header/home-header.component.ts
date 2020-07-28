@@ -202,6 +202,7 @@ uploadFile(event){
                 let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
                   duration: 2000
                 }) 
+                this.ngOnInit()
               }
              
             },
@@ -212,9 +213,9 @@ uploadFile(event){
             }
             );
           // console.log(result)
-           this.ngOnInit()
+           
          }
-         this.ngOnInit()
+       
         });
       }
   ngOnInit() {

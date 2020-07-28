@@ -108,20 +108,25 @@ user:any;
      }else{
       this.Jarwis.userupdate(result).subscribe(
         data =>  {
-          let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
+          if (data == 0){
+               
+          }else{
+          let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
             duration: 2000
           }) 
+          this.ngOnInit()
+        }
         },
         error => {
-          let snackBarRef = this.snackBar.open("Not Save ", 'Dismiss', {
+          let snackBarRef = this.snackBar.open("Not Update ", 'Dismiss', {
             duration: 2000
           }) 
         }
         );
       // console.log(result)
-       this.ngOnInit()
+       
      }
-     this.ngOnInit()
+    
     });
         
   }
@@ -147,9 +152,14 @@ user:any;
          }else{
           this.Jarwis.userdelete(result).subscribe(
             data =>  {
+              if (data == 0){
+               
+              }else{
               let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
                 duration: 2000
               }) 
+              this.ngOnInit()
+            }
             },
             error => {
               let snackBarRef = this.snackBar.open("Not Delete ", 'Dismiss', {
@@ -158,9 +168,9 @@ user:any;
             }
             );
           // console.log(result)
-           this.ngOnInit()
+        
          }
-         this.ngOnInit()
+       
         });
       }
 }

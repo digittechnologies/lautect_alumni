@@ -3,6 +3,11 @@ import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { DeletemodalComponent } from '../../delete/deletemodal/deletemodal.component';
+import { MatDialog,MatDialogConfig } from '@angular/material';
+import { EditeventComponent } from '../../edit/editevent/editevent.component';
+import { EditeventschComponent } from '../../edit/editeventsch/editeventsch.component';
+
 @Component({
   selector: 'app-event-programs',
   templateUrl: './event-programs.component.html',
@@ -42,7 +47,10 @@ export class EventProgramsComponent implements OnInit {
     private Token: TokenService,
     private router: Router,
     public snackBar: MatSnackBar, 
-  ) { }
+    private dialog?: MatDialog,
+    ) { }
+    isPopupOpened = true;
+
 event:any;
 
 uploadFile(event){
@@ -143,5 +151,166 @@ uploadFile(event){
       }
     )
   }
-
+  deleteevent(id: number) {
+    // console.log(id)
+        this.isPopupOpened = true;
+        
+       const dialogRef = this.dialog.open(DeletemodalComponent, {
+         minWidth: '50%',
+         data: {id}
+         
+       });
+      
+       
+    
+        dialogRef.afterClosed().subscribe(result => {
+         this.isPopupOpened = false;
+         if(result == 'undefined'){
+    
+         }else{
+          this.Jarwis.eventdelete(result).subscribe(
+            data =>  {
+              if (data == 0){
+               
+              }else{
+              let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
+                duration: 2000
+              }) 
+              this.ngOnInit()
+            }
+            },
+            error => {
+              let snackBarRef = this.snackBar.open("Not Delete ", 'Dismiss', {
+                duration: 2000
+              }) 
+            }
+            );
+          // console.log(result)
+        
+         }
+       
+        });
+      }
+      editevent(id){
+        this.isPopupOpened = true;
+        let home = this.event.filter(c => c.id == id);
+        console.log(home)
+        const dialogRef = this.dialog.open(EditeventComponent, {
+          minWidth: '60%',
+          data: {user: home[0]}
+          
+        });
+       
+        
+     
+         dialogRef.afterClosed().subscribe(result => {
+          this.isPopupOpened = false;
+          if(result == 'undefined'){
+     
+          }else{
+           this.Jarwis.eventupdate(result).subscribe(
+             data =>  {
+               if(data == 0){
+    
+               }else{
+                 let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
+                   duration: 2000
+                 }) 
+                 this.ngOnInit()
+               }
+             
+             },
+             error => {
+               let snackBarRef = this.snackBar.open("Not Update ", 'Dismiss', {
+                 duration: 2000
+               }) 
+             }
+             );
+           console.log(result)
+           
+          }
+         
+         });
+      }
+      editeventsch(id){
+        this.isPopupOpened = true;
+        let home = this.eventsch.filter(c => c.id == id);
+        console.log(home)
+        const dialogRef = this.dialog.open(EditeventschComponent, {
+          minWidth: '60%',
+          data: {user: home[0]}
+          
+        });
+       
+        
+     
+         dialogRef.afterClosed().subscribe(result => {
+          this.isPopupOpened = false;
+          if(result == 'undefined'){
+     
+          }else{
+           this.Jarwis.eventschupdate(result).subscribe(
+             data =>  {
+               if(data == 0){
+    
+               }else{
+                 let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
+                   duration: 2000
+                 }) 
+                 this.ngOnInit()
+               }
+             
+             },
+             error => {
+               let snackBarRef = this.snackBar.open("Not Update ", 'Dismiss', {
+                 duration: 2000
+               }) 
+             }
+             );
+           console.log(result)
+           
+          }
+         
+         });
+      }
+      deleteeventsch(id: number) {
+        // console.log(id)
+            this.isPopupOpened = true;
+            
+           const dialogRef = this.dialog.open(DeletemodalComponent, {
+             minWidth: '50%',
+             data: {id}
+             
+           });
+          
+           
+        
+            dialogRef.afterClosed().subscribe(result => {
+             this.isPopupOpened = false;
+             if(result == 'undefined'){
+        
+             }else{
+              this.Jarwis.eventschdelete(result).subscribe(
+                data =>  {
+                  if (data == 0){
+                   
+                  }else{
+                  let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
+                    duration: 2000
+                  }) 
+                  this.ngOnInit()
+                }
+                },
+                error => {
+                  let snackBarRef = this.snackBar.open("Not Delete ", 'Dismiss', {
+                    duration: 2000
+                  }) 
+                }
+                );
+              // console.log(result)
+            
+             }
+           
+            });
+          }
 }
