@@ -41,9 +41,9 @@ export class EditpeopleComponent implements OnInit {
     // console.log(this.data);
   this._userForm = this._formBuilder.group({
       id: [this.data.user.id],
-      name:[this.data.user.name],
-     about:[this.data.user.about],
-      position:[this.data.user.position],
+      p_name:[this.data.user.p_name],
+     p_about:[this.data.user.p_about],
+     p_position:[this.data.user.p_position],
       link_id:[this.data.user.link_id],
       
       category_id:[this.data.user.category_id],

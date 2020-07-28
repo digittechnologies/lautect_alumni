@@ -438,10 +438,10 @@ class UserApiController extends Controller
         $datas=$request->formdata;
         $id=$datas['id'];
         // $request->merge(['category_id'=>$datas['category_id']]);
-        $request->merge(['p_name'=>$datas['name']]);
-        $request->merge(['p_about'=>$datas['about']]);
-        $request->merge(['p_position'=>$datas['position']]);
-        $request->merge(['link_id'=>$datas['link_id']]);
+        // $request->merge(['p_name'=>$datas['name']]);
+        // $request->merge(['p_about'=>$datas['about']]);
+        // $request->merge(['p_position'=>$datas['position']]);
+        // $request->merge(['link_id'=>$datas['link_id']]);
         $aid= auth()->user()->id;
         $request->merge(['updated_by'=>$aid]);
             if ($request->image){
