@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   public form = {
     email: null,
-    password: null
+    password: null,
+    status: 'active',
   };
 
   public error = null;
@@ -36,7 +37,20 @@ export class LoginComponent implements OnInit {
   handleResponse(data) {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/nav');
+    // this.Jarwis.cat(data.userCategory);  
+
+    if (data.userCategory == 1) {
+      this.router.navigateByUrl('/profile/'+data.id+'');
+      
+    } if(data.userCategory == 2){
+      this.router.navigateByUrl('/home');
+
+    } else {
+      //  this.router.navigateByUrl('/home');      
+    }
+    
+   
   }
 
   handleError(error) {

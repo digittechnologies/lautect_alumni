@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-7 col-7">
                     <div class="preheader-left">
-                        <a href="mailto:info@construc.com"><strong>Email:</strong> lautechalumni@gmail.com</a>
-                        <a href="mailto:info@construc.com"><strong>Hotline:</strong> +234 701 234 5678</a>
+                        <a href="mailto:info@construc.com"><strong>Email:</strong> {{ \App\App_setting::select('email1')->first()->email1 }} </a>
+                        <a href="mailto:info@construc.com"><strong>Hotline:</strong> {{ \App\App_setting::select('phone_number')->first()->phone_number }} </a>
                     </div>
                 </div>
 
@@ -16,7 +16,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a title="Login" class="btn-auth btn-auth-rev" href="{{ route('login') }}">Already A Member</a>
+                        <a title="Login" class="btn-auth btn-auth-rev" href="http://localhost:4200/" target="_blank">Already A Member</a>
                         <a title="Register" class="btn-auth btn-auth" href="{{ route('register') }}">Be a Member</a>
                     @endauth
                 </div>
@@ -36,7 +36,8 @@
                 <div class="col-lg-12">
                     <nav class="main-menu navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="{{url('/')}}">
-                            <img src="assets/img/logo.png" alt="Logo">
+                            {{-- <img src="assets/img/logo.png" alt="Logo"> --}}
+                            <img src="http://{{\App\App_setting::select('url')->first()->url}}/{{\App\App_setting::select('logo')->first()->logo}}" alt="Logo" style=" height:120px;width:250px ">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
                             <span class="navbar-toggler-icon"></span>

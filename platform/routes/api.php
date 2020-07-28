@@ -7,14 +7,20 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+    Route::get('me', 'AuthController@me');
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@process');
 
     //start auth
     Route::get('getauth', 'ApiController@getauth');
-    //end auth
+    Route::post('addauth', 'ApiController@addauth');
+    Route::post('authupdate', 'UserApiController@updateauth');
+    Route::post('authdelete', 'UserApiController@deleteauth');
 
+    //end auth
+//search
+Route::post('searchauth', 'UserApiController@searchauth');
+//search
     //About
     Route::post('addaboutus', 'ApiController@addaboutus');
     Route::get('getaboutcat', 'ApiController@getaboutcat');
@@ -41,6 +47,9 @@ Route::group([
 
     Route::get('gethomeheader', 'ApiController@gethomeheader');
     Route::post('addhomeheader', 'ApiController@addhomeheader');
+    Route::post('updatehomeheader', 'ApiController@updatehomeheader');
+    Route::post('addheader', 'ApiController@addheader');
+    Route::post('headerdelete', 'UserApiController@deleteheader');
 
     Route::get('getevent', 'ApiController@getevent');
     Route::post('addevent', 'ApiController@addevent');
@@ -73,4 +82,9 @@ Route::group([
 
     Route::get('getinterview', 'ApiController@getinter');
     Route::post('addinterview', 'ApiController@addinter');
+
+    //userprofile
+    Route::get('userprofile/{id}', 'UserApiController@userprofile');
+    Route::post('userupdate', 'UserApiController@updateuser');
+    Route::post('userdelete', 'UserApiController@deleteuser');
 });

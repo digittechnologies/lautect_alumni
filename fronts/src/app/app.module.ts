@@ -10,7 +10,7 @@ import { BeforeLoginService } from './services/before-login.service';
 import { AfterLoginService } from './services/after-login.service';
 import { TokenService } from './services/token.service';
 import { AuthService } from './services/auth.service';
-import {MatSelectModule,MatInputModule, MatListModule, MatSnackBarModule,} from '@angular/material';
+import {MatSelectModule,MatInputModule,MatButtonModule,MatListModule, MatSnackBarModule, MatToolbarModule, MatDialogModule,MatCardModule,MatIconModule,} from '@angular/material';
 import { MatAutocompleteModule } from '@angular/material/autocomplete'​;
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -44,6 +44,16 @@ import { SystemCategoryComponent } from './pages/system-category/system-category
 import { PeopleCommiteeComponent } from './pages/people-commitee/people-commitee.component';
 import { NewsComponent } from './pages/news/news.component';
 import { InterviewsComponent } from './pages/interviews/interviews.component';
+import { UserprofileComponent } from './user/userprofile/userprofile.component';
+import { EdituserComponent } from './edit/edituser/edituser.component';
+import { EditcatComponent } from './edit/editcat/editcat.component';
+import { DeletemodalComponent } from './delete/deletemodal/deletemodal.component';
+import { AuthmodelComponent } from './edit/authmodel/authmodel.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { Login2Component } from './components/login2/login2.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+
+
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
@@ -73,12 +83,21 @@ export function tokenGetter() {
     PeopleCommiteeComponent,
     NewsComponent,
     InterviewsComponent,
+    UserprofileComponent,
+    EdituserComponent,
+    EditcatComponent,
+    DeletemodalComponent,
+    AuthmodelComponent,
+    LandingComponent,
+    Login2Component,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AppRoutingModule,
     ReactiveFormsModule,
+    
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -88,10 +107,15 @@ export function tokenGetter() {
     MatListModule,
     MatSnackBarModule,
     NgxPaginationModule,
+    MatButtonModule,
     // SnotifyModule,
     // LazyLoadImageModule.forRoot({
     //   preset: scrollPreset 
     // }),
+    MatToolbarModule,
+     MatDialogModule,
+     MatIconModule,
+    MatCardModule,
     ScrollingModule,
     MatAutocompleteModule​,
     MatFormFieldModule,
@@ -110,6 +134,7 @@ export function tokenGetter() {
   //   { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
   // SnotifyService],
   providers: [JarwisService,TokenService,AuthService,BeforeLoginService,AfterLoginService],
+  entryComponents: [EdituserComponent, DeletemodalComponent,AuthmodelComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

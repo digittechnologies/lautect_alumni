@@ -414,6 +414,65 @@ class ApiController extends Controller
            return response()->json(['error' => 'Not save'], 200);
             
     }
+    public function updatehomeheader(Request $request)
+    {
+
+        $datas=$request->formdata;
+        
+        // $request->merge(['title'=>$datas['title']]);
+        // $request->merge(['component'=>$datas['component']]);
+       
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(450, 300)->save(public_path('/upload/uploads/'.$filename));
+                $request->merge(['home_image'=>$filename]);
+                $h=home_page::where('id', '=', $datas['id'])->first();
+              $h->home_image = $request->home_image;
+              $h->save();
+            }
+    //    return $request;
+            $u=home_page::where('id', '=', $datas['id'])->update($datas);
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+    public function addheader(Request $request)
+    {
+
+        $datas=$request->formdata;
+        
+        // $request->merge(['title'=>$datas['title']]);
+        // $request->merge(['component'=>$datas['component']]);
+       
+          
+            if ($request->image){
+                $file=$request->image;
+                $filename=time().'.' . explode('/', explode(':', substr($file, 0, strpos($file,';')))[1])[1];
+                Image::make($file)->resize(440, 300)->save(public_path('/upload/uploads/'.$filename));
+        
+                $request->merge(['image'=>$filename]);
+                $h=home_body::where('home_body.id', '=', $datas['id'])->first();
+               
+                $h->image = $request->image;
+                $h->save();
+            }
+    //    return $;
+            $u=home_body::where('home_body.id', '=', $datas['id'])->update($datas);
+            if ($u) {
+                return response()->json(['success' => 'You have successfully'], 200);
+            }
+          
+            //  return $apps;
+           return response()->json(['error' => 'Not save'], 200);
+            
+    }
+
     public function gethomeheader()
     {
         return response()->json([
@@ -549,6 +608,16 @@ class ApiController extends Controller
        
     }
 
+    public function addauth(Request $request)
+    {
+
+// return $request;
+$u=authentication::create($request->all());
+if ($u) {
+    return "true";
+}
+return "false";
+    }
     public function getauth()
     {
         return response()->json(
@@ -556,8 +625,9 @@ class ApiController extends Controller
             [
 
          'authcount' =>authentication::count(),
-        'auth'=>authentication::inRandomOrder()->limit(20000)
+        'auth'=>authentication::inRandomOrder()->limit(1000)
         ->get()
+        
             ]
         );
        
@@ -624,8 +694,8 @@ class ApiController extends Controller
 
         'usercount' =>User::where('user_cat_id','=','1')->count(),
         'user'=>User::join('authentications','users.auth_id','=','authentications.id')
-        ->select('users.*','authentications.matric_no')->where('users.user_cat_id','=','1')->inRandomOrder()->limit(20000)
-        ->get()
+        ->select('users.*','authentications.matric_no')->where('users.user_cat_id','=','1')->latest()->take(1000)->get()
+        
             ]
         );
     }
@@ -637,7 +707,7 @@ class ApiController extends Controller
             [
 
         'usercount' =>User::where('user_cat_id','=','2')->count(),
-        'user'=>User::where('users.user_cat_id','=','2')->inRandomOrder()->limit(20000)
+        'user'=>User::where('users.user_cat_id','=','2')->inRandomOrder()->limit(100)
         ->get()
             ]
         );

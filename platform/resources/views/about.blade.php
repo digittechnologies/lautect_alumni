@@ -136,84 +136,22 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="about-page-area-title">
-                        <h2>Our Honorable Committe</h2>
+                        <h2>Our Executives and their Designations</h2>
                     </div>
                 </div>
             </div>
 
             <div class="honorable-committee-list">
                 <div class="row">
+                @foreach ($committee as $c)
                     <div class="col-lg-3 col-sm-6">
                         <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>BRYAN WATSHON<span class="committee-deg">President</span></h3>
+                            <img src="http://{{$settings->url}}/{{$c->p_image}}" class="img-fluid" alt="Committee">
+                            <h3>{{$c->p_name}}<span class="committee-deg">{{$c->p_position}}</span></h3>
                         </div>
                     </div>
+                @endforeach 
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>CARLOS HELU<span class="committee-deg">Vice President</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>ANGLE TUNI<span class="committee-deg">Secretary</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>ALEX KALIFA<span class="committee-deg">Asst Secretary</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>ALEX Tuntuni<span class="committee-deg">Office Secretary</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>MAL MUHIT<span class="committee-deg">Finance Member</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>PRINCE RIMON<span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>PRINCE KAMLA<span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -228,61 +166,22 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col-lg-12">
                     <div class="people-to-say-wrapper owl-carousel">
                         <!-- Single People Testimonial -->
+                    @foreach ($interview as $i)
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="http://placehold.it/500x500" alt="Alumni" class="img-fluid">
+                                <img src="http://{{$settings->url}}/{{$i->inter_image}}" alt="Alumni" class="img-fluid">
                             </div>
                             <i class="quote-icon"></i>
-                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
-                                inciidunt ut
-                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Robert Albert <span class="people-deg">Founder at Boxr</span></h4>
+                            <p>{{$i->content}}</p>
+                            <h4>{{$i->inter_name}} <span class="people-deg">{{$i->inter_position}}</span></h4>
                         </div>
-                        <!-- Single People Testimonial -->
-
-                        <!-- Single People Testimonial -->
-                        <div class="single-testimonial-wrap">
-                            <div class="people-thumb">
-                                <img src="http://placehold.it/500x500" alt="" class="img-fluid">
-                            </div>
-                            <i class="quote-icon"></i>
-                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
-                                inciidunt ut
-                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Akamla Albert <span class="people-deg">Founder at Kamlakana</span></h4>
-                        </div>
-                        <!-- Single People Testimonial -->
-
-                        <!-- Single People Testimonial -->
-                        <div class="single-testimonial-wrap">
-                            <div class="people-thumb">
-                                <img src="http://placehold.it/500x500" alt="" class="img-fluid">
-                            </div>
-                            <i class="quote-icon"></i>
-                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
-                                inciidunt ut
-                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Taklo Nahid <span class="people-deg">Minister at Nara</span></h4>
-                        </div>
-                        <!-- Single People Testimonial -->
-
-                        <!-- Single People Testimonial -->
-                        <div class="single-testimonial-wrap">
-                            <div class="people-thumb">
-                                <img src="http://placehold.it/500x500" alt="" class="img-fluid">
-                            </div>
-                            <i class="quote-icon"></i>
-                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
-                                inciidunt ut
-                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Mal Muhit<span class="people-deg">Founder at Kamlagiri</span></h4>
-                        </div>
-                        <!-- Single People Testimonial -->
+                    @endforeach
+                        <!-- Single People Testimonial -->                        
                     </div>
                 </div>
             </div>
