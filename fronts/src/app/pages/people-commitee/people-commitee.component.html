@@ -29,7 +29,7 @@
                   
                     <div class="form-group">
                       <label for="issueinput6">Select Category Name</label>
-                      <select id="issueinput6" name="image_cat_id" class="form-control" [(ngModel)]="form.category_id" data-toggle="tooltip" data-trigger="hover"
+                      <select id="issueinput6" name="category_id" class="form-control" [(ngModel)]="form.category_id" data-toggle="tooltip" data-trigger="hover"
                         data-placement="top" data-title="Status">
                         <option *ngFor="let e of cat" value="{{e.id}}">{{e.app_cate_name}}</option>
                         
@@ -125,10 +125,10 @@
                 <!-- <a class="info p-0" data-original-title="" title=""> -->
                   <!-- <i class="ft-user font-medium-3 mr-2"></i> -->
                 <!-- </a> -->
-                <a class="success p-0" data-original-title="" title="">
+                <a class="success p-0" data-original-title="" title="" (click)="editpeople(u.id)">
                   <i class="ft-edit-2 font-medium-3 mr-2"></i>
                 </a>
-                <a class="danger p-0" data-original-title="" title="">
+                <a class="danger p-0" data-original-title="" title="" (click)="deletepeople(u.id)">
                   <i class="ft-x font-medium-3 mr-2"></i>
                 </a>
               </td>

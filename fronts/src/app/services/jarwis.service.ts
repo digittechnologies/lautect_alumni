@@ -54,6 +54,20 @@ export class JarwisService {
   getmembercat() {
     return this.http.get(`${this.baseUrl}/getmembercat`)
   }
+  membercatupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/membercatupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  membercatdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/memeberdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   addasso(data) {
     return this.http.post(`${this.baseUrl}/addasso`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -61,6 +75,20 @@ export class JarwisService {
   }
   getasso() {
     return this.http.get(`${this.baseUrl}/getasso`)
+  }
+  assoupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/assoupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  assodelete(data) {
+
+    return this.http.post(`${this.baseUrl}/assodelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
   }
   getauth() {
     return this.http.get(`${this.baseUrl}/getauth`)
@@ -125,6 +153,20 @@ export class JarwisService {
   getevent() {
     return this.http.get(`${this.baseUrl}/getevent`)
   }
+  eventupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/eventupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  eventdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/eventdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   addeventsch(data) {
     return this.http.post(`${this.baseUrl}/addeventsch`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -132,6 +174,20 @@ export class JarwisService {
   }
   geteventsch() {
     return this.http.get(`${this.baseUrl}/geteventsch`)
+  }
+  eventschupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/eventschupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  eventschdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/eventschdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
   }
   addcareercat(data) {
     return this.http.post(`${this.baseUrl}/addcareercat`, data,{headers:{
@@ -141,6 +197,20 @@ export class JarwisService {
   getcareercat() {
     return this.http.get(`${this.baseUrl}/getcareercat`)
   }
+  careercatupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/careercatupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  careercatdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/careercatdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   addcareer(data) {
     return this.http.post(`${this.baseUrl}/addcareer`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -148,6 +218,20 @@ export class JarwisService {
   }
   getcareer() {
     return this.http.get(`${this.baseUrl}/getcareer`)
+  }
+  careerupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/careerupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  careerdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/careerdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
   }
   addgallerycat(data) {
     return this.http.post(`${this.baseUrl}/addgallerycat`, data,{headers:{
@@ -157,6 +241,20 @@ export class JarwisService {
   getgallerycat() {
     return this.http.get(`${this.baseUrl}/getgallerycat`)
   }
+  gallerycatupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/gallerycatupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  gallerycatdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/gallerycatdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   addgallery(data) {
     return this.http.post(`${this.baseUrl}/addgallery`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -165,7 +263,20 @@ export class JarwisService {
   getgallery() {
     return this.http.get(`${this.baseUrl}/getgallery`)
   }
+  galleryupdate(data) {
 
+    return this.http.post(`${this.baseUrl}/galleryupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  gallerydelete(data) {
+
+    return this.http.post(`${this.baseUrl}/gallerydelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   addcat(data) {
     return this.http.post(`${this.baseUrl}/addcat`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -173,6 +284,20 @@ export class JarwisService {
   }
   getcat() {
     return this.http.get(`${this.baseUrl}/getcat`)
+  }
+  catupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/catupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  catdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/catdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
   }
   addpeople(data) {
     return this.http.post(`${this.baseUrl}/addpeople`, data,{headers:{
@@ -182,6 +307,20 @@ export class JarwisService {
   getpeople() {
     return this.http.get(`${this.baseUrl}/getpeople`)
   }
+  peopleupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/peopleupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  peopledelete(data) {
+
+    return this.http.post(`${this.baseUrl}/peopledelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   addnewcat(data) {
     return this.http.post(`${this.baseUrl}/addnewcat`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -189,6 +328,20 @@ export class JarwisService {
   }
   getnewcat() {
     return this.http.get(`${this.baseUrl}/getnewcat`)
+  }
+  newcatupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/newcatupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  newcatdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/newcatdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
   }
   addnews(data) {
     return this.http.post(`${this.baseUrl}/addnews`, data,{headers:{
@@ -198,6 +351,20 @@ export class JarwisService {
   getnews() {
     return this.http.get(`${this.baseUrl}/getnews`)
   }
+  newupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/newupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  newdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/newdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
   addinterview(data) {
     return this.http.post(`${this.baseUrl}/addinterview`, data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
@@ -205,6 +372,21 @@ export class JarwisService {
   }
   getinterview() {
     return this.http.get(`${this.baseUrl}/getinterview`)
+  }
+
+  interviewupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/interviewupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  interviewdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/interviewdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
   }
   userprofile(id:string) {
 
@@ -257,6 +439,35 @@ headerdelete(data) {
   authsearch(data) {
 
     return this.http.post(`${this.baseUrl}/searchauth/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+
+  usercatupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/usercatupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  usercatdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/usercatdelete/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  aboutupdate(data) {
+
+    return this.http.post(`${this.baseUrl}/aboutupdate/`,data,{headers:{
+      Authorization:`Bearer ${localStorage.token}`
+    }})
+
+  }
+  aboutdelete(data) {
+
+    return this.http.post(`${this.baseUrl}/aboutdelete/`,data,{headers:{
       Authorization:`Bearer ${localStorage.token}`
     }})
 

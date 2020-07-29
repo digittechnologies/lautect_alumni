@@ -81,14 +81,50 @@
           </div>
       
     </div>
+    <div class="row">
+      <div class="col-md-6">
+          <label>Linkedin</label><br>
+         
+           
+          <input type="text" formControlName="linkedin" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label>Youtube </label>
+          <input type="text" formControlName="youtube" class="form-control">
+
+        </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+        <label>Select Profile Image</label><br>
+       
+        <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)">
+
+      </div>
+      <div class="col-md-6">
+        <label>Faculty </label>
+        <input type="text" formControlName="faculty" class="form-control">
+
+      </div>
+  
+</div>
       <div class="row">
         
         <div class="form-group col-md-12">
-          <label for="eventInput2">Content</label>
+          <label for="eventInput2">Tell more about you</label>
         <textarea id="complaintinput5" rows="5" class="form-control round"  formControlName="about" ></textarea>
         </div>
       
     </div>
+    <div class="row">
+        
+      <div class="form-group col-md-12">
+        <label for="eventInput2">About your hobbies</label>
+      <textarea id="complaintinput5" rows="5" class="form-control round"  formControlName="hobbies" ></textarea>
+      </div>
+    
+  </div>
         <!-- <div class="row">
           <div class="col-md-6">
           <button type="submit" class="btn btn-success">

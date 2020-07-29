@@ -143,10 +143,10 @@
                               <!-- <a class="info p-0" data-original-title="" title=""> -->
                                 <!-- <i class="ft-user font-medium-3 mr-2"></i> -->
                               <!-- </a> -->
-                              <a class="success p-0" data-original-title="" title="">
+                              <a class="success p-0" data-original-title="" title="" (click)="editevent(u.id)">
                                 <i class="ft-edit-2 font-medium-3 mr-2"></i>
                               </a>
-                              <a class="danger p-0" data-original-title="" title="">
+                              <a class="danger p-0" data-original-title="" title="" (click)="deleteevent(u.id)">
                                 <i class="ft-x font-medium-3 mr-2"></i>
                               </a>
                             </td>
@@ -256,6 +256,7 @@
                             <th></th>
                             <th>Schedule Name</th>
                             <th>Title </th>
+                            <th>Speaker</th>
                             <th>Status</th>
                             <th>End Time</th>
                             <th>Start Date</th>
@@ -290,10 +291,10 @@
                               <!-- <a class="info p-0" data-original-title="" title=""> -->
                                 <!-- <i class="ft-user font-medium-3 mr-2"></i> -->
                               <!-- </a> -->
-                              <a class="success p-0" data-original-title="" title="">
+                              <a class="success p-0" data-original-title="" title="" (click)="editeventsch(u.id)">
                                 <i class="ft-edit-2 font-medium-3 mr-2"></i>
                               </a>
-                              <a class="danger p-0" data-original-title="" title="">
+                              <a class="danger p-0" data-original-title="" title="" (click)="deleteeventsch(u.id)">
                                 <i class="ft-x font-medium-3 mr-2"></i>
                               </a>
                             </td>

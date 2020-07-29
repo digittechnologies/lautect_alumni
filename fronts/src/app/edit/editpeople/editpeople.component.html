@@ -1,0 +1,68 @@
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Update Info</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <!-- <mat-icon (click)="onNoClick()">cancel</mat-icon> -->
+  </mat-toolbar>
+</mat-card-header>
+<div class="container">
+<mat-dialog-content class="mat-typography">
+  
+    <form [formGroup]="_userForm" >
+      <div class="form-group">
+        <div class="form-group">
+          <label for="issueinput6">Select Category Name</label>
+          <select id="issueinput6" formControlName="category_id" class="form-control" data-toggle="tooltip" data-trigger="hover"
+            data-placement="top" data-title="Status">
+            <option *ngFor="let e of cat" value="{{e.id}}">{{e.app_cate_name}}</option>
+            
+          </select>
+        </div>
+      <div class="form-group">
+        <label for="eventInput1"> Name</label>
+        <input type="text" id="eventInput1" class="form-control"  formControlName="p_name" required>
+      </div>
+      <div class="form-group">
+        <label for="eventInput1">Position</label>
+        <input type="text" id="eventInput1" class="form-control"  formControlName="p_position" required>
+      </div>
+      <div class="form-group">
+        <label for="eventInput1"> Link</label>
+        <input type="text" id="eventInput1" class="form-control"  formControlName="link_id">
+      </div>
+      <div class="form-group">
+        <label for="eventInput2">About </label>
+      <textarea id="complaintinput5" rows="5" class="form-control round"  formControlName="p_about" required></textarea>
+      </div>
+       
+        <div class="form-group">
+          <label>Select Image</label>
+          <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)" required>
+        </div>
+        
+        
+        
+    
+       
+        
+      </div>
+
+    </form>
+  
+</mat-dialog-content>
+<div class="form-group">
+  <div class="row">
+<div class="form-actions center">
+                    
+  <button   class="btn btn-raised btn-defult mr-1" (click)="onNoClick()">
+    <i class="fa fa-check-square-o"></i>cancel
+  </button>
+
+  <button type="submit" (click)="onSubmit()"  class="btn btn-raised btn-success">
+    <i class="fa fa-check-square-o"></i>Update
+  </button>
+</div>
+</div>
+</div>
+</div>
+

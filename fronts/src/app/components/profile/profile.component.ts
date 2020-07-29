@@ -119,20 +119,25 @@ email:any;
      }else{
       this.Jarwis.userupdate(result).subscribe(
         data =>  {
-          let snackBarRef = this.snackBar.open("Save successfully", 'Dismiss', {
+          if (data == 0){
+               
+          }else{
+          let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
             duration: 2000
           }) 
+          this.ngOnInit()
+        }
         },
         error => {
-          let snackBarRef = this.snackBar.open("Not Save ", 'Dismiss', {
+          let snackBarRef = this.snackBar.open("Not update ", 'Dismiss', {
             duration: 2000
           }) 
         }
         );
-      // console.log(result)
-       this.ngOnInit()
+      // console.log(result)http://frontendguider.com/how-to-upload-files-in-angular-with-laravel/
+      
      }
-     this.ngOnInit()
+    //  this.ngOnInit()
     });
         
   }

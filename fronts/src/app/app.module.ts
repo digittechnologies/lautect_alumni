@@ -52,8 +52,20 @@ import { AuthmodelComponent } from './edit/authmodel/authmodel.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { Login2Component } from './components/login2/login2.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
-
-
+import { EditaboutusComponent } from './edit/editaboutus/editaboutus.component';
+import { EditassoComponent } from './edit/editasso/editasso.component';
+import { EditusercatComponent } from './edit/editusercat/editusercat.component';
+import { EditeventComponent } from './edit/editevent/editevent.component';
+import { EditeventschComponent } from './edit/editeventsch/editeventsch.component';
+import { EditgallerycatComponent } from './edit/editgallerycat/editgallerycat.component';
+import { EditgalleryComponent } from './edit/editgallery/editgallery.component';
+import { EditinterviewComponent } from './edit/editinterview/editinterview.component';
+import { EditnewsComponent } from './edit/editnews/editnews.component';
+import { EditnewcatComponent } from './edit/editnewcat/editnewcat.component';
+import { EditopportunitiesComponent } from './edit/editopportunities/editopportunities.component';
+import { EditpeopleComponent } from './edit/editpeople/editpeople.component';
+import { EditcareercatComponent } from './edit/editcareercat/editcareercat.component';
+import { EditsyscatComponent } from './edit/editsyscat/editsyscat.component';
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
@@ -68,6 +80,7 @@ export function tokenGetter() {
     ResponseResetComponent,
     MembersComponent,
     HomeComponent,
+    EditgalleryComponent,
     VerificationComponent,
     AssociationComponent,
     MemberCatComponent,
@@ -91,6 +104,19 @@ export function tokenGetter() {
     LandingComponent,
     Login2Component,
     UserProfileComponent,
+    EditaboutusComponent,
+    EditassoComponent,
+    EditusercatComponent,
+    EditeventComponent,
+    EditeventschComponent,
+    EditgallerycatComponent,
+    EditinterviewComponent,
+    EditnewsComponent,
+    EditnewcatComponent,
+    EditopportunitiesComponent,
+    EditpeopleComponent,
+    EditcareercatComponent,
+    EditsyscatComponent,
   ],
   imports: [
     BrowserModule,
@@ -134,7 +160,7 @@ export function tokenGetter() {
   //   { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
   // SnotifyService],
   providers: [JarwisService,TokenService,AuthService,BeforeLoginService,AfterLoginService],
-  entryComponents: [EdituserComponent, DeletemodalComponent,AuthmodelComponent ],
+  entryComponents: [EditgalleryComponent,EditpeopleComponent,EditcareercatComponent,EditopportunitiesComponent,EditnewcatComponent,EditnewsComponent,EditinterviewComponent,EditgallerycatComponent,EdituserComponent,EditeventComponent,EditeventschComponent, DeletemodalComponent,AuthmodelComponent,EditaboutusComponent,EditassoComponent,EditusercatComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
