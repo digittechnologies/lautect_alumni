@@ -18,8 +18,8 @@ class MemberController extends Controller
     {
  
     $settings = app_setting::all();        
-     $users = User::join('member_categories','users.user_cat_id','=','member_categories.id')
-                     ->select('users.*','member_categories.member_cat_name')
+     $users = User::join('user_categories','users.user_cat_id','=','user_categories.id')
+                     ->select('users.*','user_categories.cat_name')
                     //  ->where('about_category.id', '=', '3')
                      ->get();
 

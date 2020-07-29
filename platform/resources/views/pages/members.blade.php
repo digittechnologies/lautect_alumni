@@ -68,8 +68,8 @@
                                             <td><img src="http://{{$settings->url}}/{{$user->user_image}}" alt="table">{{$user->name}}</td>
                                             <td>{{$user->dept}}</td>
                                             <td>{{$user->year_of_g}}</td>
-                                            <td>Dhaka</td>
-                                            <td>{{$user->mamber_cat_name}}</td>
+                                            <td>Lautech</td>
+                                            <td>{{$user->cat_name}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -92,7 +92,7 @@
                                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                                     <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">50</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
                                     <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
                                 </ul>
                             </nav>

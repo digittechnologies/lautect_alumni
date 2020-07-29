@@ -22,9 +22,9 @@ class CommiteeController extends Controller
         $header =home_body::select('home_body.*')
                          ->where('home_body.id', '=', 12)
                          ->first();
-        $committee =people_commitee::select('people_commitees.*')
+         $committee =people_commitee::select('people_commitees.*')
                          ->where('people_commitees.category_id', '=', 1)
-                         ->get();
+                         ->get();  
      
          return view('pages.commitee',['settings'=>$settings[0], 'header'=> $header, 'committee'=>$committee]);
 
