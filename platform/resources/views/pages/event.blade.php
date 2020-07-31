@@ -92,7 +92,7 @@
                                                 </div>
                                                 <h3><a href="single-event.html">{{$e->subject}}!</a></h3>
                                                 <p>{{$e->content}}</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join with us</a>
+                                                <a href="{{url('eventsDetails/')}}/{{$e->id}}" class="btn btn-brand btn-brand-dark">join with us</a>
                                             </div>
                                         </div>
                                     </div>

@@ -29,13 +29,27 @@ class AboutController extends Controller
     $header =home_body::select('home_body.*')
                      ->where('home_body.id', '=', 6)
                      ->first();
+   
+    $interview =interview::select('interviews.*')                  
+                     ->get();  
+
     $committee =people_commitee::select('people_commitees.*')
                      ->where('people_commitees.category_id', '=', 1)
                      ->get();  
-    $interview =interview::select('interviews.*')                  
-                     ->get();  
+    $committee3 =people_commitee::select('people_commitees.*')
+                     ->where('people_commitees.category_id', '=', 1)
+                     ->where('people_commitees.role_id', '=', 3)
+                     ->get();
+    $committee2 =people_commitee::select('people_commitees.*')
+                     ->where('people_commitees.category_id', '=', 1)
+                     ->where('people_commitees.role_id', '=', 2)
+                     ->get();
+    $committee1 =people_commitee::select('people_commitees.*')
+                     ->where('people_commitees.category_id', '=', 1)
+                     ->where('people_commitees.role_id', '=', 1)
+                     ->get();
  
-     return view('about',['settings'=>$settings[0], 'about'=> $about, 'header'=> $header, 'committee'=>$committee, 'interview'=>$interview]);
+     return view('about',['settings'=>$settings[0], 'about'=> $about, 'header'=> $header, 'committee'=>$committee, 'committee3'=>$committee3, 'committee2'=>$committee2, 'committee1'=>$committee1,  'interview'=>$interview]);
 
 
     }

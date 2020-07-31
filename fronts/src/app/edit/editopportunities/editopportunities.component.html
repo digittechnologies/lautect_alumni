@@ -1,0 +1,77 @@
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Update Info</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <!-- <mat-icon (click)="onNoClick()">cancel</mat-icon> -->
+  </mat-toolbar>
+</mat-card-header>
+<div class="container">
+<mat-dialog-content class="mat-typography">
+  
+    <form [formGroup]="_userForm" >
+      <div class="form-group">
+        <div class="form-group">
+          <label for="issueinput6">Select Career</label>
+          <select id="issueinput6" formControlName="car_cat_id" class="form-control"  data-toggle="tooltip" data-trigger="hover"
+            data-placement="top" data-title="Status">
+            <option *ngFor="let e of career" value="{{e.id}}">{{e.car_cat_name}}</option>
+            
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="eventInput1">Career Name</label>
+          <input type="text" id="eventInput1" class="form-control"  formControlName="car_name" required>
+        </div>
+        <div class="form-group">
+          <label for="eventInput1">Title</label>
+          <input type="text" id="eventInput1" class="form-control"  formControlName="title" required>
+        </div>
+        <div class="form-group">
+          <label for="eventInput1">Location</label>
+          <input type="text" id="eventInput1" class="form-control"  formControlName="location" required>
+        </div>
+        <div class="form-group">
+          <label for="projectinput1">Address</label>
+          <input type="text" id="projectinput1" class="form-control" formControlName="address"  placeholder="e.g 10AM">
+        </div>
+        <div class="form-group">
+          <label for="eventInput2">Content</label>
+        <textarea id="complaintinput5" rows="5" class="form-control round"  formControlName="content" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="eventInput2">Information</label>
+        <textarea id="complaintinput5" rows="5" class="form-control round"  formControlName="information" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Select Image</label>
+          <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)" required>
+        </div>
+        
+        
+        
+    
+       
+        
+      </div>
+
+    </form>
+  
+</mat-dialog-content>
+<div class="form-group">
+  <div class="row">
+<div class="form-actions center">
+                    
+  <button   class="btn btn-raised btn-defult mr-1" (click)="onNoClick()">
+    <i class="fa fa-check-square-o"></i>cancel
+  </button>
+
+  <button type="submit" (click)="onSubmit()"  class="btn btn-raised btn-success">
+    <i class="fa fa-check-square-o"></i>Update
+  </button>
+</div>
+</div>
+</div>
+</div>
+

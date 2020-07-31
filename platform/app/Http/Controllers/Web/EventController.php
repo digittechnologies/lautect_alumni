@@ -21,4 +21,16 @@ class EventController extends Controller
  
      return view('pages.event',['settings'=>$settings[0], 'header'=> $header, 'event'=>$event_page]);
     }
+
+    public function details($id)
+    {
+ 
+        $event_page = event_tb::all();
+     $settings = app_setting::all();     
+    $header =home_body::select('home_body.*')
+                     ->where('home_body.id', '=', 8)
+                     ->first();
+ 
+     return view('pages.eventDetails');
+    }
 }

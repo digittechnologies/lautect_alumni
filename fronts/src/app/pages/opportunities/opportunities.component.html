@@ -93,9 +93,7 @@
                            
                            <tr *ngFor="let u of career | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
                             <td>{{i + 1}}</td>
-                             <td>
-                               <!-- <img src=""> -->
-                             </td>
+                            
                              <td>{{u.car_cat_name}}</td>
                              <td>{{u.decription}}</td>
                              
@@ -108,10 +106,10 @@
                               <!-- <a class="info p-0" data-original-title="" title=""> -->
                                 <!-- <i class="ft-user font-medium-3 mr-2"></i> -->
                               <!-- </a> -->
-                              <a class="success p-0" data-original-title="" title="">
+                              <a class="success p-0" data-original-title="" title="" (click)="editcarcat(u.id)">
                                 <i class="ft-edit-2 font-medium-3 mr-2"></i>
                               </a>
-                              <a class="danger p-0" data-original-title="" title="">
+                              <a class="danger p-0" data-original-title="" title="" (click)="deletecarcat(u.id)">
                                 <i class="ft-x font-medium-3 mr-2"></i>
                               </a>
                             </td>
@@ -165,7 +163,7 @@
                         </div>
                         <div class="form-group">
                           <label for="projectinput1">Address</label>
-                          <input type="text" id="projectinput1" class="form-control" name="address" [(ngModel)]="form2.address" placeholder="e.g 10AM">
+                          <input type="text" id="projectinput1" class="form-control" name="address" [(ngModel)]="form2.address" >
                         </div>
                         <div class="form-group">
                           <label for="eventInput2">Content</label>
@@ -198,7 +196,7 @@
                 <div class="col-sm-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">List of the Member Category</h4>
+                    <h4 class="card-title">List of the Career</h4>
                   </div>
                   <div class="card-content">
                     <div class="card-body table-responsive">
@@ -226,7 +224,8 @@
                            <tr *ngFor="let u of careers | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
                             <td>{{i + 1}}</td>
                              <td>
-                               <img src="">
+                              <img src="http://{{url}}/{{u.car_image}}" class="rounded" style="width: 50px;height: 40px;">
+
                              </td>
                              <td>{{u.car_name}}</td>
                              <td>{{u.title}}</td>
@@ -238,13 +237,13 @@
                              <td>{{u.created_at}}</td>
                              <td>{{u.updated_at}}</td>
                             <td>
-                              <a class="info p-0" data-original-title="" title="">
+                              <!-- <a class="info p-0" data-original-title="" title="">
                                 <i class="ft-user font-medium-3 mr-2"></i>
-                              </a>
-                              <a class="success p-0" data-original-title="" title="">
+                              </a> -->
+                              <a class="success p-0" data-original-title="" title="" (click)="editcar(u.id)">
                                 <i class="ft-edit-2 font-medium-3 mr-2"></i>
                               </a>
-                              <a class="danger p-0" data-original-title="" title="">
+                              <a class="danger p-0" data-original-title="" title="" (click)="deletecar(u.id)">
                                 <i class="ft-x font-medium-3 mr-2"></i>
                               </a>
                             </td>

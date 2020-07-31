@@ -1,0 +1,82 @@
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Update Info</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <!-- <mat-icon (click)="onNoClick()">cancel</mat-icon> -->
+  </mat-toolbar>
+</mat-card-header>
+<div class="container">
+<mat-dialog-content class="mat-typography">
+  
+    <form [formGroup]="_userForm" >
+      <div class="form-group">
+       
+        <div class="form-group">
+          <label for="eventInput1">Event Name</label>
+          <input type="text" id="eventInput1" class="form-control"  formControlName="event_name" required>
+        </div>
+        <div class="form-group">
+          <label for="eventInput1">Subject</label>
+          <input type="text" id="eventInput1" class="form-control"  formControlName="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="eventInput1">Address</label>
+          <input type="text" id="eventInput1" class="form-control"  formControlName="address" >
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="projectinput1">Start Time</label>
+              <input type="time" id="projectinput1" class="form-control" formControlName="start_time" placeholder="e.g, 2:00:00 AM" >
+            </div>
+          </div>
+          <div class="col-md-6">
+            
+              <div class="form-group">
+                <label for="projectinput1">End Time</label>
+                <input type="time" id="projectinput1" class="form-control" formControlName="end_time" placeholder="e.g, 3:50:00 AM" >
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectinput2">Start Date</label>
+          <input type="date" id="projectinput2" class="form-control" formControlName="start_date" placeholder="e.g, 27 February 2020" >
+        </div>
+        <div class="form-group">
+          <label for="projectinput2">End Date</label>
+          <input type="date" id="projectinput2" class="form-control" formControlName="end_date"  placeholder="e.g, 27 February 2020" >
+        </div>
+        <div class="form-group">
+          <label for="eventInput2">Content</label>
+        <textarea id="complaintinput5" rows="5" class="form-control round"  formControlName="content" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Select Image</label>
+          <input type="file" class="form-control-file" id="projectinput8" (change)="uploadFile($event)" required>
+        </div>
+    
+       
+        
+      </div>
+
+    </form>
+  
+</mat-dialog-content>
+<div class="form-group">
+  <div class="row">
+<div class="form-actions center">
+                    
+  <button   class="btn btn-raised btn-defult mr-1" (click)="onNoClick()">
+    <i class="fa fa-check-square-o"></i>cancel
+  </button>
+
+  <button type="submit" (click)="onSubmit()"  class="btn btn-raised btn-success">
+    <i class="fa fa-check-square-o"></i>Update
+  </button>
+</div>
+</div>
+</div>
+</div>
+

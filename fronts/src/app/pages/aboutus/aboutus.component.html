@@ -104,7 +104,7 @@
              <tr *ngFor="let u of aboutus | paginate: {itemsPerPage: 10, currentPage: p} ; let i=index">               
               <td>{{i + 1}}</td>
                <td>
-                 <img >
+                <img src="http://{{url}}/{{u.images}}" class="rounded" style="width: 50px;height: 40px;">
                </td>
                <td>{{u.cat_name}}</td>
                <td>{{u.title}}</td>
@@ -117,10 +117,10 @@
                 <!-- <a class="info p-0" data-original-title="" title=""> -->
                   <!-- <i class="ft-user font-medium-3 mr-2"></i> -->
                 <!-- </a> -->
-                <a class="success p-0" data-original-title="" title="">
+                <a class="success p-0" data-original-title="" title=""  (click)="editabout(u.id)">
                   <i class="ft-edit-2 font-medium-3 mr-2"></i>
                 </a>
-                <a class="danger p-0" data-original-title="" title="">
+                <a class="danger p-0" data-original-title="" title="" (click)="deleteabout(u.id)">
                   <i class="ft-x font-medium-3 mr-2"></i>
                 </a>
               </td>
@@ -147,3 +147,4 @@
 
 </div></div>
 
+ 

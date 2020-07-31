@@ -10,6 +10,7 @@ use App\event_tb;
 use App\about;
 use App\User;
 use App\home_body;
+use App\career;
 
 class JobController extends Controller
 {
@@ -18,11 +19,14 @@ class JobController extends Controller
  
      
         $settings = app_setting::all();     
-        $header =home_body::select('home_body.*')
+        $career = career::join('career_categories','careers.car_cat_id','=','career_categories.id')
+                                ->select('careers.*','career_categories.car_cat_name')                   
+                                ->get();
+         $header =home_body::select('home_body.*')
                          ->where('home_body.id', '=', 10)
                          ->first();
      
-         return view('pages.job',['settings'=>$settings[0], 'header'=> $header]);
+         return view('pages.job',['settings'=>$settings[0], 'header'=> $header, 'career'=> $career,]);
 
     }
 }

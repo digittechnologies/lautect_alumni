@@ -3,6 +3,10 @@ import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
+import { DeletemodalComponent } from '../../delete/deletemodal/deletemodal.component';
+import { MatDialog,MatDialogConfig } from '@angular/material';
+import { EditgallerycatComponent } from '../../edit/editgallerycat/editgallerycat.component';
+import { EditgalleryComponent } from '../../edit/editgallery/editgallery.component';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -32,7 +36,10 @@ export class GalleryComponent implements OnInit {
     private Token: TokenService,
     private router: Router,
     public snackBar: MatSnackBar, 
-  ) { }
+    private dialog?: MatDialog,
+    ) { }
+    isPopupOpened = true;
+
 
  
 uploadFile(event){
@@ -134,5 +141,166 @@ uploadFile(event){
       }
     )
   }
-
+  deletegallery(id: number) {
+    // console.log(id)
+        this.isPopupOpened = true;
+        
+       const dialogRef = this.dialog.open(DeletemodalComponent, {
+         minWidth: '50%',
+         data: {id}
+         
+       });
+      
+       
+    
+        dialogRef.afterClosed().subscribe(result => {
+         this.isPopupOpened = false;
+         if(result == 'undefined'){
+    
+         }else{
+          this.Jarwis.gallerydelete(result).subscribe(
+            data =>  {
+              if (data == 0){
+               
+              }else{
+              let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
+                duration: 2000
+              }) 
+              this.ngOnInit()
+            }
+            },
+            error => {
+              let snackBarRef = this.snackBar.open("Not Delete ", 'Dismiss', {
+                duration: 2000
+              }) 
+            }
+            );
+          // console.log(result)
+        
+         }
+       
+        });
+      }
+      editgallery(id){
+        this.isPopupOpened = true;
+        let home = this.gallery.filter(c => c.id == id);
+        console.log(home)
+        const dialogRef = this.dialog.open(EditgalleryComponent, {
+          minWidth: '60%',
+          data: {user: home[0]}
+          
+        });
+       
+        
+     
+         dialogRef.afterClosed().subscribe(result => {
+          this.isPopupOpened = false;
+          if(result == 'undefined'){
+     
+          }else{
+           this.Jarwis.galleryupdate(result).subscribe(
+             data =>  {
+               if(data == 0){
+    
+               }else{
+                 let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
+                   duration: 2000
+                 }) 
+                 this.ngOnInit()
+               }
+             
+             },
+             error => {
+               let snackBarRef = this.snackBar.open("Not Update ", 'Dismiss', {
+                 duration: 2000
+               }) 
+             }
+             );
+           console.log(result)
+           
+          }
+         
+         });
+      }
+      editgallerycat(id){
+        this.isPopupOpened = true;
+        let home = this.gallerycat.filter(c => c.id == id);
+        console.log(home)
+        const dialogRef = this.dialog.open(EditgallerycatComponent, {
+          minWidth: '60%',
+          data: {user: home[0]}
+          
+        });
+       
+        
+     
+         dialogRef.afterClosed().subscribe(result => {
+          this.isPopupOpened = false;
+          if(result == 'undefined'){
+     
+          }else{
+           this.Jarwis.gallerycatupdate(result).subscribe(
+             data =>  {
+               if(data == 0){
+    
+               }else{
+                 let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
+                   duration: 2000
+                 }) 
+                 this.ngOnInit()
+               }
+             
+             },
+             error => {
+               let snackBarRef = this.snackBar.open("Not Update ", 'Dismiss', {
+                 duration: 2000
+               }) 
+             }
+             );
+           console.log(result)
+           
+          }
+         
+         });
+      }
+      deletegallerycat(id: number) {
+        // console.log(id)
+            this.isPopupOpened = true;
+            
+           const dialogRef = this.dialog.open(DeletemodalComponent, {
+             minWidth: '50%',
+             data: {id}
+             
+           });
+          
+           
+        
+            dialogRef.afterClosed().subscribe(result => {
+             this.isPopupOpened = false;
+             if(result == 'undefined'){
+        
+             }else{
+              this.Jarwis.gallerycatdelete(result).subscribe(
+                data =>  {
+                  if (data == 0){
+                   
+                  }else{
+                  let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
+                    duration: 2000
+                  }) 
+                  this.ngOnInit()
+                }
+                },
+                error => {
+                  let snackBarRef = this.snackBar.open("Not Delete ", 'Dismiss', {
+                    duration: 2000
+                  }) 
+                }
+                );
+              // console.log(result)
+            
+             }
+           
+            });
+          }
 }

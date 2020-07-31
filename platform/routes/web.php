@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/members', 'Web\MemberController@index')->name('members');
 Route::get('/events', 'Web\EventController@index')->name('events');
+Route::get('/eventsDetails/{id}', 'Web\EventController@details')->name('eventsDetails');
 Route::get('/gallery', 'Web\GalleryController@index')->name('gallery');
 
 Route::get('/job', 'Web\JobController@index')->name('job');

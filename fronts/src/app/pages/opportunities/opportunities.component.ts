@@ -3,7 +3,10 @@ import { JarwisService } from '../../services/jarwis.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-
+import { DeletemodalComponent } from '../../delete/deletemodal/deletemodal.component';
+import { MatDialog,MatDialogConfig } from '@angular/material';
+import { EditopportunitiesComponent } from '../../edit/editopportunities/editopportunities.component';
+import { EditcareercatComponent } from '../../edit/editcareercat/editcareercat.component';
 @Component({
   selector: 'app-opportunities',
   templateUrl: './opportunities.component.html',
@@ -30,13 +33,15 @@ export class OpportunitiesComponent implements OnInit {
   careers: any;
   career: any;
   app: any;
-
+url:any;
   constructor(
     private Jarwis: JarwisService,
     private Token: TokenService,
     private router: Router,
     public snackBar: MatSnackBar, 
-  ) { }
+    private dialog?: MatDialog,
+    ) { }
+    isPopupOpened = true;
 
 
 uploadFile(event){
@@ -123,8 +128,173 @@ uploadFile(event){
     this.Jarwis.getappsetting().subscribe(
       data=>{
       this.app = data;
-      
+      this.url=this.app.url;
       }
     )
   }
+
+  editcar(id){
+    this.isPopupOpened = true;
+    let home = this.careers.filter(c => c.id == id);
+    console.log(home)
+    const dialogRef = this.dialog.open(EditopportunitiesComponent, {
+      minWidth: '60%',
+      data: {user: home[0]}
+      
+    });
+   
+    
+ 
+     dialogRef.afterClosed().subscribe(result => {
+      this.isPopupOpened = false;
+      if(result == 'undefined'){
+ 
+      }else{
+       this.Jarwis.careerupdate(result).subscribe(
+         data =>  {
+           if(data == 0){
+
+           }else{
+             let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
+               duration: 2000
+             }) 
+             this.ngOnInit()
+           }
+         
+         },
+         error => {
+           let snackBarRef = this.snackBar.open("Not Update ", 'Dismiss', {
+             duration: 2000
+           }) 
+         }
+         );
+       console.log(result)
+       
+      }
+     
+     });
+  }
+  deletecar(id: number) {
+    // console.log(id)
+        this.isPopupOpened = true;
+        
+       const dialogRef = this.dialog.open(DeletemodalComponent, {
+         minWidth: '50%',
+         data: {id}
+         
+       });
+      
+       
+    
+        dialogRef.afterClosed().subscribe(result => {
+         this.isPopupOpened = false;
+         if(result == 'undefined'){
+    
+         }else{
+          this.Jarwis.careerdelete(result).subscribe(
+            data =>  {
+              if (data == 0){
+               
+              }else{
+              let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
+                duration: 2000
+              }) 
+              this.ngOnInit()
+            }
+            },
+            error => {
+              let snackBarRef = this.snackBar.open("Not Delete ", 'Dismiss', {
+                duration: 2000
+              }) 
+            }
+            );
+          // console.log(result)
+        
+         }
+       
+        });
+      }
+
+      editcarcat(id){
+        this.isPopupOpened = true;
+        let home = this.career.filter(c => c.id == id);
+        console.log(home)
+        const dialogRef = this.dialog.open(EditcareercatComponent, {
+          minWidth: '60%',
+          data: {user: home[0]}
+          
+        });
+       
+        
+     
+         dialogRef.afterClosed().subscribe(result => {
+          this.isPopupOpened = false;
+          if(result == 'undefined'){
+     
+          }else{
+           this.Jarwis.careercatupdate(result).subscribe(
+             data =>  {
+               if(data == 0){
+    
+               }else{
+                 let snackBarRef = this.snackBar.open("Updated successfully", 'Dismiss', {
+                   duration: 2000
+                 }) 
+                 this.ngOnInit()
+               }
+             
+             },
+             error => {
+               let snackBarRef = this.snackBar.open("Not Update ", 'Dismiss', {
+                 duration: 2000
+               }) 
+             }
+             );
+           console.log(result)
+           
+          }
+         
+         });
+      }
+      deletecarcat(id: number) {
+        // console.log(id)
+            this.isPopupOpened = true;
+            
+           const dialogRef = this.dialog.open(DeletemodalComponent, {
+             minWidth: '50%',
+             data: {id}
+             
+           });
+          
+           
+        
+            dialogRef.afterClosed().subscribe(result => {
+             this.isPopupOpened = false;
+             if(result == 'undefined'){
+        
+             }else{
+              this.Jarwis.careercatdelete(result).subscribe(
+                data =>  {
+                  if (data == 0){
+                   
+                  }else{
+                  let snackBarRef = this.snackBar.open("Delete successfully", 'Dismiss', {
+                    duration: 2000
+                  }) 
+                  this.ngOnInit()
+                }
+                },
+                error => {
+                  let snackBarRef = this.snackBar.open("Not Delete ", 'Dismiss', {
+                    duration: 2000
+                  }) 
+                }
+                );
+              // console.log(result)
+            
+             }
+           
+            });
+          }
+
 }

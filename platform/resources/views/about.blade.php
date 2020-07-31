@@ -142,17 +142,39 @@
             </div>
 
             <div class="honorable-committee-list">
-                <div class="row">
-                @foreach ($committee as $c)
-                    <div class="col-lg-3 col-sm-6">
+            
+            <div class="row">
+                    @foreach ($committee1 as $com1)
+                    <div class="col-lg-4 col-sm-10 col-md-7 m-auto">
                         <div class="single-committee-member">
-                            <img src="http://{{$settings->url}}/{{$c->p_image}}" class="img-fluid" alt="Committee">
-                            <h3>{{$c->p_name}}<span class="committee-deg">{{$c->p_position}}</span></h3>
+                            <img src="http://{{$settings->url}}/{{$com1->p_image}}" class="img-fluid" alt="Committee">
+                            <h3>{{$com1->p_name}} <span class="committee-deg">{{$com1->p_position}}</span></h3>
                         </div>
                     </div>
-                @endforeach 
-
+                @endforeach                      
                 </div>
+
+                <div class="row">
+                    @foreach ($committee2 as $com2)
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="single-committee-member">
+                            <img src="http://{{$settings->url}}/{{$com2->p_image}}" class="img-fluid" alt="Committee">
+                            <h3>{{$com2->p_name}} <span class="committee-deg">{{$com2->p_position}}</span></h3>
+                        </div>
+                    </div>
+                @endforeach           
+
+            <div class="row">
+                @foreach ($committee3 as $com3)
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-committee-member">
+                            <img src="http://{{$settings->url}}/{{$com3->p_image}}" class="img-fluid" alt="Committee">
+                            <h3>{{$com3->p_name}} <span class="committee-deg">{{$com3->p_position}}</span></h3>
+                        </div>
+                    </div>
+                @endforeach             
+                </div>
+
             </div>
         </div>
     </div>
